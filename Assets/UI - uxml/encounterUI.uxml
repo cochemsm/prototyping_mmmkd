@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20-%20uxml/encounterUI.uss?fileID=7433441132597879392&amp;guid=6ba5ff8fc8a242b42ad21ef9538ae450&amp;type=3#encounterUI" />
+    <ui:VisualElement name="Background" class="fillScreen" style="background-color: rgb(140, 55, 31);" />
+    <ui:VisualElement name="Character" class="fillScreen" />
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:VisualElement name="SystemPowerContainer" class="SystemPowerContainer">
+            <ui:Label tabindex="-1" text="SYSTEM POWER:" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            <ui:ProgressBar value="67" name="SystemPower" class="systemPower" />
+            <ui:Label tabindex="-1" text="67%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SystemPowerLabel" />
+        </ui:VisualElement>
+        <ui:VisualElement name="PatientMeter" class="patientMeter">
+            <ui:VisualElement name="TemporaryBattery" style="background-color: rgb(128, 128, 128); width: 100%; height: 200px;" />
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:VisualElement>
+                    <ui:Label tabindex="-1" text="NAME:" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:Label tabindex="-1" text="INFO:" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:VisualElement>
+                <ui:VisualElement>
+                    <ui:Label tabindex="-1" text="Max" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PatientName" />
+                    <ui:Label tabindex="-1" text="Ist voll cool&#10;Kann mega gut kochen" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PatientInfo" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="align-items: center; height: 20%; bottom: 0; position: absolute; width: 100%;">
+            <ui:VisualElement name="TemporaryCardhand" style="width: 80%; height: 100%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
