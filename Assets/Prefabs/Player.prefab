@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7646418776251810110}
   - component: {fileID: 2115734894292069629}
   - component: {fileID: 4322432426565709588}
-  - component: {fileID: 9150276135158844940}
+  - component: {fileID: 2852477911710302452}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -118,7 +118,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6131719155505417472}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 60
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &9150276135158844940
+--- !u!114 &2852477911710302452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerinput: {fileID: -8483152832917034939, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
-  speed: 10
+  movementSpeed: 1
+  lookSpeed: 0.5
 --- !u!1 &8191732204618124455
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6214087720756630813}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -83.49, y: 0, z: 0}
 --- !u!20 &7018292858466846100
 Camera:
   m_ObjectHideFlags: 0
