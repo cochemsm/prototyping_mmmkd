@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class #SCRIPTNAME# : MonoBehaviour {
+    public static #SCRIPTNAME# Instance {get; private set; }
+    #NOTRIM# 
+    private void Awake() {
+        if (Instance is not null) {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(this);
+    }
+    
+    private void OnDestroy() {
+        if (Instance == this) Instance = null;
+    }
+}
