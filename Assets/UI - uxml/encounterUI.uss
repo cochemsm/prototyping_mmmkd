@@ -49,3 +49,9 @@ Label {
     top: 100px;
     left: 200px;
 }
+
+.battery {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(108, 108, 108);
+}
