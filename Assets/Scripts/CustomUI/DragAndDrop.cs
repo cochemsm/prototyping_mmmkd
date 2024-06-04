@@ -34,6 +34,8 @@ public class DragAndDrop : MouseManipulator {
 
     private void OnMouseUp(MouseUpEvent evt) {
         if (!target.HasMouseCapture()) return;
+
+        if (!target.Overlaps(dragArea.contentRect)) return;
         
         target.ReleaseMouse();
         evt.StopPropagation();
