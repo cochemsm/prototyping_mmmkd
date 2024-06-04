@@ -30,6 +30,8 @@ public class UIController : MonoBehaviour {
 
         enemyName = body.Q<Label>("EnemyName");
         enemyInfo = body.Q<Label>("EnemyInfo");
+        
+        body.Q<VisualElement>("cardTemplate").AddManipulator(new DragAndDrop(body));
     }
     
     private void OnDestroy() {
