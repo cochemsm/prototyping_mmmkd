@@ -21,9 +21,14 @@ public class GameManager : MonoBehaviour {
 
     private void Setup() {
         PublicEvents.LoadNextLevel += LoadNextLevel;
+        PublicEvents.SafeGame += SafeGame;
     }
 
     private void LoadNextLevel() {
         Debug.Log("Insert Code to load next level");
+    }
+    
+    private void SafeGame() {
+        Debug.Log("Insert Code to safe the Game");
     }
 }

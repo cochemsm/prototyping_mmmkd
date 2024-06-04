@@ -2,14 +2,15 @@ using UnityEngine;
 
 namespace Objects.Triggers {
     [RequireComponent(typeof(BoxCollider))]
-    public class NextLevelTrigger : MonoBehaviour {
+    public class Checkpoint : MonoBehaviour {
         private void Awake() {
             GetComponent<BoxCollider>().isTrigger = true;
         }
 
         private void OnTriggerEnter(Collider other) {
             if (!other.CompareTag("Player")) return;
-            PublicEvents.LoadNextLevel?.Invoke();
+            PublicEvents.SafeGame?.Invoke();
+            Destroy(gameObject);
         }
     }
 }
