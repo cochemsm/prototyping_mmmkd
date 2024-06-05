@@ -1,8 +1,12 @@
+using System;
+using Cards;
 using UnityEngine;
 
 namespace Manager {
     public class GameManager : MonoBehaviour {
         public static GameManager Instance {get; private set; }
+
+        public Card testCard;
         
         private void Awake() {
             if (Instance is not null) {
@@ -11,17 +15,20 @@ namespace Manager {
             }
             Instance = this;
             DontDestroyOnLoad(this);
-        
-            Setup();
-        }
-    
-        private void OnDestroy() {
-            if (Instance == this) Instance = null;
         }
 
-        private void Setup() {
+        private void OnEnable() {
             PublicEvents.LoadNextLevel += LoadNextLevel;
             PublicEvents.SafeGame += SafeGame;
+        }
+
+        private void OnDisable() {
+            PublicEvents.LoadNextLevel -= LoadNextLevel;
+            PublicEvents.SafeGame -= SafeGame;
+        }
+
+        private void OnDestroy() {
+            if (Instance == this) Instance = null;
         }
 
         private void LoadNextLevel() {

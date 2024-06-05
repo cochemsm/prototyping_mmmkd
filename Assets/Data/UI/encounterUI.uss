@@ -39,10 +39,6 @@ Label {
     min-height: 100%;
 }
 
-#TemporaryCardhand {
-    background-color: rgb(55, 37, 37);
-}
-
 .patientMeter {
     position: absolute;
     width: 500px;
@@ -60,4 +56,14 @@ Label {
 .meterField {
     background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=8228938214290033325&guid=101f7f399f631dd40992be7068463071&type=3#console.erroricon');
     flex-basis: 100%;
+}
+
+.card {
+    background-color: rgb(21, 98, 233);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 250px;
+    height: 350px;
 }

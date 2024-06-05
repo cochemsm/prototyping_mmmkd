@@ -1,20 +1,42 @@
-using System.Collections;
 using System.Collections.Generic;
 using Cards;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Cardhand : VisualElement {
-    public new class UxmlFactory : UxmlFactory<Cardhand> {}
+namespace CustomUI {
+    public class Cardhand : VisualElement {
+        public new class UxmlFactory : UxmlFactory<Cardhand> {}
 
-    public List<Card> cards = new List<Card>();
-    private VisualTreeAsset cardTemplate;
+        private List<Card> cards;
+        private VisualTreeAsset cardTemplate;
     
-    public Cardhand() {
-        cardTemplate = Resources.Load<VisualTreeAsset>("");
-    }
+        public Cardhand() {
+            cards = new List<Card>();
+        }
 
-    private void SetCardsToPoints() {
+        public void AddCard(Card newCard, VisualElement root) {
+            Debug.Log("Im here");
+            cards.Add(newCard);
+            cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/cardTemplate.uxml");
+            VisualElement card = cardTemplate.Instantiate();
+            card.userData = newCard;
+            card.AddToClassList("card");
+            card.AddManipulator(new DragAndDrop(root));
+            hierarchy.Add(card);
+        }
+
+        public void RemoveCard(Card oldCard) {
+            foreach (var card in cards) {
+                if (oldCard == card) {
+                    cards.Remove(oldCard);
+                    return;
+                }
+            }
+        }
+
+        private void SetCardsToPoints() {
         
+        }
     }
 }

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00d95a90e8576549b96872d5be879b0, type: 3}
   m_Name: Testing
   m_EditorClassIdentifier: 
-  image: {fileID: 8228938214290033325, guid: adda468b490f8674d9a333d046f84a7b, type: 3}
-  text: Test
+  cardName: Testing Card
+  cardImage: {fileID: 0}
+  imageOnCard: {fileID: 0}
+  text: Test Text
   energy: 2

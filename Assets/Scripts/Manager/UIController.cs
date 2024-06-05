@@ -1,3 +1,5 @@
+using Cards;
+using CustomUI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,15 +7,17 @@ namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
 
+        public Card test;
+        
         private UIDocument ui;
         private VisualElement body;
     
         private ProgressBar systemPower;
         private Label systemPowerLabel;
-        // private Battery patience;
+        private LifeMeter patience;
         private Label enemyName;
         private Label enemyInfo;
-        // private Cardhand cardhand;
+        private Cardhand cardhand;
     
         private void Awake() {
             if (Instance is not null) {
@@ -28,15 +32,23 @@ namespace Manager {
 
             systemPower = body.Q<ProgressBar>("SystemPower");
             systemPowerLabel = body.Q<Label>("SystemPowerLabel");
-
+            patience = body.Q<LifeMeter>("Patience");
             enemyName = body.Q<Label>("EnemyName");
             enemyInfo = body.Q<Label>("EnemyInfo");
-        
-            body.Q<VisualElement>("cardTemplate").AddManipulator(new DragAndDrop(body));
+            cardhand = body.Q<Cardhand>("Cardhand");
+            
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
         }
     
         private void OnDestroy() {
             if (Instance == this) Instance = null;
+        }
+
+        public void AddCardToHand(Card newCard) {
+            cardhand.AddCard(newCard, body);
         }
     }
 }
