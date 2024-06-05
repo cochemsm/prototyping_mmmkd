@@ -66,4 +66,12 @@ Label {
     border-bottom-left-radius: 10px;
     width: 250px;
     height: 350px;
+    border-left-color: rgb(26, 26, 132);
+    border-right-color: rgb(26, 26, 132);
+    border-top-color: rgb(26, 26, 132);
+    border-bottom-color: rgb(26, 26, 132);
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
 }

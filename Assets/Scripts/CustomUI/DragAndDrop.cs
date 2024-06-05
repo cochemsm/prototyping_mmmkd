@@ -5,13 +5,15 @@ using UnityEngine.UIElements;
 namespace CustomUI {
     public class DragAndDrop : MouseManipulator {
 
+        private VisualElement root;
         private VisualElement dragArea;
         private Cardhand cardhand;
         private Vector2 startPosition;
 
         public DragAndDrop(VisualElement root) {
+            this.root = root;
             dragArea = root.Q<VisualElement>("dragArea");
-            cardhand = root.Q<Cardhand>("CardHand");
+            cardhand = root.Q<Cardhand>("Cardhand");
         }
     
         private void OnMouseDown(MouseDownEvent evt) {
@@ -36,8 +38,13 @@ namespace CustomUI {
 
         private void OnMouseUp(MouseUpEvent evt) {
             if (!target.HasMouseCapture()) return;
+
+            if (target.Overlaps(cardhand.contentRect)) {
+                cardhand.Add(target);
+            } else {
+                target.parent.Remove(target);  
+            }
             
-            dragArea.Remove(target);
             dragArea.style.display = DisplayStyle.None;
             
             target.ReleaseMouse();

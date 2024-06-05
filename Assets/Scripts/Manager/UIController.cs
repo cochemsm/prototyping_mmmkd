@@ -41,6 +41,11 @@ namespace Manager {
             AddCardToHand(test);
             AddCardToHand(test);
             AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
         }
     
         private void OnDestroy() {
