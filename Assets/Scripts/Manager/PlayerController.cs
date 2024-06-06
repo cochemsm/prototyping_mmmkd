@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -29,11 +30,23 @@ public class PlayerController : MonoBehaviour {
         _input = movementInput.action.ReadValue<Vector2>();
     }
 
+    // private float rotation;
     private void FixedUpdate() {
         Vector3 movementVector = new Vector3(_input.x, 0, _input.y);
         movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
         _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
 
+        /*float currentRotation = _playerBody.eulerAngles.y + 180;
+        float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
+        bool rotationDirection = currentRotation < wantedRotation;
+        bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;
+        if (!checkIfEqual && movementVector != Vector3.zero) rotation += (rotationDirection ? 1 : -1) * rotationSpeed;
+        if (rotation < 1) rotation = 0;
+        if (rotation > 360) rotation -= 360;
+        rotation -= rotation % rotationSpeed;
+        Debug.Log(rotation);
+        Vector3 rotate = new Vector3(0, rotation, 0);
+        if (movementVector != Vector3.zero) _playerBody.eulerAngles = rotate;*/
         _playerBody.rotation = Quaternion.LookRotation(movementVector);
     }
 
