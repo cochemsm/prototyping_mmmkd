@@ -6159,7 +6159,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.55
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6209,7 +6209,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 50
+    maxLights: 100
   TrailModule:
     enabled: 1
     mode: 0
