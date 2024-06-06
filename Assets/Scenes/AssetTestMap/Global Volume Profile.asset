@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 6863996227293593233}
   - {fileID: -448869123435362784}
   - {fileID: 6982797748941085128}
+  - {fileID: 6385866483993999604}
 --- !u!114 &328804392045175017
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -146,6 +147,28 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 0
     m_Value: 1000
+--- !u!114 &6385866483993999604
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.31383735}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.71326685}
 --- !u!114 &6863996227293593233
 MonoBehaviour:
   m_ObjectHideFlags: 3
