@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private InputActionReference interactInput;
     
     [Header("Value to play around")]
-    [SerializeField] private float movementSpeed;
+    [SerializeField] private float movementSpeed = 1;
+    [SerializeField] private float rotationSpeed = 1;
     
     private Rigidbody _rigidbody;
     private Vector2 _input;
@@ -31,7 +32,9 @@ public class PlayerController : MonoBehaviour {
     private void FixedUpdate() {
         Vector3 movementVector = new Vector3(_input.x, 0, _input.y);
         movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
-        _rigidbody.velocity = movementVector * movementSpeed;
+        _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
+
+        _playerBody.rotation = Quaternion.LookRotation(movementVector);
     }
 
     private void OnEnable() {
