@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 
     // private float rotation;
     private void FixedUpdate() {
-        Vector3 movementVector = new Vector3(_input.x, 0.00001f, _input.y);
+        Vector3 movementVector = new Vector3(_input.x, Mathf.Epsilon, _input.y);
         movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
         _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
 
