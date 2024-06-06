@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     
     [Header("Value to play around")]
     [SerializeField] private float movementSpeed = 1;
-    [SerializeField] private float rotationSpeed = 1;
+    // [SerializeField] private float rotationSpeed = 1;
     
     private Rigidbody _rigidbody;
     private Vector2 _input;
