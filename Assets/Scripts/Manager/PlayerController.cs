@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 
     // private float rotation;
     private void FixedUpdate() {
-        Vector3 movementVector = new Vector3(_input.x, 0, _input.y);
+        Vector3 movementVector = new Vector3(_input.x, 0.00001f, _input.y);
         movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
         _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(rotation);
         Vector3 rotate = new Vector3(0, rotation, 0);
         if (movementVector != Vector3.zero) _playerBody.eulerAngles = rotate;*/
-        _playerBody.rotation = Quaternion.LookRotation(movementVector);
+        if (_input != Vector2.zero) _playerBody.rotation = Quaternion.LookRotation(movementVector);
     }
 
     private void OnEnable() {
@@ -66,14 +66,16 @@ public class PlayerController : MonoBehaviour {
     private IInteractable character;
     private void Interact(InputAction.CallbackContext ctx) {
         if (!trigger) return;
-        character.Interact();
+        character?.Interact();
     }
 
     private void OnTriggerEnter(Collider other) {
         trigger = true;
+        character = other.transform.GetComponent<IInteractable>();
     }
 
     private void OnTriggerExit(Collider other) {
         trigger = false;
+        character = null;
     }
 }
