@@ -62,7 +62,18 @@ public class PlayerController : MonoBehaviour {
         interactInput.action.performed -= Interact;
     }
 
+    private bool trigger;
+    private IInteractable character;
     private void Interact(InputAction.CallbackContext ctx) {
-        Debug.Log("Player tried to interact with something");
+        if (!trigger) return;
+        character.Interact();
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        trigger = true;
+    }
+
+    private void OnTriggerExit(Collider other) {
+        trigger = false;
     }
 }
