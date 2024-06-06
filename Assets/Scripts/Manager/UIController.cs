@@ -7,6 +7,10 @@ namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
 
+        [SerializeField] private VisualTreeAsset[] uis;
+        private const int ingame = 0;
+        private const int encounter = 1;
+        
         public Card test;
         
         private UIDocument ui;
@@ -18,6 +22,8 @@ namespace Manager {
         private Label enemyName;
         private Label enemyInfo;
         private Cardhand cardhand;
+
+        private VisualElement interact;
     
         private void Awake() {
             if (Instance is not null) {
@@ -54,6 +60,10 @@ namespace Manager {
 
         public void AddCardToHand(Card newCard) {
             cardhand.AddCard(newCard, body);
+        }
+
+        public void ToggleInteractButton() {
+            interact.style.display = interact.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
         }
     }
 }

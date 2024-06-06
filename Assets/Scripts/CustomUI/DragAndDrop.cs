@@ -40,12 +40,15 @@ namespace CustomUI {
             if (!target.HasMouseCapture()) return;
 
             if (target.Overlaps(cardhand.contentRect)) {
-                cardhand.Add(target);
+                cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);
+                Debug.Log("Card Stayed");
             } else {
-                target.parent.Remove(target);  
+                target.parent.Remove(target);
+                Debug.Log("Removed Card" + target);
             }
             
             dragArea.style.display = DisplayStyle.None;
+            cardhand.SetCardsToPoints();
             
             target.ReleaseMouse();
             evt.StopPropagation();
