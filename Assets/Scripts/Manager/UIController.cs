@@ -8,21 +8,25 @@ namespace Manager {
         public static UIController Instance {get; private set; }
 
         [SerializeField] private VisualTreeAsset[] uis;
-        private const int ingame = 0;
-        private const int encounter = 1;
-        
-        public Card test;
+        public enum UIs {
+            inGame,
+            encounter
+        }
         
         private UIDocument ui;
         private VisualElement body;
-    
+        
+        public Card test;
+        
+        // encounter
         private ProgressBar systemPower;
         private Label systemPowerLabel;
         private LifeMeter patience;
         private Label enemyName;
         private Label enemyInfo;
         private Cardhand cardhand;
-
+        
+        // ingame
         private VisualElement interact;
     
         private void Awake() {
@@ -56,6 +60,10 @@ namespace Manager {
     
         private void OnDestroy() {
             if (Instance == this) Instance = null;
+        }
+        
+        public void ChangeUI(UIs newUI) {
+            ui.visualTreeAsset = uis[(int) newUI];
         }
 
         public void AddCardToHand(Card newCard) {

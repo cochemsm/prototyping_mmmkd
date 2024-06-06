@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour {
+public class PlayerControllerOld : MonoBehaviour {
     private Rigidbody rb;
     [SerializeField] private InputActionReference playerinput;
     [SerializeField] private float movementSpeed = 3f;
@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour {
     private void Update() {
         input = playerinput.action.ReadValue<Vector2>();
         if (input == Vector2.zero) rb.velocity = Vector2.zero;
-        rb.MovePosition(transform.position + (transform.forward * input.y * movementSpeed) + (transform.right * input.x * movementSpeed));
+        var transform1 = transform;
+        rb.MovePosition(transform1.position + (transform1.forward * (input.y * movementSpeed)) + (transform1.right * (input.x * movementSpeed)));
 
         Vector2 mouseMovement = Mouse.current.delta.ReadValue() * lookSpeed;
         rotationX += -mouseMovement.y;
