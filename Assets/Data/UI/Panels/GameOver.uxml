@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Data/UI/Styles/GameOver.uss?fileID=7433441132597879392&amp;guid=e9dc0b279ab9110419587e3ec11954b8&amp;type=3#GameOver" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: center;">
+        <ui:Label tabindex="-1" text="Game Over" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" style="font-size: 120px; height: 30%;" />
+        <ui:Label tabindex="-1" text="Du loser bist gestorben" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DeathText" style="top: 10%;" />
+        <ui:VisualElement name="Buttons" style="flex-direction: row; justify-content: space-between; width: 60%; top: 30%;">
+            <ui:Button text="Load Checkpoint" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Checkpoint" class="button" />
+            <ui:Button text="Restart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartButton" class="button" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

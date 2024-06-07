@@ -1,8 +1,3 @@
-.buttons {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 .title {
     height: 40%;
     margin-top: 20px;
@@ -11,4 +6,9 @@
     margin-left: 20px;
     font-size: 120px;
     -unity-text-align: middle-center;
+}
+
+.button {
+    flex-shrink: 1;
+    flex-basis: 100%;
 }
