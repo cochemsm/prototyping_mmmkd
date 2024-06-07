@@ -34,7 +34,7 @@ namespace Manager {
 
         public void LoadNextLevel() {
             int index = SceneManager.GetActiveScene().buildIndex;
-            if (!(SceneManager.sceneCount > index + 1)) return;
+            if (!(SceneManager.sceneCount >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
         }
     
