@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 9c4fe07ab30a6c14397344129b600a74
+guid: cef548c969a64e24cbdf0baa7c2e273e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TrashPile
-    second: {fileID: 2100000, guid: bcfdffd5231311742b85a445d31ddaf4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
