@@ -4,41 +4,6 @@
     position: absolute;
 }
 
-Label {
-    font-size: 35px;
-}
-
-.SystemPowerContainer {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.systemPower {
-    height: 35px;
-    margin-right: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 10px;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-}
-
-.unity-progress-bar__background {
-    width: 400px;
-    min-height: 100%;
-}
-
-.unity-progress-bar__progress {
-}
-
-.unity-progress-bar__container {
-    max-height: 100%;
-    min-height: 100%;
-}
-
 .patientMeter {
     position: absolute;
     width: 500px;

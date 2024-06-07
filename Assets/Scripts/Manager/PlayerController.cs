@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     [Header("Setup (Do not touch)")]
     [SerializeField] private InputActionReference movementInput;
     [SerializeField] private InputActionReference interactInput;
+    [SerializeField] private InputActionReference pauseInput;
     
     [Header("Value to play around")]
     [SerializeField] private float movementSpeed = 1;
@@ -55,12 +56,16 @@ public class PlayerController : MonoBehaviour {
         movementInput.action.Enable();
         interactInput.action.Enable();
         interactInput.action.performed += Interact;
+        pauseInput.action.Enable();
+        pauseInput.action.performed += Pause;
     }
 
     private void OnDisable() {
         movementInput.action.Disable();
         movementInput.action.Disable();
         interactInput.action.performed -= Interact;
+        pauseInput.action.Disable();
+        pauseInput.action.performed -= Pause;
     }
 
     private IInteractable _character;
@@ -78,5 +83,9 @@ public class PlayerController : MonoBehaviour {
         if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
         _character = null;
+    }
+
+    private void Pause(InputAction.CallbackContext ctx) {
+        if (GameManager.Instance is not null) GameManager.Instance.PauseToggle();
     }
 }

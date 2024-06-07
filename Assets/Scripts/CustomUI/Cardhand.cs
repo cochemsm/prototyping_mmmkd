@@ -24,7 +24,7 @@ namespace CustomUI {
 
         public void AddCard(Card newCard, VisualElement root) {
             cards.Add(newCard);
-            cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/cardTemplate.uxml");
+            cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml");
             VisualElement card = cardTemplate.Instantiate();
             card.userData = newCard;
             card.AddToClassList("cardHover");

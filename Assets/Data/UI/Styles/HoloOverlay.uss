@@ -1,7 +1,3 @@
-Label {
-    font-size: 35px;
-}
-
 .systemPowerContainer {
     flex-direction: row;
     align-items: center;

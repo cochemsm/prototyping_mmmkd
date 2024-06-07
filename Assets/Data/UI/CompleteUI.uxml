@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="MainMenu" src="project://database/Assets/Data/UI/Panels/MainMenu.uxml?fileID=9197481963319205126&amp;guid=66c5c97a0fb102348960b624c974d2f1&amp;type=3#MainMenu" />
+    <ui:Template name="SettingsMenu" src="project://database/Assets/Data/UI/Panels/SettingsMenu.uxml?fileID=9197481963319205126&amp;guid=12c0f09fd77a3e447a112b4d87f5c875&amp;type=3#SettingsMenu" />
+    <ui:Template name="PauseMenu" src="project://database/Assets/Data/UI/Panels/PauseMenu.uxml?fileID=9197481963319205126&amp;guid=b85ac81d19a8ffb42bbd3f1bf0a91a56&amp;type=3#PauseMenu" />
+    <ui:Template name="InGame" src="project://database/Assets/Data/UI/Panels/InGame.uxml?fileID=9197481963319205126&amp;guid=a0373f490144a074fae49a1b8dfea6b4&amp;type=3#InGame" />
+    <ui:Template name="Encounter" src="project://database/Assets/Data/UI/Panels/Encounter.uxml?fileID=9197481963319205126&amp;guid=1196c720858db6645a6b6c56afa7e8cc&amp;type=3#Encounter" />
+    <ui:Template name="HoloOverlay" src="project://database/Assets/Data/UI/Panels/HoloOverlay.uxml?fileID=9197481963319205126&amp;guid=a4566397e6be9bc4a9341ad51d5d97ab&amp;type=3#HoloOverlay" />
+    <ui:Template name="GameOver" src="project://database/Assets/Data/UI/Panels/GameOver.uxml?fileID=9197481963319205126&amp;guid=d9eecd6313b23a043ba054e9a9e0eb3b&amp;type=3#GameOver" />
+    <Style src="project://database/Assets/Data/UI/Styles/CompleteUI.uss?fileID=7433441132597879392&amp;guid=ab8fc80a983d64f42b5e03e4752eec10&amp;type=3#CompleteUI" />
+    <ui:Instance template="MainMenu" name="MainMenu" class="panel" style="display: none;" />
+    <ui:Instance template="SettingsMenu" name="SettingsMenu" class="panel" style="display: none;" />
+    <ui:Instance template="PauseMenu" name="PauseMenu" class="panel" style="display: none;" />
+    <ui:Instance template="InGame" name="InGame" class="panel" style="display: none;" />
+    <ui:Instance template="Encounter" name="Encounter" class="panel" style="display: none;" />
+    <ui:Instance template="HoloOverlay" name="HoloOverlay" class="panel" style="display: none; position: absolute; width: 100%; height: 100%;" />
+    <ui:Instance template="GameOver" name="GameOver" class="panel" style="display: none;" />
+</ui:UXML>
