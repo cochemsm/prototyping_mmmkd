@@ -9,6 +9,8 @@ using UnityEngine.UIElements;
 namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
+
+        public TestingCard test;
         
         private UIDocument _ui;
         private VisualElement _root;
@@ -50,6 +52,16 @@ namespace Manager {
             SetupGameOver();
             
             ChangePanel(startPanel);
+            
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
+            AddCardToHand(test);
         }
     
         private void OnDestroy() {
@@ -133,14 +145,14 @@ namespace Manager {
         private Slider _gamma;
         
         private void SetupSettingsMenu() {
-            _panels[(int) UIs.SettingsMenu].Q<ListView>().selectionChanged += ChangeCategory;
+            _panels[(int) UIs.SettingsMenu].Q<ListView>("CategorySelector").selectionChanged += ChangeCategory;
             _soundView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("SoundView");
             _screenView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("ScreenView");
             _master = _panels[(int)UIs.SettingsMenu].Q<Slider>("MasterSound");
             _music = _panels[(int)UIs.SettingsMenu].Q<Slider>("MusicSound");
             _sfx = _panels[(int)UIs.SettingsMenu].Q<Slider>("SFXSound");
             _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
-            _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("windowDropDown");
+            _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
         }
 

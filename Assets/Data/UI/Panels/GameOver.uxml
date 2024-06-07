@@ -4,7 +4,7 @@
         <ui:Label tabindex="-1" text="Game Over" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" style="font-size: 120px; height: 30%;" />
         <ui:Label tabindex="-1" text="Du loser bist gestorben" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DeathText" style="top: 10%;" />
         <ui:VisualElement name="Buttons" style="flex-direction: row; justify-content: space-between; width: 60%; top: 30%;">
-            <ui:Button text="Load Checkpoint" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Checkpoint" class="button" />
+            <ui:Button text="Load Checkpoint" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CheckpointButton" class="button" />
             <ui:Button text="Restart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartButton" class="button" />
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="button" />
         </ui:VisualElement>
