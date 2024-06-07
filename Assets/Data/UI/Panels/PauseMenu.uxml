@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/MainMenu.uss?fileID=7433441132597879392&amp;guid=6171c8cfe6a45fd48ba14c4f431cbfea&amp;type=3#MainMenu" />
-    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: center;">
+    <ui:VisualElement style="flex-grow: 1; align-items: center;">
+        <ui:Label tabindex="-1" text="Game Paused" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" />
         <ui:VisualElement name="Buttons">
             <ui:Button text="Resume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResumeButton" class="buttons" />
             <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="buttons" />

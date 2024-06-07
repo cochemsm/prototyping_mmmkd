@@ -120,7 +120,31 @@ namespace Manager {
         
         #region Settings Menu
 
+        private ListView _category;
+        private ScrollView _soundView;
+        private ScrollView _screenView;
+
+        private Slider _master;
+        private Slider _music;
+        private Slider _sfx;
+
+        private DropdownField _resolution;
+        private DropdownField _windowMode;
+        private Slider _gamma;
+        
         private void SetupSettingsMenu() {
+            _panels[(int) UIs.SettingsMenu].Q<ListView>().selectionChanged += ChangeCategory;
+            _soundView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("SoundView");
+            _screenView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("ScreenView");
+            _master = _panels[(int)UIs.SettingsMenu].Q<Slider>("MasterSound");
+            _music = _panels[(int)UIs.SettingsMenu].Q<Slider>("MusicSound");
+            _sfx = _panels[(int)UIs.SettingsMenu].Q<Slider>("SFXSound");
+            _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
+            _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("windowDropDown");
+            _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
+        }
+
+        private void ChangeCategory(IEnumerable<object> category) {
             
         }
 
@@ -211,9 +235,24 @@ namespace Manager {
         
         #region Game Over
 
+        private Label _deathText;
+        
         private void SetupGameOver() {
-            
+            _deathText = _panels[(int)UIs.GameOver].Q<Label>("DeathText");
+            _panels[(int)UIs.GameOver].Q<Button>("CheckpointButton").clicked += LoadCheckpoint;
+            _panels[(int)UIs.GameOver].Q<Button>("RestartButton").clicked += Restart;
+            _panels[(int)UIs.GameOver].Q<Button>("ExitButton").clicked += Exit;
         }
+
+        private void LoadCheckpoint() {
+            // TODO: load safe point and start from there
+        }
+
+        private void Restart() {
+            // TODO: load first scene
+        }
+        
+        // Exit function identical to pause menu
 
         #endregion
     }
