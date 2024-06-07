@@ -1,0 +1,6 @@
+.ListItem {
+}
+
+.view {
+    flex-grow: 1;
+}

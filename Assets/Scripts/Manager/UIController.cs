@@ -1,16 +1,14 @@
 using System.Collections.Generic;
-using System.Globalization;
 using Cards;
 using CustomUI;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
 
-        public TestingCard test;
+        public TestingCard test; // TODO: cards need a system
         
         private UIDocument _ui;
         private VisualElement _root;
@@ -132,9 +130,11 @@ namespace Manager {
         
         #region Settings Menu
 
+        private List<string> _categories;
+        
         private ListView _category;
-        private ScrollView _soundView;
-        private ScrollView _screenView;
+        private VisualElement _soundView;
+        private VisualElement _screenView;
 
         private Slider _master;
         private Slider _music;
@@ -145,19 +145,39 @@ namespace Manager {
         private Slider _gamma;
         
         private void SetupSettingsMenu() {
-            _panels[(int) UIs.SettingsMenu].Q<ListView>("CategorySelector").selectionChanged += ChangeCategory;
-            _soundView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("SoundView");
-            _screenView = _panels[(int)UIs.SettingsMenu].Q<ScrollView>("ScreenView");
+            _category = _panels[(int) UIs.SettingsMenu].Q<ListView>("CategorySelector");
+            _category.selectionChanged += ChangeCategory;
+            _soundView = _panels[(int)UIs.SettingsMenu].Q<VisualElement>("SoundView");
+            _screenView = _panels[(int)UIs.SettingsMenu].Q<VisualElement>("ScreenView");
             _master = _panels[(int)UIs.SettingsMenu].Q<Slider>("MasterSound");
             _music = _panels[(int)UIs.SettingsMenu].Q<Slider>("MusicSound");
             _sfx = _panels[(int)UIs.SettingsMenu].Q<Slider>("SFXSound");
             _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
             _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
+
+            _categories = new List<string>();
+            _categories.Add("Audio");
+            _categories.Add("Window");
+            
+            _category.makeItem = () => {
+                Label listItem = new Label();
+                listItem.AddToClassList("ListItem");
+                return listItem;
+            };
+            _category.bindItem = (elem, i) => ((Label) elem).text = _categories[i];
+            _category.itemsSource = _categories;
+            
         }
 
-        private void ChangeCategory(IEnumerable<object> category) {
-            
+        private void ChangeCategory(IEnumerable<object> selected) {
+            if (((string) _category.selectedItem).Equals("Audio")) {
+                _soundView.style.display = DisplayStyle.Flex;
+                _screenView.style.display = DisplayStyle.None;
+            } else {
+                _soundView.style.display = DisplayStyle.None;
+                _screenView.style.display = DisplayStyle.Flex;
+            }
         }
 
         #endregion
@@ -204,7 +224,7 @@ namespace Manager {
         private VisualElement _interact;
 
         private void SetupInGame() {
-            _interact = _root.Q<VisualElement>("interactIndicator");
+            _interact = _panels[(int) UIs.InGame].Q<VisualElement>("interactIndicator");
         }
         
         public void ToggleInteractButton() {
@@ -219,16 +239,18 @@ namespace Manager {
         private Label _enemyName;
         private Label _enemyInfo;
         private Cardhand _cardhand;
+        private Label _speechLabel;
 
         public UIController(UIs startPanel) {
             this.startPanel = startPanel;
         }
 
         private void SetupEncounter() {
-            _patience = _root.Q<LifeMeter>("Patience");
-            _enemyName = _root.Q<Label>("EnemyName");
-            _enemyInfo = _root.Q<Label>("EnemyInfo");
-            _cardhand = _root.Q<Cardhand>("Cardhand");
+            _patience = _panels[(int) UIs.Encounter].Q<LifeMeter>("Patience");
+            _enemyName = _panels[(int) UIs.Encounter].Q<Label>("EnemyName");
+            _enemyInfo = _panels[(int) UIs.Encounter].Q<Label>("EnemyInfo");
+            _cardhand = _panels[(int) UIs.Encounter].Q<Cardhand>("Cardhand");
+            _speechLabel = _panels[(int) UIs.Encounter].Q<Label>("SpeechLabel");
         }
         
         public void AddCardToHand(Card newCard) {
@@ -241,6 +263,10 @@ namespace Manager {
 
         public void SetEnemyInfo() {
             // TODO: Implement something to save enemy data to read out here
+        }
+
+        public void SetSpeech(string text) {
+            _speechLabel.text = text;
         }
         
         #endregion

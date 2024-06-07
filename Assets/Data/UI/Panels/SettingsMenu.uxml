@@ -1,17 +1,24 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Data/UI/Styles/Settings.uss?fileID=7433441132597879392&amp;guid=8b7fd7464877ffe4691eba42704d3d88&amp;type=3#Settings" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-        <ui:ListView focusable="true" name="CategorySelector" />
-        <ui:VisualElement>
-            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="SoundView">
-                <ui:Slider picking-mode="Ignore" label="Master" value="42" high-value="100" name="MasterSound" />
-                <ui:Slider picking-mode="Ignore" label="Music" value="42" high-value="100" name="MusicSound" />
-                <ui:Slider picking-mode="Ignore" label="SFX" value="42" high-value="100" name="SFXSound" />
-            </ui:ScrollView>
-            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="ScreenView">
-                <ui:DropdownField label="Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ResolutionDropDown" />
-                <ui:DropdownField label="Window Mode" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="WindowsDropDown" />
-                <ui:Slider picking-mode="Ignore" label="Gamma" value="42" high-value="100" name="GammaSlider" />
-            </ui:ScrollView>
+        <ui:ListView focusable="true" name="CategorySelector" fixed-item-height="55" style="width: 30%; align-items: flex-end; padding-top: 5%; padding-right: 0; padding-bottom: 5%; padding-left: 5%;" />
+        <ui:VisualElement name="View" style="flex-grow: 1; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%;">
+            <ui:VisualElement name="SoundView" class="view">
+                <ui:Label tabindex="-1" text="Sound Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-bottom: 2%; margin-top: 0; margin-right: 0; margin-left: 0;" />
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="SoundSettings">
+                    <ui:Slider picking-mode="Ignore" label="Master" value="42" high-value="100" name="MasterSound" />
+                    <ui:Slider picking-mode="Ignore" label="Music" value="42" high-value="100" name="MusicSound" />
+                    <ui:Slider picking-mode="Ignore" label="SFX" value="42" high-value="100" name="SFXSound" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+            <ui:VisualElement name="ScreenView" class="view" style="display: none;">
+                <ui:Label tabindex="-1" text="Screen Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-bottom: 2%; margin-top: 0; margin-right: 0; margin-left: 0;" />
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="ScreenSettings">
+                    <ui:DropdownField label="Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ResolutionDropDown" />
+                    <ui:DropdownField label="Window Mode" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="WindowsDropDown" />
+                    <ui:Slider picking-mode="Ignore" label="Gamma" value="42" high-value="100" name="GammaSlider" />
+                </ui:ScrollView>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -16,6 +16,9 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
+        <ui:VisualElement name="SpeechBubble" style="position: absolute; top: 224px; left: 1445px;">
+            <ui:Label tabindex="-1" text="HAHAHA You will never defeat me" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeechLabel" />
+        </ui:VisualElement>
         <ui:VisualElement style="align-items: center; height: 20%; bottom: 0; position: absolute; width: 100%;">
             <CustomUI.Cardhand name="Cardhand" style="width: 80%; height: 100%; background-color: rgb(55, 37, 37); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; flex-direction: row; justify-content: center;" />
         </ui:VisualElement>
