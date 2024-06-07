@@ -168,6 +168,10 @@ namespace Manager {
             _category.bindItem = (elem, i) => ((Label) elem).text = _categories[i];
             _category.itemsSource = _categories;
             
+            _resolution.choices.RemoveAt(0);
+            foreach (var resolution in Screen.resolutions) {
+                _resolution.choices.Add(resolution.width + "x" + resolution.height);
+            }
         }
 
         private void ChangeCategory(IEnumerable<object> selected) {

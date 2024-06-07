@@ -1,0 +1,70 @@
+Settings Menu
+    ListView
+        hover
+        selected
+    Slider
+    Dropdown Menus
+
+Encounter UI
+    Cards
+
+
+
+Buttons
+    Continue Button (hover)
+    Play Button (hover)
+    Settings Button (hover)
+    Quit Button (hover)
+
+    Resume Button (hover)
+    Settings Button (hover)
+    Exit Button (hover)
+
+    Load Checkpoint Button (hover)
+    Restart (hover)
+    Exit (hover)
+
+Text
+    Button Text
+    Main Menu Title
+    Settings View Title
+    Settings Text
+    Settings List Text (hover) (selected)
+    Dropdown Menu Text
+    Pause Menu Title
+    Interact Text
+    Interact Key Text
+    Pickup Text
+    Enemy Info Text
+    Speech Bubble Text
+    Card Title Text
+    Card Description Text
+    Holo Overlay Text
+    System Power Text
+    Game Over Title
+    Death Text
+
+Background
+    Main Menu Background
+    Settings Background
+    Pause Menu Background ?
+    Encounter Background
+
+Other
+    HoloOverlay "Background"
+    Settings Panel Background (recommend uxml transparent square)
+    interact button
+    interact text background ?
+    pickup background ?
+    Cardhand background ?
+    Speech Bubble background (need to be scalable)
+
+Special
+    Patience Meter Background ?
+    Patience Meter
+    Patience Meter Filled
+    System Power Progress Bar Container
+    System Power Progress Bar Progress
+
+Programming
+    Character (3D render)

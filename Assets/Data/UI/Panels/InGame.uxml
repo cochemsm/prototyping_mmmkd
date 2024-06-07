@@ -6,4 +6,7 @@
         </ui:VisualElement>
         <ui:Label tabindex="-1" text="Interact" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; margin-left: 10px;" />
     </ui:VisualElement>
+    <ui:VisualElement name="PickupIndicator" style="flex-grow: 1; position: absolute; top: 938px; left: 1560px;">
+        <ui:Label tabindex="-1" text="Picked up a new Card" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+    </ui:VisualElement>
 </ui:UXML>
