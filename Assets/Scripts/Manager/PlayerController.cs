@@ -69,11 +69,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        character = other.transform.GetComponent<IInteractable>();
+        if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
+        character = other.transform.GetComponent<IInteractable>();
     }
 
     private void OnTriggerExit(Collider other) {
+        if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
         character = null;
     }
