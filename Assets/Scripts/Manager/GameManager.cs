@@ -1,6 +1,7 @@
 using System;
 using Cards;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Manager {
     public class GameManager : MonoBehaviour {
@@ -32,7 +33,9 @@ namespace Manager {
         }
 
         private void LoadNextLevel() {
-            Debug.Log("Insert Code to load next level");
+            int index = SceneManager.GetActiveScene().buildIndex;
+            if (!(SceneManager.sceneCount > index + 1)) return;
+            SceneManager.LoadScene(index + 1);
         }
     
         private void SafeGame() {

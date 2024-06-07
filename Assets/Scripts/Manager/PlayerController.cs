@@ -62,20 +62,16 @@ public class PlayerController : MonoBehaviour {
         interactInput.action.performed -= Interact;
     }
 
-    private bool trigger;
     private IInteractable character;
     private void Interact(InputAction.CallbackContext ctx) {
-        if (!trigger) return;
         character?.Interact();
     }
 
     private void OnTriggerEnter(Collider other) {
-        trigger = true;
         character = other.transform.GetComponent<IInteractable>();
     }
 
     private void OnTriggerExit(Collider other) {
-        trigger = false;
         character = null;
     }
 }
