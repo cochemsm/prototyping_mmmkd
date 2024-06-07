@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Manager;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -69,9 +70,11 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         character = other.transform.GetComponent<IInteractable>();
+        if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
     }
 
     private void OnTriggerExit(Collider other) {
+        if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
         character = null;
     }
 }

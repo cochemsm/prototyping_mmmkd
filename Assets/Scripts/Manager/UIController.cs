@@ -39,7 +39,8 @@ namespace Manager {
 
             ui = GetComponent<UIDocument>();
             body = ui.rootVisualElement;
-
+            
+            // encounter
             systemPower = body.Q<ProgressBar>("SystemPower");
             systemPowerLabel = body.Q<Label>("SystemPowerLabel");
             patience = body.Q<LifeMeter>("Patience");
@@ -47,15 +48,8 @@ namespace Manager {
             enemyInfo = body.Q<Label>("EnemyInfo");
             cardhand = body.Q<Cardhand>("Cardhand");
             
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
+            // ingame
+            interact = body.Q<VisualElement>("interactIndicator");
         }
     
         private void OnDestroy() {
@@ -71,7 +65,7 @@ namespace Manager {
         }
 
         public void ToggleInteractButton() {
-            interact.style.display = interact.style.display == DisplayStyle.Flex ? DisplayStyle.None : DisplayStyle.Flex;
+            interact.style.visibility = interact.style.visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
         }
     }
 }
