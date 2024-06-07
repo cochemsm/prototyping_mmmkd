@@ -63,20 +63,20 @@ public class PlayerController : MonoBehaviour {
         interactInput.action.performed -= Interact;
     }
 
-    private IInteractable character;
+    private IInteractable _character;
     private void Interact(InputAction.CallbackContext ctx) {
-        character?.Interact();
+        _character?.Interact();
     }
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
-        character = other.transform.GetComponent<IInteractable>();
+        _character = other.transform.GetComponent<IInteractable>();
     }
 
     private void OnTriggerExit(Collider other) {
         if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
-        character = null;
+        _character = null;
     }
 }
