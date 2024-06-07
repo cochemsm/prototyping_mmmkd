@@ -32,7 +32,7 @@ namespace Manager {
             if (Instance == this) Instance = null;
         }
 
-        private void LoadNextLevel() {
+        public void LoadNextLevel() {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCount > index + 1)) return;
             SceneManager.LoadScene(index + 1);
@@ -40,6 +40,14 @@ namespace Manager {
     
         private void SafeGame() {
             Debug.Log("Insert Code to safe the Game");
+        }
+
+        public void PauseToggle() {
+            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            if (UIController.Instance is not null) 
+                UIController.Instance.ChangePanel(
+                    UIController.Instance.CurrentPanel == UIController.UIs.PauseMenu ? 
+                        UIController.UIs.InGame : UIController.UIs.PauseMenu);
         }
     }
 }

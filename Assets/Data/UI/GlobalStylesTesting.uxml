@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Data/UI/Styles/Global/Labels.uss?fileID=7433441132597879392&amp;guid=a744797c9c9c0e4409b4feb87baf21a1&amp;type=3#Labels" />
+    <Style src="project://database/Assets/Data/UI/Styles/Global/Buttons.uss?fileID=7433441132597879392&amp;guid=22997adc88a868441ae14944d5db3861&amp;type=3#Buttons" />
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" />
+</ui:UXML>

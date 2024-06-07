@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8386621165834937066}
   - component: {fileID: 2849459429636732800}
   - component: {fileID: 9219828633157193261}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7976000511475265437}
   - component: {fileID: 8780510302130567327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: interactTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4191343978695115893}
   - component: {fileID: 1093495770741033658}
   - component: {fileID: 5586091186036770431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 2573046443357758740}
   - component: {fileID: 7594282317393767597}
   - component: {fileID: 402347226980411976}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInput: {fileID: -8483152832917034939, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   interactInput: {fileID: -9134095044525366973, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
+  pauseInput: {fileID: 7366552605307378368, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   movementSpeed: 10
 --- !u!1 &8411349843081406845
 GameObject:
@@ -385,7 +386,7 @@ GameObject:
   - component: {fileID: 1349461183252870551}
   - component: {fileID: 5589130148864057548}
   - component: {fileID: 5003714338594430234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
