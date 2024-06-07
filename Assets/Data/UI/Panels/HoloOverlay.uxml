@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/HoloOverlay.uss?fileID=7433441132597879392&amp;guid=7ca1f1669cc40b44cb47edfdd1505950&amp;type=3#HoloOverlay" />
-    <ui:VisualElement name="systemPowerContainer" class="systemPowerContainer">
+    <ui:VisualElement name="systemPowerContainer" picking-mode="Ignore" class="systemPowerContainer">
         <ui:Label tabindex="-1" text="SYSTEM POWER:" parse-escape-sequences="true" display-tooltip-when-elided="true" />
         <ui:ProgressBar value="67" name="SystemPower" class="systemPower" />
         <ui:Label tabindex="-1" text="67%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
