@@ -1,15 +1,3 @@
-Settings Menu
-    ListView
-        hover
-        selected
-    Slider
-    Dropdown Menus
-
-Encounter UI
-    Cards
-
-
-
 Buttons
     Continue Button (hover)
     Play Button (hover)
@@ -25,24 +13,26 @@ Buttons
     Exit (hover)
 
 Text
-    Button Text
-    Main Menu Title
-    Settings View Title
-    Settings Text
+    Font
+    Holo Overlay Color
+        Interact Text
+        Interact Key Text
+        Pickup Text
+        Enemy Info Text
+        System Power Text
+    Generall Text Color
+        Button Text
+        Main Menu Title
+        Settings View Title
+        Settings Text
+        Dropdown Menu Text
+        Pause Menu Title
+        Card Title Text
+        Card Description Text
+        Game Over Title
+        Death Text
+        Speech Bubble Text
     Settings List Text (hover) (selected)
-    Dropdown Menu Text
-    Pause Menu Title
-    Interact Text
-    Interact Key Text
-    Pickup Text
-    Enemy Info Text
-    Speech Bubble Text
-    Card Title Text
-    Card Description Text
-    Holo Overlay Text
-    System Power Text
-    Game Over Title
-    Death Text
 
 Background
     Main Menu Background
@@ -59,12 +49,20 @@ Other
     Cardhand background ?
     Speech Bubble background (need to be scalable)
 
-Special
-    Patience Meter Background ?
-    Patience Meter
-    Patience Meter Filled
-    System Power Progress Bar Container
-    System Power Progress Bar Progress
+Patience Meter
+    Background ?
+    Ground
+    Filled
+
+System Power Progress Bar
+    Container
+    Progress
+
+ListView
+
+Slider
+
+Dropdown
 
 Programming
     Character (3D render)
