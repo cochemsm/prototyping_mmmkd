@@ -136,7 +136,7 @@ Light:
   m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -169,7 +169,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -709,7 +709,7 @@ MonoBehaviour:
   jumpInput: {fileID: -1551320130676076397, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   interactInput: {fileID: -9134095044525366973, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   pauseInput: {fileID: 7366552605307378368, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
-  movementSpeed: 2.5
+  movementSpeed: 5
   jumpForce: 250
 --- !u!1 &8411349843081406845
 GameObject:
