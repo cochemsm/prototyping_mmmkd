@@ -9,5 +9,7 @@
     <ui:VisualElement name="PickupIndicator" style="flex-grow: 1; position: absolute; top: 938px; left: 1560px;">
         <ui:Label tabindex="-1" text="Picked up a new Card" parse-escape-sequences="true" display-tooltip-when-elided="true" />
     </ui:VisualElement>
-    <ui:VisualElement name="Map" style="width: 300px; height: 300px; position: absolute; top: 744px; left: 38px;" />
+    <ui:VisualElement name="MapBackground" style="width: 400px; height: 400px; position: absolute; top: 651px; left: 23px; background-image: url(&apos;project://database/Assets/Art/MapMarker/Map_Border/MapBorder.png?fileID=2800000&amp;guid=3b0063d7dc58bc94299e820436fe68dd&amp;type=3#MapBorder&apos;); justify-content: center; align-items: center;">
+        <ui:VisualElement name="Map" style="width: 90%; height: 90%;" />
+    </ui:VisualElement>
 </ui:UXML>
