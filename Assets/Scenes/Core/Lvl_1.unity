@@ -48933,6 +48933,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3305227984047273370, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7057355098430459583, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.967
@@ -48971,6 +48975,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7057355098430459583, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053643292660763680, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053643292660763680, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053643292660763680, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
+      propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8402318274859529911, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
