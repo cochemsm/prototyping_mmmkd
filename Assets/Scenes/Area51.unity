@@ -462,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b667ad8ffd86c964d83d1c8c37cee6c7, type: 2}
     - target: {fileID: 8535738491758796436, guid: 2898b3bb5c5a54a48ad0ffa5fbe4ec48, type: 3}
       propertyPath: startPanel
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -534,10 +534,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 402347226980411976, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
-      propertyPath: jumpForce
-      value: 250
-      objectReference: {fileID: 0}
     - target: {fileID: 7057355098430459583, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

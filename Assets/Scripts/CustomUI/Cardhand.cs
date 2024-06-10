@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cards;
 using UnityEditor;
@@ -9,34 +8,34 @@ namespace CustomUI {
     public class Cardhand : VisualElement {
         public new class UxmlFactory : UxmlFactory<Cardhand> {}
 
-        private List<Card> cards;
-        private List<VisualElement> uiCards;
-        private VisualTreeAsset cardTemplate;
-        private VisualElement center;
+        private readonly List<Card> _cards;
+        private readonly List<VisualElement> _uiCards;
+        private VisualTreeAsset _cardTemplate;
+        private readonly VisualElement _center;
     
         public Cardhand() {
-            cards = new List<Card>();
-            uiCards = new List<VisualElement>();
-            center = new VisualElement();
-            center.AddToClassList("cardhandCenter");
-            hierarchy.Add(center);
+            _cards = new List<Card>();
+            _uiCards = new List<VisualElement>();
+            _center = new VisualElement();
+            _center.AddToClassList("cardhandCenter");
+            hierarchy.Add(_center);
         }
 
         public void AddCard(Card newCard, VisualElement root) {
-            cards.Add(newCard);
-            cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml");
-            VisualElement card = cardTemplate.Instantiate();
+            _cards.Add(newCard);
+            _cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml");
+            VisualElement card = _cardTemplate.Instantiate();
             card.userData = newCard;
             card.AddToClassList("cardHover");
             card.AddManipulator(new DragAndDrop(root));
-            uiCards.Add(card);
-            center.Add(card);
+            _uiCards.Add(card);
+            _center.Add(card);
             
             SetCardsToPoints();
         }
 
         public void RemoveCard(Card oldCard) {
-            cards.Remove(oldCard);
+            _cards.Remove(oldCard);
             
             SetCardsToPoints();
         }
@@ -48,18 +47,18 @@ namespace CustomUI {
             float o = 1f;
             float d = 300;
             
-            for (int i = 0; i < cards.Count; i++) {
-                float x = (float) i / (cards.Count - 1);
+            for (int i = 0; i < _cards.Count; i++) {
+                float x = (float) i / (_cards.Count - 1);
                 float w = (Mathf.PI - 2 * o) * x + o;
 
-                position.x = d * Mathf.Cos(w) * cards.Count / 2;
+                position.x = d * Mathf.Cos(w) * _cards.Count / 2;
                 position.y = d * Mathf.Sin(w);
 
                 position += offset;
 
-                uiCards[i].style.position = Position.Absolute;
-                uiCards[i].style.bottom = position.y;
-                uiCards[i].style.left = position.x;
+                _uiCards[i].style.position = Position.Absolute;
+                _uiCards[i].style.bottom = position.y;
+                _uiCards[i].style.left = position.x;
             }
         }
     }

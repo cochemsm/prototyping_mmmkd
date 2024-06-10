@@ -17,21 +17,21 @@ namespace CustomUI {
             }
         }
 
-        private const string meterClass = "meterComponent";
-        private const string fieldClass = "meterField";
+        private const string MeterClass = "meterComponent";
+        private const string FieldClass = "meterField";
         
-        private int meterFields;
+        private int _meterFields;
         public int MeterFields {
-            get => meterFields;
+            get => _meterFields;
             set {
-                meterFields = value;
+                _meterFields = value;
                 GenerateMeterFields();
             }
         }
     
         public LifeMeter() {
             GenerateMeterFields();
-            this.AddToClassList(meterClass);
+            this.AddToClassList(MeterClass);
         }
 
         void GenerateMeterFields() {
@@ -39,9 +39,9 @@ namespace CustomUI {
                 this.RemoveAt(0);
             }
             
-            for (int i = 0; i < meterFields; i++) {
+            for (int i = 0; i < _meterFields; i++) {
                 VisualElement temp = new VisualElement();
-                temp.AddToClassList(fieldClass);
+                temp.AddToClassList(FieldClass);
                 hierarchy.Add(temp);
             }
         }

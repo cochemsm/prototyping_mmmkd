@@ -1,11 +1,14 @@
+using Interfaces;
 using UnityEngine;
 
-public class TestingCharacter : MonoBehaviour, IInteractable {
-    private void Awake() {
-        gameObject.tag = "interactable";
-    }
+namespace Objects.Characters {
+    public class TestingCharacter : MonoBehaviour, IInteractable {
+        private void Awake() {
+            gameObject.tag = "interactable";
+        }
 
-    public void Interact() {
-        Debug.Log("Interaction");
+        public void Interact() {
+            Debug.Log("Interaction");
+        }
     }
 }

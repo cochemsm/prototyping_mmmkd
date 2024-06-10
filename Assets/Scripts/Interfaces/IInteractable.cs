@@ -1,3 +1,5 @@
-public interface IInteractable {
-    public void Interact();
+namespace Interfaces {
+    public interface IInteractable {
+        public void Interact();
+    }
 }
