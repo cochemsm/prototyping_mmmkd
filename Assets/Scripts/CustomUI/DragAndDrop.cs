@@ -1,3 +1,4 @@
+using Cards;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -44,12 +45,12 @@ namespace CustomUI {
         private void OnMouseUp(MouseUpEvent evt) {
             if (!target.HasMouseCapture()) return;
 
-            bool test = RectOverlap(target.contentRect, _cardhand.contentRect);
-            Debug.Log(_cardhand.contentRect + "; " + target.contentRect);
+            bool test = RectOverlap(target.worldBound, _cardhand.worldBound);
             if (test) {
                 _cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);
                 Debug.Log("Card Stayed");
             } else {
+                _cardhand.RemoveCard((Card) target.userData);
                 target.parent.Remove(target);
                 Debug.Log("Removed Card" + target);
             }
@@ -58,7 +59,6 @@ namespace CustomUI {
             target.style.left = _localStartPos.x;
             
             _dragArea.style.display = DisplayStyle.None;
-            _cardhand.SetCardsToPoints();
             
             target.ReleaseMouse();
             evt.StopPropagation();
