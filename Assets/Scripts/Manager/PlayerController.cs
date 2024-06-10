@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Jump(InputAction.CallbackContext ctx) {
         RaycastHit hit;
-        if (!Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), Vector3.down, out hit, 0.5f)) return;
+        if (!Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), Vector3.down, out hit, 1f)) return;
         if (!hit.transform.CompareTag("Ground")) return;
         _rigidbody.AddForce(new Vector3(0, jumpForce, 0));
     }
