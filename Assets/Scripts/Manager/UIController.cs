@@ -53,16 +53,6 @@ namespace Manager {
             SetupGameOver();
             
             ChangePanel(startPanel);
-            
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
-            AddCardToHand(test);
         }
     
         private void OnDestroy() {
