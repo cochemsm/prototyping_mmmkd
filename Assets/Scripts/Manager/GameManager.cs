@@ -42,11 +42,12 @@ namespace Manager {
         }
 
         public void PauseToggle() {
-            Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-            if (UIController.Instance is not null) 
-                UIController.Instance.ChangePanel(
-                    UIController.Instance.CurrentPanel == UIController.UIs.PauseMenu ? 
-                        UIController.UIs.InGame : UIController.UIs.PauseMenu);
+            if (UIController.Instance is null) return;
+            if (UIController.Instance.CurrentPanel != UIController.UIs.SettingsMenu)
+                Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+            UIController.Instance.ChangePanel(
+                UIController.Instance.CurrentPanel == UIController.UIs.PauseMenu ? 
+                    UIController.UIs.InGame : UIController.UIs.PauseMenu);
         }
     }
 }

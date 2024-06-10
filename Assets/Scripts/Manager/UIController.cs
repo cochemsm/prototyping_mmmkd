@@ -23,6 +23,7 @@ namespace Manager {
             PauseMenu,
             InGame,
             Encounter,
+            KeyPad,
             HoloOverlay,
             GameOver
         }
@@ -49,6 +50,7 @@ namespace Manager {
             SetupPauseMenu();
             SetupHoloOverlay();
             SetupEncounter();
+            SetupKeyPad();
             SetupInGame();
             SetupGameOver();
             
@@ -59,8 +61,9 @@ namespace Manager {
             if (Instance == this) Instance = null;
         }
 
-        private void Update() {
+        private void FixedUpdate() {
             SetMap(map);
+            UpdateSettings();
         }
 
         #endregion
@@ -77,6 +80,9 @@ namespace Manager {
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.None;
                     break;
+                case UIs.SettingsMenu:
+                    newUI = _lastPanelBeforeSettings;
+                    break;
             }
 
             _panels[(int)CurrentPanel].style.display = DisplayStyle.None;
@@ -88,6 +94,9 @@ namespace Manager {
                     break;
                 case UIs.GameOver:
                     // TODO: load last scene
+                    break;
+                case UIs.SettingsMenu:
+                    _lastPanelBeforeSettings = CurrentPanel;
                     break;
             } 
             
@@ -127,6 +136,8 @@ namespace Manager {
         
         #region Settings Menu
 
+        private UIs _lastPanelBeforeSettings;
+        
         private List<string> _categories;
         
         private ListView _category;
@@ -152,7 +163,7 @@ namespace Manager {
             _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
             _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
-
+            
             _categories = new List<string>();
             _categories.Add("Audio");
             _categories.Add("Window");
@@ -179,6 +190,11 @@ namespace Manager {
                 _soundView.style.display = DisplayStyle.None;
                 _screenView.style.display = DisplayStyle.Flex;
             }
+        }
+
+        private void UpdateSettings() {
+            if (CurrentPanel != UIs.SettingsMenu) return;
+            
         }
 
         #endregion
@@ -287,6 +303,48 @@ namespace Manager {
             _speechLabel.text = text;
         }
         
+        #endregion
+
+        #region Key Pad
+
+        private Label _code;
+        
+        private void SetupKeyPad() {
+            _code = _panels[(int) UIs.KeyPad].Q<Label>("Code");
+            _panels[(int) UIs.KeyPad].Q<Button>("One").clicked += NumberOne;
+            _panels[(int) UIs.KeyPad].Q<Button>("Two").clicked += NumberTwo;
+            _panels[(int) UIs.KeyPad].Q<Button>("Three").clicked += NumberThree;
+            _panels[(int) UIs.KeyPad].Q<Button>("Four").clicked += NumberFour;
+            _panels[(int) UIs.KeyPad].Q<Button>("Five").clicked += NumberFive;
+            _panels[(int) UIs.KeyPad].Q<Button>("Six").clicked += NumberSix;
+            _panels[(int) UIs.KeyPad].Q<Button>("Seven").clicked += NumberSeven;
+            _panels[(int) UIs.KeyPad].Q<Button>("Eight").clicked += NumberEight;
+            _panels[(int) UIs.KeyPad].Q<Button>("Nine").clicked += NumberNine;
+            _panels[(int) UIs.KeyPad].Q<Button>("Zero").clicked += NumberZero;
+            _panels[(int) UIs.KeyPad].Q<Button>("Reset").clicked += Reset;
+            _panels[(int) UIs.KeyPad].Q<Button>("Enter").clicked += Enter;
+        }
+
+        private void NumberOne() => _code.text += CheckNumberLength() ? "1" : "";
+        private void NumberTwo() => _code.text += CheckNumberLength() ? "2" : "";
+        private void NumberThree() => _code.text += CheckNumberLength() ? "3" : "";
+        private void NumberFour() => _code.text += CheckNumberLength() ? "4" : "";
+        private void NumberFive() => _code.text += CheckNumberLength() ? "5" : "";
+        private void NumberSix() => _code.text += CheckNumberLength() ? "6" : "";
+        private void NumberSeven() => _code.text += CheckNumberLength() ? "7" : "";
+        private void NumberEight() => _code.text += CheckNumberLength() ? "8" : "";
+        private void NumberNine() => _code.text += CheckNumberLength() ? "9" : "";
+        private void NumberZero() => _code.text += CheckNumberLength() ? "0" : "";
+        private void Reset() => _code.text = "";
+
+        private void Enter() {
+            if (Convert.ToInt32(_code.text) == 24579) {
+                PublicEvents.CodeIsRight?.Invoke();
+                ChangePanel(UIs.InGame);
+            }
+        }
+        private bool CheckNumberLength() => _code.text.Length < 5;
+
         #endregion
         
         #region Game Over

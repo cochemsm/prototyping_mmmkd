@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1255,6 +1255,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4068373912626513877, guid: f3da0190a129dcf428e3f2a92084029c, type: 3}
+--- !u!114 &22633385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22633380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030100d1642775147b127a20cf67a032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &24179350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35073,6 +35085,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3da0190a129dcf428e3f2a92084029c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 22633384}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3da0190a129dcf428e3f2a92084029c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 22633385}
   m_SourcePrefab: {fileID: 100100000, guid: f3da0190a129dcf428e3f2a92084029c, type: 3}
 --- !u!1001 &740132546
 PrefabInstance:
@@ -87720,6 +87735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GateTerminal
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 377cd84116e48474490d0ad60b23ef10, type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87730,6 +87749,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 377cd84116e48474490d0ad60b23ef10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2024433899}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 377cd84116e48474490d0ad60b23ef10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2024433903}
   m_SourcePrefab: {fileID: 100100000, guid: 377cd84116e48474490d0ad60b23ef10, type: 3}
 --- !u!1 &2024433893 stripped
 GameObject:
@@ -87767,9 +87789,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 2024433893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5147ab6d34a4bf4d884c34b38588f42, type: 3}
+  m_Script: {fileID: 11500000, guid: 358fa678fd35a40449664603109836ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &2024433903
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024433893}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.09
+  m_Center: {x: -0.0000009538714, y: 0.026465928, z: -0.00000047723154}
 --- !u!1001 &2026742002
 PrefabInstance:
   m_ObjectHideFlags: 0
