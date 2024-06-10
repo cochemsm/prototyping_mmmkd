@@ -25,7 +25,7 @@ namespace CustomUI {
             _dragArea.Add(target);
 
             target.style.top = globalStartPos.y;
-            target.style.left = globalStartPos.x + 125; // this is half the card width
+            target.style.left = globalStartPos.x + target.resolvedStyle.width / 2;
         
             target.CaptureMouse();
             evt.StopPropagation();
@@ -43,8 +43,8 @@ namespace CustomUI {
 
         private void OnMouseUp(MouseUpEvent evt) {
             if (!target.HasMouseCapture()) return;
-
-            bool test = target.Overlaps(_cardhand.contentRect);
+            
+            bool test = target.worldBound.Overlaps(_cardhand.worldBound);
             Debug.Log(_cardhand.contentRect + "; " + target.contentRect);
             if (test) {
                 _cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);

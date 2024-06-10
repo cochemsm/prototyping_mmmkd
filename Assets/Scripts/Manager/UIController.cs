@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Cards;
 using CustomUI;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 using UnityEngine.UIElements;
 
 namespace Manager {
@@ -9,6 +11,7 @@ namespace Manager {
         public static UIController Instance {get; private set; }
 
         public TestingCard test; // TODO: cards need a system
+        public RenderTexture map;
         
         private UIDocument _ui;
         private VisualElement _root;
@@ -64,6 +67,10 @@ namespace Manager {
     
         private void OnDestroy() {
             if (Instance == this) Instance = null;
+        }
+
+        private void Update() {
+            SetMap(map);
         }
 
         #endregion
@@ -226,13 +233,30 @@ namespace Manager {
         #region In Game
 
         private VisualElement _interact;
+        private VisualElement _map;
 
         private void SetupInGame() {
             _interact = _panels[(int) UIs.InGame].Q<VisualElement>("interactIndicator");
+            _map = _panels[(int)UIs.InGame].Q<VisualElement>("Map");
         }
         
         public void ToggleInteractButton() {
             _interact.style.visibility = _interact.style.visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
+        }
+
+        public void SetMap(RenderTexture image) {
+            _map.style.backgroundImage = new StyleBackground(RenderTextureTo2DTexture(image));
+        }
+
+        private Texture2D RenderTextureTo2DTexture(RenderTexture rt) {
+            var texture = new Texture2D(rt.width, rt.height, rt.graphicsFormat, 0, TextureCreationFlags.None);
+            RenderTexture.active = rt;
+            texture.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+            texture.Apply();
+
+            RenderTexture.active = null;
+
+            return texture;
         }
 
         #endregion
