@@ -10,11 +10,13 @@ using UnityEngine.Serialization;
 public class PlayerController : MonoBehaviour {
     [Header("Setup (Do not touch)")]
     [SerializeField] private InputActionReference movementInput;
+    [SerializeField] private InputActionReference jumpInput;
     [SerializeField] private InputActionReference interactInput;
     [SerializeField] private InputActionReference pauseInput;
     
     [Header("Value to play around")]
     [SerializeField] private float movementSpeed = 1;
+    [SerializeField] private float jumpForce = 1;
     // [SerializeField] private float rotationSpeed = 1;
     
     private Rigidbody _rigidbody;
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour {
         movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
         _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
 
-        /*float currentRotation = _playerBody.eulerAngles.y + 180;
+        /*float currentRotation = _playerBody.eulerAngles.y + 180; TODO: well
         float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
         bool rotationDirection = currentRotation < wantedRotation;
         bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;
@@ -54,6 +56,8 @@ public class PlayerController : MonoBehaviour {
 
     private void OnEnable() {
         movementInput.action.Enable();
+        jumpInput.action.Enable();
+        jumpInput.action.performed += Jump;
         interactInput.action.Enable();
         interactInput.action.performed += Interact;
         pauseInput.action.Enable();
@@ -62,17 +66,14 @@ public class PlayerController : MonoBehaviour {
 
     private void OnDisable() {
         movementInput.action.Disable();
-        movementInput.action.Disable();
+        jumpInput.action.Disable();
+        jumpInput.action.performed -= Jump;
+        interactInput.action.Disable();
         interactInput.action.performed -= Interact;
         pauseInput.action.Disable();
         pauseInput.action.performed -= Pause;
     }
-
-    private IInteractable _character;
-    private void Interact(InputAction.CallbackContext ctx) {
-        _character?.Interact();
-    }
-
+    
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
@@ -83,6 +84,18 @@ public class PlayerController : MonoBehaviour {
         if (!other.CompareTag("interactable")) return;
         if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
         _character = null;
+    }
+
+    private void Jump(InputAction.CallbackContext ctx) {
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), Vector3.down, out hit, 0.5f)) return;
+        if (!hit.transform.CompareTag("Ground")) return;
+        _rigidbody.AddForce(new Vector3(0, jumpForce, 0));
+    }
+    
+    private IInteractable _character; // TODO: rework this
+    private void Interact(InputAction.CallbackContext ctx) {
+        _character?.Interact();
     }
 
     private void Pause(InputAction.CallbackContext ctx) {
