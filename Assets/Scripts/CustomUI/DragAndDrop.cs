@@ -43,8 +43,8 @@ namespace CustomUI {
 
         private void OnMouseUp(MouseUpEvent evt) {
             if (!target.HasMouseCapture()) return;
-            
-            bool test = target.worldBound.Overlaps(_cardhand.worldBound);
+
+            bool test = RectOverlap(target.contentRect, _cardhand.contentRect);
             Debug.Log(_cardhand.contentRect + "; " + target.contentRect);
             if (test) {
                 _cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);
@@ -62,6 +62,27 @@ namespace CustomUI {
             
             target.ReleaseMouse();
             evt.StopPropagation();
+        }
+        
+        private bool RectOverlap(Rect firstRect, Rect secondRect)
+        {
+            if (firstRect.x + firstRect.width*0.5f < secondRect.x - secondRect.width*0.5f)
+            {
+                return false;
+            }
+            if (secondRect.x + secondRect.width * 0.5f < firstRect.x - firstRect.width * 0.5f)
+            {
+                return false;
+            }
+            if (firstRect.y + firstRect.height * 0.5f < secondRect.y - secondRect.height * 0.5f)
+            {
+                return false;
+            }
+            if (secondRect.y + secondRect.height * 0.5f < firstRect.y - firstRect.height * 0.5f)
+            {
+                return false;
+            }
+            return true;
         }
     
         protected override void RegisterCallbacksOnTarget() {
