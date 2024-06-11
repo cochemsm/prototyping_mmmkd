@@ -323,6 +323,7 @@ namespace Manager {
             _panels[(int) UIs.KeyPad].Q<Button>("Zero").clicked += NumberZero;
             _panels[(int) UIs.KeyPad].Q<Button>("Reset").clicked += Reset;
             _panels[(int) UIs.KeyPad].Q<Button>("Enter").clicked += Enter;
+            _panels[(int) UIs.KeyPad].Q<Button>("Close").clicked += CloseKeyPad;
         }
 
         private void NumberOne() => _code.text += CheckNumberLength() ? "1" : "";
@@ -344,6 +345,7 @@ namespace Manager {
             }
         }
         private bool CheckNumberLength() => _code.text.Length < 5;
+        private void CloseKeyPad() => ChangePanel(UIs.InGame);
 
         #endregion
         
