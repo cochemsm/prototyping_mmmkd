@@ -14,6 +14,7 @@ namespace Manager {
         [Header("Value to play around")]
         [SerializeField] private float movementSpeed = 1;
         [SerializeField] private float jumpForce = 1;
+        [SerializeField] private bool canMove = true;
         // [SerializeField] private float rotationSpeed = 1;
     
         private Rigidbody _rigidbody;
@@ -25,6 +26,7 @@ namespace Manager {
             _rigidbody = GetComponent<Rigidbody>();
             _playerBody = transform.GetChild(0);
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
+            PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
         }
 
         private void Update() {
@@ -33,21 +35,19 @@ namespace Manager {
 
         // private float rotation;
         private void FixedUpdate() {
-            Vector3 movementVector = new Vector3(_input.x, Mathf.Epsilon, _input.y);
-            movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
-            _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
+            Vector3 movementVector = Move();
 
             /*float currentRotation = _playerBody.eulerAngles.y + 180; TODO: well
-        float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
-        bool rotationDirection = currentRotation < wantedRotation;
-        bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;
-        if (!checkIfEqual && movementVector != Vector3.zero) rotation += (rotationDirection ? 1 : -1) * rotationSpeed;
-        if (rotation < 1) rotation = 0;
-        if (rotation > 360) rotation -= 360;
-        rotation -= rotation % rotationSpeed;
-        Debug.Log(rotation);
-        Vector3 rotate = new Vector3(0, rotation, 0);
-        if (movementVector != Vector3.zero) _playerBody.eulerAngles = rotate;*/
+            float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
+            bool rotationDirection = currentRotation < wantedRotation;
+            bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;
+            if (!checkIfEqual && movementVector != Vector3.zero) rotation += (rotationDirection ? 1 : -1) * rotationSpeed;
+            if (rotation < 1) rotation = 0;
+            if (rotation > 360) rotation -= 360;
+            rotation -= rotation % rotationSpeed;
+            Debug.Log(rotation);
+            Vector3 rotate = new Vector3(0, rotation, 0);
+            if (movementVector != Vector3.zero) _playerBody.eulerAngles = rotate;*/
             if (_input != Vector2.zero) _playerBody.rotation = Quaternion.LookRotation(movementVector);
         }
 
@@ -81,6 +81,14 @@ namespace Manager {
             if (!other.CompareTag("interactable")) return;
             if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
             _character = null;
+        }
+
+        private Vector3 Move() {
+            if (!canMove) return Vector3.zero;
+            Vector3 movementVector = new Vector3(_input.x, Mathf.Epsilon, _input.y);
+            movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
+            _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
+            return movementVector;
         }
 
         private void Jump(InputAction.CallbackContext ctx) {

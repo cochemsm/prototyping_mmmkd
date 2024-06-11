@@ -342,10 +342,14 @@ namespace Manager {
             if (Convert.ToInt32(_code.text) == 24579) {
                 PublicEvents.CodeIsRight?.Invoke();
                 ChangePanel(UIs.InGame);
+                PublicEvents.LockPlayerMovementToggle?.Invoke();
             }
         }
         private bool CheckNumberLength() => _code.text.Length < 5;
-        private void CloseKeyPad() => ChangePanel(UIs.InGame);
+        private void CloseKeyPad() {
+            ChangePanel(UIs.InGame);
+            PublicEvents.LockPlayerMovementToggle?.Invoke();
+        }
 
         #endregion
         
