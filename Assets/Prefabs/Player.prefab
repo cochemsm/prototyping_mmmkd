@@ -711,7 +711,7 @@ MonoBehaviour:
   interactInput: {fileID: -9134095044525366973, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   pauseInput: {fileID: 7366552605307378368, guid: 04de5b66f74449c41b9a0edca01818ff, type: 3}
   movementSpeed: 5
-  jumpForce: 150
+  jumpForce: 250
 --- !u!1 &8411349843081406845
 GameObject:
   m_ObjectHideFlags: 0
