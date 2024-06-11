@@ -33,7 +33,6 @@ namespace Manager {
 
         public void LoadNextLevel() {
             int index = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log(SceneManager.sceneCountInBuildSettings + "; " + (index + 1));
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
         }
