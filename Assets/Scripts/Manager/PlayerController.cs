@@ -37,7 +37,7 @@ namespace Manager {
         private void FixedUpdate() {
             Vector3 movementVector = Move();
 
-            /*float currentRotation = _playerBody.eulerAngles.y + 180; TODO: well
+            /*float currentRotation = _playerBody.eulerAngles.y + 180; TODO: rotation
             float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
             bool rotationDirection = currentRotation < wantedRotation;
             bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;

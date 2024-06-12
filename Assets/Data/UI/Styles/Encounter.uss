@@ -23,6 +23,10 @@
     flex-basis: 100%;
 }
 
+.activeMeterField {
+    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&guid=adda468b490f8674d9a333d046f84a7b&type=3#console.warnicon');
+}
+
 .card {
     background-color: rgb(21, 98, 233);
     border-top-left-radius: 10px;

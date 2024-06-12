@@ -8,7 +8,7 @@ namespace Manager {
 
         public Card testCard;
         
-        public enum Scenes { MainMenu, Lvl1, Lvl2 }
+        public enum Scenes { MainMenu, Lvl1, Lvl2, GameOver }
         
         private void Awake() {
             if (Instance is not null) {
@@ -37,6 +37,7 @@ namespace Manager {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
+            if (SceneManager.sceneCountInBuildSettings == index + 1) UIController.Instance.ChangePanel(UIController.UIs.GameOver);
         }
 
         public void LoadScene(Scenes scene) {
@@ -45,6 +46,7 @@ namespace Manager {
     
         private void SafeGame() {
             Debug.Log("Insert Code to safe the Game");
+            // TODO: Game Saving
         }
 
         public void PauseToggle() {

@@ -94,9 +94,6 @@ namespace Manager {
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
                     break;
-                case UIs.GameOver:
-                    // TODO: load last scene
-                    break;
                 case UIs.SettingsMenu:
                     _lastPanelBeforeSettings = CurrentPanel;
                     break;
@@ -170,7 +167,7 @@ namespace Manager {
             
             _categories = new List<string>();
             _categories.Add("Audio");
-            _categories.Add("Window");
+            _categories.Add("Video");
             
             _category.makeItem = () => {
                 Label listItem = new Label();
@@ -302,12 +299,13 @@ namespace Manager {
             _cardhand.AddCard(newCard, _root);
         }
 
-        public void SetPatience() {
-            // TODO: LifeMeter does not have a field for settings patience
+        public void SetPatience(int patience) {
+            _patience.ActiveMeterFields = patience;
         }
 
-        public void SetEnemyInfo() {
-            // TODO: Implement something to save enemy data to read out here
+        public void SetEnemyInfo(string enemyName, string enemyInfo) {
+            _enemyName.text = enemyName;
+            _enemyInfo.text = enemyInfo;
         }
 
         public void SetSpeech(string text) {
