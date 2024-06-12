@@ -378,7 +378,8 @@ namespace Manager {
         }
 
         private void Restart() {
-            // TODO: load first scene
+            GameManager.Instance.LoadScene(GameManager.Scenes.Lvl1);
+            ChangePanel(UIs.InGame);
         }
         
         // Exit function identical to pause menu
