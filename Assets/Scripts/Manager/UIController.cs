@@ -1,7 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using Cards;
 using CustomUI;
+using Objects.Cards;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.UIElements;
@@ -10,7 +11,7 @@ namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
 
-        public TestingCard test; // TODO: cards need a system
+        // TODO: cards need a system
         public RenderTexture map;
         
         private UIDocument _ui;
@@ -63,7 +64,6 @@ namespace Manager {
 
         private void FixedUpdate() {
             SetMap(map);
-            UpdateSettings();
         }
 
         #endregion
@@ -83,6 +83,9 @@ namespace Manager {
                 case UIs.SettingsMenu:
                     newUI = _lastPanelBeforeSettings;
                     break;
+                case UIs.KeyPad:
+                    PublicEvents.LockPlayerMovementToggle?.Invoke();
+                    break;
             }
 
             _panels[(int)CurrentPanel].style.display = DisplayStyle.None;
@@ -91,9 +94,6 @@ namespace Manager {
                 case UIs.InGame:
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
-                    break;
-                case UIs.GameOver:
-                    // TODO: load last scene
                     break;
                 case UIs.SettingsMenu:
                     _lastPanelBeforeSettings = CurrentPanel;
@@ -116,7 +116,7 @@ namespace Manager {
         }
 
         private void Continue() {
-            // TODO: here safed things need to be loaded and started
+            // TODO: here saved things need to be loaded and started
         }
 
         private void Play() {
@@ -163,10 +163,12 @@ namespace Manager {
             _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
             _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
+            _panels[(int)UIs.SettingsMenu].Q<Button>("Back").clicked += Back;
+            _panels[(int)UIs.SettingsMenu].Q<Button>("Apply").clicked += UpdateSettings;
             
             _categories = new List<string>();
             _categories.Add("Audio");
-            _categories.Add("Window");
+            _categories.Add("Video");
             
             _category.makeItem = () => {
                 Label listItem = new Label();
@@ -177,8 +179,11 @@ namespace Manager {
             _category.itemsSource = _categories;
             
             _resolution.choices.RemoveAt(0);
+            int i = 0;
             foreach (var resolution in Screen.resolutions) {
                 _resolution.choices.Add(resolution.width + "x" + resolution.height);
+                if (resolution.width == 1920 && resolution.height == 1080) _resolution.index = i;
+                i++;
             }
         }
 
@@ -192,9 +197,12 @@ namespace Manager {
             }
         }
 
+        private void Back() {
+            ChangePanel(_lastPanelBeforeSettings);
+        }
+
         private void UpdateSettings() {
-            if (CurrentPanel != UIs.SettingsMenu) return;
-            
+            // TODO
         }
 
         #endregion
@@ -214,7 +222,8 @@ namespace Manager {
         // Settings function identical for Main Menu
         
         private void Exit() {
-            // TODO: game manager needs to load specific scenes
+            GameManager.Instance.LoadScene(GameManager.Scenes.MainMenu);
+            ChangePanel(UIs.MainMenu);
         }
 
         #endregion
@@ -240,18 +249,27 @@ namespace Manager {
 
         private VisualElement _interact;
         private VisualElement _map;
+        private Label _pickupText;
 
         private void SetupInGame() {
             _interact = _panels[(int) UIs.InGame].Q<VisualElement>("interactIndicator");
             _map = _panels[(int)UIs.InGame].Q<VisualElement>("Map");
+            _pickupText = _panels[(int)UIs.InGame].Q<Label>("PickupText");
         }
         
         public void ToggleInteractButton() {
             _interact.style.visibility = _interact.style.visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
         }
 
-        public void SetMap(RenderTexture image) {
+        private void SetMap(RenderTexture image) {
             _map.style.backgroundImage = new StyleBackground(RenderTextureTo2DTexture(image));
+        }
+
+        public IEnumerator SetPickupText(string text) {
+            _pickupText.visible = true;
+            _pickupText.text = text;
+            yield return new WaitForSeconds(2f);
+            _pickupText.visible = false;
         }
 
         private Texture2D RenderTextureTo2DTexture(RenderTexture rt) {
@@ -291,12 +309,14 @@ namespace Manager {
             _cardhand.AddCard(newCard, _root);
         }
 
-        public void SetPatience() {
-            // TODO: LifeMeter does not have a field for settings patience
+        public void ChangePatience(int patience) {
+            _patience.ActiveMeterFields -= patience;
+            if (_patience.ActiveMeterFields <= 0) GameManager.Instance.FleeEnemy();
         }
 
-        public void SetEnemyInfo() {
-            // TODO: Implement something to save enemy data to read out here
+        public void SetEnemyInfo(string enemyName, string enemyInfo) {
+            _enemyName.text = enemyName;
+            _enemyInfo.text = enemyInfo;
         }
 
         public void SetSpeech(string text) {
@@ -345,7 +365,9 @@ namespace Manager {
             }
         }
         private bool CheckNumberLength() => _code.text.Length < 5;
-        private void CloseKeyPad() => ChangePanel(UIs.InGame);
+        private void CloseKeyPad() {
+            ChangePanel(UIs.InGame);
+        }
 
         #endregion
         
@@ -365,7 +387,8 @@ namespace Manager {
         }
 
         private void Restart() {
-            // TODO: load first scene
+            GameManager.Instance.LoadScene(GameManager.Scenes.Lvl1);
+            ChangePanel(UIs.InGame);
         }
         
         // Exit function identical to pause menu

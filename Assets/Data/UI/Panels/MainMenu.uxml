@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/MainMenu.uss?fileID=7433441132597879392&amp;guid=6171c8cfe6a45fd48ba14c4f431cbfea&amp;type=3#MainMenu" />
-    <ui:VisualElement style="flex-grow: 1; justify-content: flex-start; align-items: center;">
-        <ui:Label tabindex="-1" text="Sprapmatic" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: flex-start; align-items: center; background-color: rgb(63, 63, 63); background-image: url(&apos;project://database/Assets/Data/_PackageInfo/Team/er.PNG?fileID=21300000&amp;guid=8bd30e7346fc7b1469a823e2dee60aca&amp;type=3#er&apos;);">
+        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Void" class="title" />
         <ui:VisualElement name="Buttons" style="translate: 0 -25%;">
             <ui:Button text="Continue" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ContinueButton" class="buttons" style="visibility: hidden;" />
             <ui:Button text="Play" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayButton" class="buttons" />

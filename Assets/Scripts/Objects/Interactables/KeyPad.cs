@@ -12,6 +12,7 @@ namespace Objects.Interactables {
 
         public void Interact() {
             UIController.Instance.ChangePanel(UIController.UIs.KeyPad);
+            PublicEvents.LockPlayerMovementToggle?.Invoke();
         }
     }
 }

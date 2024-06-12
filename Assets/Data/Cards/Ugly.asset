@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc46e79d9cc49848b34f9e1e08dcb60, type: 3}
+  m_Name: Ugly
+  m_EditorClassIdentifier: 
+  cardName: Roaster
+  cardImage: {fileID: 8228938214290033325, guid: 101f7f399f631dd40992be7068463071, type: 3}
+  imageOnCard: {fileID: 2800000, guid: 1a8b7d82e4b771345b8c5330999484af, type: 3}
+  text: Tell them that they are ugly
+  energy: 2
+  befriendPoints: 0
+  killPoints: 4
