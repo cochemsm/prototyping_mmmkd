@@ -1,7 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using Cards;
 using CustomUI;
+using Objects.Cards;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.UIElements;
@@ -10,7 +11,7 @@ namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
 
-        public TestingCard test; // TODO: cards need a system
+        // TODO: cards need a system
         public RenderTexture map;
         
         private UIDocument _ui;
@@ -248,18 +249,27 @@ namespace Manager {
 
         private VisualElement _interact;
         private VisualElement _map;
+        private Label _pickupText;
 
         private void SetupInGame() {
             _interact = _panels[(int) UIs.InGame].Q<VisualElement>("interactIndicator");
             _map = _panels[(int)UIs.InGame].Q<VisualElement>("Map");
+            _pickupText = _panels[(int)UIs.InGame].Q<Label>("PickupText");
         }
         
         public void ToggleInteractButton() {
             _interact.style.visibility = _interact.style.visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
         }
 
-        public void SetMap(RenderTexture image) {
+        private void SetMap(RenderTexture image) {
             _map.style.backgroundImage = new StyleBackground(RenderTextureTo2DTexture(image));
+        }
+
+        public IEnumerator SetPickupText(string text) {
+            _pickupText.visible = true;
+            _pickupText.text = text;
+            yield return new WaitForSeconds(2f);
+            _pickupText.visible = false;
         }
 
         private Texture2D RenderTextureTo2DTexture(RenderTexture rt) {
@@ -299,8 +309,9 @@ namespace Manager {
             _cardhand.AddCard(newCard, _root);
         }
 
-        public void SetPatience(int patience) {
-            _patience.ActiveMeterFields = patience;
+        public void ChangePatience(int patience) {
+            _patience.ActiveMeterFields -= patience;
+            if (_patience.ActiveMeterFields <= 0) GameManager.Instance.FleeEnemy();
         }
 
         public void SetEnemyInfo(string enemyName, string enemyInfo) {

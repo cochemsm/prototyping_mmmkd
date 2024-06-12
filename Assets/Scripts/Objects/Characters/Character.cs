@@ -2,7 +2,9 @@ using Interfaces;
 using UnityEngine;
 
 namespace Objects.Characters {
-    public class TestingCharacter : MonoBehaviour, IInteractable {
+    public class Character : MonoBehaviour, IInteractable {
+        public CharacterData data;
+        
         private void Awake() {
             gameObject.tag = "interactable";
         }
