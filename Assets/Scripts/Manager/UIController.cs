@@ -118,7 +118,7 @@ namespace Manager {
         }
 
         private void Continue() {
-            // TODO: here safed things need to be loaded and started
+            // TODO: here saved things need to be loaded and started
         }
 
         private void Play() {
@@ -224,7 +224,8 @@ namespace Manager {
         // Settings function identical for Main Menu
         
         private void Exit() {
-            // TODO: game manager needs to load specific scenes
+            GameManager.Instance.LoadScene(GameManager.Scenes.MainMenu);
+            ChangePanel(UIs.MainMenu);
         }
 
         #endregion

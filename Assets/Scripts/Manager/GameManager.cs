@@ -8,6 +8,8 @@ namespace Manager {
 
         public Card testCard;
         
+        public enum Scenes { MainMenu, Lvl1, Lvl2 }
+        
         private void Awake() {
             if (Instance is not null) {
                 Destroy(gameObject);
@@ -35,6 +37,10 @@ namespace Manager {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
+        }
+
+        public void LoadScene(Scenes scene) {
+            SceneManager.LoadScene((int) scene);
         }
     
         private void SafeGame() {
