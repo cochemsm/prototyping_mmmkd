@@ -5930,8 +5930,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.27727836, g: 0.8773585, b: 0.38974002, a: 1}
-  m_Intensity: 125
+  m_Color: {r: 0.47419012, g: 0.9056604, b: 0.55209446, a: 1}
+  m_Intensity: 200
   m_Range: 24
   m_SpotAngle: 11.380124
   m_InnerSpotAngle: 5.5514555
@@ -7651,8 +7651,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.27727836, g: 0.8773585, b: 0.38974002, a: 1}
-  m_Intensity: 125
+  m_Color: {r: 0.47419012, g: 0.9056604, b: 0.55209446, a: 1}
+  m_Intensity: 200
   m_Range: 24
   m_SpotAngle: 11.380124
   m_InnerSpotAngle: 5.5514555
@@ -19060,6 +19060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed4844172de9ff429e468c38b614f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!135 &415156726
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32201,6 +32202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5147ab6d34a4bf4d884c34b38588f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!1 &649585597
 GameObject:
   m_ObjectHideFlags: 0
@@ -36994,6 +36996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed4844172de9ff429e468c38b614f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!135 &742989176
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -43718,8 +43721,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.27727836, g: 0.8773585, b: 0.38974002, a: 1}
-  m_Intensity: 125
+  m_Color: {r: 0.47419012, g: 0.9056604, b: 0.55209446, a: 1}
+  m_Intensity: 200
   m_Range: 24
   m_SpotAngle: 11.380124
   m_InnerSpotAngle: 5.5514555
@@ -51925,7 +51928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.15099
+      value: 46.58
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.y
@@ -51933,7 +51936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.696
+      value: -18.36
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58768,7 +58771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.521
+      value: 64.02
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.y
@@ -58776,7 +58779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.516
+      value: -6.6
       objectReference: {fileID: 0}
     - target: {fileID: 8547836570997542601, guid: 000f7257718ffc445b9574eb45fe5549, type: 3}
       propertyPath: m_LocalRotation.w
@@ -89667,8 +89670,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.27727836, g: 0.8773585, b: 0.38974002, a: 1}
-  m_Intensity: 125
+  m_Color: {r: 0.47419012, g: 0.9056604, b: 0.55209446, a: 1}
+  m_Intensity: 200
   m_Range: 24
   m_SpotAngle: 11.380124
   m_InnerSpotAngle: 5.5514555
@@ -91542,8 +91545,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.27727836, g: 0.8773585, b: 0.38974002, a: 1}
-  m_Intensity: 125
+  m_Color: {r: 0.47419012, g: 0.9056604, b: 0.55209446, a: 1}
+  m_Intensity: 200
   m_Range: 24
   m_SpotAngle: 11.380124
   m_InnerSpotAngle: 5.5514555
