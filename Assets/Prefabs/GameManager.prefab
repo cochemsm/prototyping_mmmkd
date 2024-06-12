@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a53578f39efed4391c77f097dadc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testCard: {fileID: 11400000, guid: b667ad8ffd86c964d83d1c8c37cee6c7, type: 2}
+  cardPool:
+  - {fileID: 11400000, guid: e68a36d1307011a488126aa1a4e4d862, type: 2}
+  - {fileID: 11400000, guid: 47cd1dfbbf1446a4b8145cd8dea77d1c, type: 2}

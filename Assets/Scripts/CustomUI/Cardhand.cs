@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Cards;
+using Objects.Cards;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -23,10 +23,14 @@ namespace CustomUI {
 
         public void AddCard(Card newCard, VisualElement root) {
             _cards.Add(newCard);
-            // _cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml");
+            _cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml"); // TODO: this cant be build
             VisualElement card = _cardTemplate.Instantiate();
+            card.Q<VisualElement>("Background").style.backgroundImage = new StyleBackground(newCard.cardImage);
+            card.Q<VisualElement>("CardImage").style.backgroundImage = new StyleBackground(newCard.imageOnCard);
+            card.Q<Label>("CardText").text = newCard.text;
+            card.Q<LifeMeter>("Energy").ActiveMeterFields = newCard.energy;
             card.userData = newCard;
-            card.AddToClassList("cardHover");
+            card.AddToClassList("card");
             card.AddManipulator(new DragAndDrop(root));
             _uiCards.Add(card);
             _center.Add(card);

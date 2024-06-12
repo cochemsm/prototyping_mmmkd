@@ -7,7 +7,7 @@
         <ui:Label tabindex="-1" text="Interact" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; margin-left: 10px;" />
     </ui:VisualElement>
     <ui:VisualElement name="PickupIndicator" style="flex-grow: 1; position: absolute; right: 20px; bottom: 20px;">
-        <ui:Label tabindex="-1" text="Picked up a new Card" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+        <ui:Label tabindex="-1" text="Picked up a new Card" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PickupText" style="visibility: hidden;" />
     </ui:VisualElement>
     <ui:VisualElement name="MapBackground" style="width: 400px; height: 400px; position: absolute; left: 20px; background-image: url(&apos;project://database/Assets/Art/MapMarker/Map_Border/MapBorder.png?fileID=2800000&amp;guid=3b0063d7dc58bc94299e820436fe68dd&amp;type=3#MapBorder&apos;); justify-content: center; align-items: center; bottom: 20px;">
         <ui:VisualElement name="Map" style="width: 90%; height: 90%;" />
