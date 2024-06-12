@@ -4,3 +4,8 @@
 .view {
     flex-grow: 1;
 }
+
+.button {
+    width: 100px;
+    height: 50px;
+}

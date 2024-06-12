@@ -63,7 +63,6 @@ namespace Manager {
 
         private void FixedUpdate() {
             SetMap(map);
-            UpdateSettings();
         }
 
         #endregion
@@ -82,6 +81,9 @@ namespace Manager {
                     break;
                 case UIs.SettingsMenu:
                     newUI = _lastPanelBeforeSettings;
+                    break;
+                case UIs.KeyPad:
+                    PublicEvents.LockPlayerMovementToggle?.Invoke();
                     break;
             }
 
@@ -163,6 +165,8 @@ namespace Manager {
             _resolution = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("ResolutionDropDown");
             _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
+            _panels[(int)UIs.SettingsMenu].Q<Button>("Back").clicked += Back;
+            _panels[(int)UIs.SettingsMenu].Q<Button>("Apply").clicked += UpdateSettings;
             
             _categories = new List<string>();
             _categories.Add("Audio");
@@ -177,8 +181,11 @@ namespace Manager {
             _category.itemsSource = _categories;
             
             _resolution.choices.RemoveAt(0);
+            int i = 0;
             foreach (var resolution in Screen.resolutions) {
                 _resolution.choices.Add(resolution.width + "x" + resolution.height);
+                if (resolution.width == 1920 && resolution.height == 1080) _resolution.index = i;
+                i++;
             }
         }
 
@@ -192,9 +199,12 @@ namespace Manager {
             }
         }
 
+        private void Back() {
+            ChangePanel(_lastPanelBeforeSettings);
+        }
+
         private void UpdateSettings() {
-            if (CurrentPanel != UIs.SettingsMenu) return;
-            
+            // TODO
         }
 
         #endregion
@@ -342,13 +352,11 @@ namespace Manager {
             if (Convert.ToInt32(_code.text) == 24579) {
                 PublicEvents.CodeIsRight?.Invoke();
                 ChangePanel(UIs.InGame);
-                PublicEvents.LockPlayerMovementToggle?.Invoke();
             }
         }
         private bool CheckNumberLength() => _code.text.Length < 5;
         private void CloseKeyPad() {
             ChangePanel(UIs.InGame);
-            PublicEvents.LockPlayerMovementToggle?.Invoke();
         }
 
         #endregion

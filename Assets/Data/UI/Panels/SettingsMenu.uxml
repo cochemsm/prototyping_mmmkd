@@ -15,10 +15,14 @@
                 <ui:Label tabindex="-1" text="Screen Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-bottom: 2%; margin-top: 0; margin-right: 0; margin-left: 0;" />
                 <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="ScreenSettings">
                     <ui:DropdownField label="Resolution" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="ResolutionDropDown" />
-                    <ui:DropdownField label="Window Mode" index="-1" choices="Fullscreen, Windowed, Windowed Borderless" name="WindowsDropDown" />
+                    <ui:DropdownField label="Window Mode" index="0" choices="Fullscreen, Windowed, Windowed Borderless" name="WindowsDropDown" />
                     <ui:Slider picking-mode="Ignore" label="Gamma" value="42" high-value="100" name="GammaSlider" />
                 </ui:ScrollView>
             </ui:VisualElement>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Buttons" style="flex-grow: 1; height: 20%; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%; flex-direction: row; justify-content: space-between; align-items: center;">
+        <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Back" class="button" />
+        <ui:Button text="Apply" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Apply" class="button" />
     </ui:VisualElement>
 </ui:UXML>

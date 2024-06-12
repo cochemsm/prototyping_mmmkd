@@ -48,7 +48,7 @@ namespace Manager {
             Debug.Log(rotation);
             Vector3 rotate = new Vector3(0, rotation, 0);
             if (movementVector != Vector3.zero) _playerBody.eulerAngles = rotate;*/
-            if (_input != Vector2.zero) _playerBody.rotation = Quaternion.LookRotation(movementVector);
+            if (_input != Vector2.zero && canMove) _playerBody.rotation = Quaternion.LookRotation(movementVector);
         }
 
         private void OnEnable() {
