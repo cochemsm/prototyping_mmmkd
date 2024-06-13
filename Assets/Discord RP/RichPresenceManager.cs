@@ -1,8 +1,7 @@
 using UnityEngine;
 
 namespace Discord_RP {
-    public class RichPresenceManager : MonoBehaviour
-    {
+    public class RichPresenceManager : MonoBehaviour {
         private Discord.Discord _discord;
     
         private void Start()           {
@@ -24,8 +23,9 @@ namespace Discord_RP {
             var activity = new Discord.Activity {
                 State = "Playing",
                 Details = "DuStinkst"
+				startTimestamp = 1507665886;
             };
             activityManager.UpdateActivity(activity, (res) => { });
-        }
-    }
+		}
+	}
 }
