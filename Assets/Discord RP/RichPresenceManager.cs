@@ -18,6 +18,7 @@ namespace Discord_RP {
             _discord.Dispose();
         }
 
+<<<<<<< Updated upstream
         private void ChangeActivity() {
             var activityManager = _discord.GetActivityManager();
             var activity = new Discord.Activity {
@@ -29,3 +30,31 @@ namespace Discord_RP {
 		}
 	}
 }
+=======
+    //Discords Activity
+    public void ChangeActivity()
+    {
+        var activityManager = discord.GetActivityManager();
+        var activity = new Discord.Activity
+        {
+            State = "Playing",
+            Details = "DuStinkst",
+            Assets =
+            {
+                LargeImage = "gameico-1024"
+            },
+            Timestamps =
+            {
+                Start = 1507665886
+            },
+
+    };
+        activityManager.UpdateActivity(activity, (res) => { });
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        discord.RunCallbacks();
+    }
+}
+>>>>>>> Stashed changes
