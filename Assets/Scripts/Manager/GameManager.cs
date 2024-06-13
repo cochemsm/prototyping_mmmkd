@@ -80,6 +80,10 @@ namespace Manager {
             cardPool.Add(card);
             StartCoroutine(UIController.Instance.SetPickupText("Added new card to deck"));
         }
+
+        public void GameEnd() {
+            
+        }
         
         #region Patience Logic
 

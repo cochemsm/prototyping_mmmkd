@@ -1,3 +1,4 @@
+using System.Collections;
 using Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,18 +16,32 @@ namespace Manager {
         [SerializeField] private float movementSpeed = 1;
         [SerializeField] private float jumpForce = 1;
         [SerializeField] private bool canMove = true;
-        // [SerializeField] private float rotationSpeed = 1;
+        [SerializeField] private float timeBetweenDamage = 1f;
     
         private Rigidbody _rigidbody;
         private Vector2 _input;
         private Transform _playerBody;
         private float _cameraRotation;
-    
+        private Coroutine _damageOverTime;
+        private int _health;
+        private int Health {
+            get => _health;
+            set {
+                _health = Mathf.Clamp(value, 0, 100);
+                UIController.Instance.SetSystemPower(_health);
+                if (_health <= 0) {
+                    GameManager.Instance.GameEnd();
+                    _damageOverTime = null;
+                }
+            }
+        }
+        
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
             _playerBody = transform.GetChild(0);
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
             PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
+            _damageOverTime = StartCoroutine(DamageOverTime());
         }
 
         private void Update() {
@@ -109,6 +124,12 @@ namespace Manager {
 
         private void Pause(InputAction.CallbackContext ctx) {
             if (GameManager.Instance is not null) GameManager.Instance.PauseToggle();
+        }
+
+        private IEnumerator DamageOverTime() {
+            yield return new WaitForSeconds(timeBetweenDamage);
+            Health--;
+            _damageOverTime = StartCoroutine(DamageOverTime());
         }
     }
 }
