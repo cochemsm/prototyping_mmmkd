@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Discord_RP {
@@ -13,16 +15,16 @@ namespace Discord_RP {
         private void Update() {
             _discord.RunCallbacks();
         }
-
-        private void OnDisable() {
+        private void OnDisable()
+        {
             _discord.Dispose();
         }
 
-        public void ChangeActivity() {
+        private void ChangeActivity() {
             var activityManager = _discord.GetActivityManager();
             var activity = new Discord.Activity {
                 State = "Playing",
-                Details = "DuStinkst",
+                // Details = "DuStinkst",
                 Assets = {
                     LargeImage = "gameico-1024"
                 },
