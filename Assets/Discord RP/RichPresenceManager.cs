@@ -26,8 +26,9 @@ public class RichPresenceManager : MonoBehaviour
         {
             State = "Playing",
             Details = "DuStinkst"
+            startTimestamp = 1507665886;
 
-        };
+    };
         activityManager.UpdateActivity(activity, (res) => { });
     }
     // Update is called once per frame
