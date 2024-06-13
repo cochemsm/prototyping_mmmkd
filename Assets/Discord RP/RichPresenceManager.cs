@@ -23,7 +23,7 @@ namespace Discord_RP {
             var activityManager = _discord.GetActivityManager();
             var activity = new Discord.Activity {
                 State = "Playing",
-                Details = "DuStinkst"
+                //Details = "DuStinkst"
 				startTimestamp = 1507665886;
             };
             activityManager.UpdateActivity(activity, (res) => { });
