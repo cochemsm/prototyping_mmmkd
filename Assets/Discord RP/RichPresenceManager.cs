@@ -25,7 +25,7 @@ public class RichPresenceManager : MonoBehaviour
         var activity = new Discord.Activity
         {
             State = "Playing",
-            Details = "NULL"
+            Details = "DuStinkst"
 
         };
         activityManager.UpdateActivity(activity, activity(res) {
