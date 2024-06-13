@@ -29,7 +29,7 @@ namespace Discord_RP {
                     LargeImage = "gameico-1024"
                 },
                 Timestamps = {
-                    Start = 1507665886
+                    Start = 0 //Unix Timestemp here
                 },
 
             };
