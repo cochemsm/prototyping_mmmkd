@@ -15,11 +15,11 @@
     width: 100%;
     height: 200px;
     flex-direction: row;
-    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&guid=adda468b490f8674d9a333d046f84a7b&type=3#check@2x');
+    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&guid=101f7f399f631dd40992be7068463071&type=3#check@2x');
 }
 
 .meterField {
-    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=8228938214290033325&guid=101f7f399f631dd40992be7068463071&type=3#console.erroricon');
+    background-image: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=8228938214290033325&guid=adda468b490f8674d9a333d046f84a7b&type=3#console.erroricon');
     flex-basis: 100%;
 }
 
