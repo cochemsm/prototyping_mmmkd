@@ -82,7 +82,7 @@ namespace Manager {
         }
 
         public void GameEnd() {
-            
+            Debug.Log("Player Died");
         }
         
         #region Patience Logic

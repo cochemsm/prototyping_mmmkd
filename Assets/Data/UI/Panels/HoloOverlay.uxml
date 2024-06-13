@@ -3,6 +3,6 @@
     <ui:VisualElement name="systemPowerContainer" picking-mode="Ignore" class="systemPowerContainer">
         <ui:Label tabindex="-1" text="SYSTEM POWER:" parse-escape-sequences="true" display-tooltip-when-elided="true" />
         <ui:ProgressBar value="67" name="SystemPower" class="systemPower" />
-        <ui:Label tabindex="-1" text="67%" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+        <ui:Label tabindex="-1" text="67%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SystemPowerLabel" />
     </ui:VisualElement>
 </ui:UXML>

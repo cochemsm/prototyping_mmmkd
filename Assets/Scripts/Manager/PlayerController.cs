@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Interfaces;
 using UnityEngine;
@@ -41,6 +42,10 @@ namespace Manager {
             _playerBody = transform.GetChild(0);
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
             PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
+        }
+
+        private void Start() {
+            Health = 100;
             _damageOverTime = StartCoroutine(DamageOverTime());
         }
 
