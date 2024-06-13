@@ -28,9 +28,7 @@ public class RichPresenceManager : MonoBehaviour
             Details = "DuStinkst"
 
         };
-        //activityManager.UpdateActivity(activity, activity(res) => {
-            //Debug.log("Updated Activity");
-        //});
+        activityManager.UpdateActivity(activity, (res) => { });
     }
     // Update is called once per frame
     void Update()
