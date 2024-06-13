@@ -10,7 +10,7 @@ public class RichPresenceManager : MonoBehaviour
     {
         //Data With APP ID
         discord = new Discord.Discord(1250746160759439432, (ulong)Discord.CreateFlags.NoRequireDiscord);
-        ChangeActivity(discord);
+        ChangeActivity();
     }
 
     void OnDisable()
@@ -28,9 +28,9 @@ public class RichPresenceManager : MonoBehaviour
             Details = "DuStinkst"
 
         };
-        activityManager.UpdateActivity(activity, activity(res) => {
-            Debug.log("Updated Activity");
-        });
+        //activityManager.UpdateActivity(activity, activity(res) => {
+            //Debug.log("Updated Activity");
+        //});
     }
     // Update is called once per frame
     void Update()
