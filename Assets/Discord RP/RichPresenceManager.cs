@@ -1,38 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RichPresenceManager : MonoBehaviour
-{
-    Discord.Discord discord;
-    // Start is called before the first frame update
-    void Start()
+namespace Discord_RP {
+    public class RichPresenceManager : MonoBehaviour
     {
-        //Data With APP ID
-        discord = new Discord.Discord(1250746160759439432, (ulong)Discord.CreateFlags.NoRequireDiscord);
-        ChangeActivity();
-    }
+        private Discord.Discord _discord;
+    
+        private void Start()           {
+            //Data With APP ID
+            _discord = new Discord.Discord(1250746160759439432, (ulong)Discord.CreateFlags.NoRequireDiscord);
+            ChangeActivity();
+        }
+        
+        private void Update() {
+            _discord.RunCallbacks();
+        }
 
-    void OnDisable()
-    {
-        discord.Dispose();
-    }
+        private void OnDisable() {
+            _discord.Dispose();
+        }
 
-    //Discords Activity
-    public void ChangeActivity()
-    {
-        var activityManager = discord.GetActivityManager();
-        var activity = new Discord.Activity
-        {
-            State = "Playing",
-            Details = "DuStinkst"
-
-        };
-        activityManager.UpdateActivity(activity, (res) => { });
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        discord.RunCallbacks();
+        private void ChangeActivity() {
+            var activityManager = _discord.GetActivityManager();
+            var activity = new Discord.Activity {
+                State = "Playing",
+                Details = "DuStinkst"
+            };
+            activityManager.UpdateActivity(activity, (res) => { });
+        }
     }
 }
