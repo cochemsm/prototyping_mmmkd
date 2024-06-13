@@ -4,7 +4,7 @@
     <ui:VisualElement name="Character" class="fillScreen" />
     <ui:VisualElement name="Container" style="flex-grow: 1;">
         <ui:VisualElement name="PatientMeter" class="patientMeter">
-            <CustomUI.LifeMeter MeterFields="5" name="Patience" ActiveFields="3" />
+            <CustomUI.LifeMeter MeterFields="12" name="Patience" ActiveFields="3" />
             <ui:VisualElement style="flex-direction: row;">
                 <ui:VisualElement>
                     <ui:Label tabindex="-1" text="NAME:" parse-escape-sequences="true" display-tooltip-when-elided="true" />

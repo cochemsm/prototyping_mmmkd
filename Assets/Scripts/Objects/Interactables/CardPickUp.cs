@@ -1,5 +1,6 @@
 using System;
 using Interfaces;
+using Manager;
 using Objects.Cards;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace Objects.Interactables {
         }
 
         public void Interact() {
-            Debug.Log("Picked Up a Card");
+            GameManager.Instance.AddCardToPool(data);
             gameObject.SetActive(false);
         }
     }

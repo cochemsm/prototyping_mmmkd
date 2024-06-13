@@ -14,6 +14,8 @@ namespace Manager {
         public List<Card> cardPool = new List<Card>();
         
         public enum Scenes { MainMenu, Lvl1, Lvl2, Lvl3, GameOver }
+
+        private PlayerController _player;
         
         private void Awake() {
             if (Instance is not null) {
@@ -25,6 +27,7 @@ namespace Manager {
         }
 
         private void Start() {
+            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             AddCardsFromPool(5);
         }
 
@@ -72,12 +75,23 @@ namespace Manager {
                 UIController.Instance.AddCardToHand(cardPool[Random.Range(0, cardPool.Count)]);
             }
         }
+
+        public void AddCardToPool(Card card) {
+            cardPool.Add(card);
+            StartCoroutine(UIController.Instance.SetPickupText("Added new card to deck"));
+        }
         
         #region Patience Logic
 
-        public Character character;
+        private Character _character;
         private int _friendlyGoal;
         private int _evilGoal;
+
+        public void SetCharacter(Character character) {
+            _character = character;
+            _friendlyGoal = character.data.befriendGoal;
+            _evilGoal = character.data.killGoal;
+        }
 
         public void CardPlayed(int friendly, int evil, int energy) {
             _friendlyGoal -= friendly;
@@ -94,15 +108,16 @@ namespace Manager {
 
         private void KillEnemy() {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
-            cardPool.Add(character.data.killReward);
-            StartCoroutine(UIController.Instance.SetPickupText("Added new card to deck"));
-            character.gameObject.SetActive(false);
+            AddCardToPool(_character.data.killReward);
+            _character.gameObject.SetActive(false);
+            _player.ManuelTriggerExit();
         }
 
         public void FleeEnemy() {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
             StartCoroutine(UIController.Instance.SetPickupText("Enemy has fled to safety"));
-            character.gameObject.SetActive(false);
+            _character.gameObject.SetActive(false);
+            _player.ManuelTriggerExit();
         }
         
         #endregion

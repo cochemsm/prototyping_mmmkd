@@ -27,6 +27,7 @@ namespace CustomUI {
             VisualElement card = _cardTemplate.Instantiate();
             card.Q<VisualElement>("Background").style.backgroundImage = new StyleBackground(newCard.cardImage);
             card.Q<VisualElement>("CardImage").style.backgroundImage = new StyleBackground(newCard.imageOnCard);
+            card.Q<Label>("CardTitle").text = newCard.cardName;
             card.Q<Label>("CardText").text = newCard.text;
             card.Q<LifeMeter>("Energy").ActiveMeterFields = newCard.energy;
             card.userData = newCard;

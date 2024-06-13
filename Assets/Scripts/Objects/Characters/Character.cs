@@ -1,4 +1,5 @@
 using Interfaces;
+using Manager;
 using UnityEngine;
 
 namespace Objects.Characters {
@@ -10,7 +11,9 @@ namespace Objects.Characters {
         }
 
         public void Interact() {
-            Debug.Log("Interaction");
+            GameManager.Instance.SetCharacter(this);
+            UIController.Instance.ChangePanel(UIController.UIs.Encounter);
+            UIController.Instance.SetEnemyInfo(data.myName, data.info);
         }
     }
 }

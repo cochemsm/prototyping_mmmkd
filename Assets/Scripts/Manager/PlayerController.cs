@@ -79,6 +79,10 @@ namespace Manager {
 
         private void OnTriggerExit(Collider other) {
             if (!other.CompareTag("interactable")) return;
+            ManuelTriggerExit();
+        }
+
+        public void ManuelTriggerExit() {
             if (UIController.Instance is not null) UIController.Instance.ToggleInteractButton();
             _character = null;
         }

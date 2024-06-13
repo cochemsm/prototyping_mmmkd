@@ -6,7 +6,7 @@
     <Style src="project://database/Assets/Data/UI/Styles/Global/ListView.uss?fileID=7433441132597879392&amp;guid=6b97381dbb26dff42968843d089b9ea0&amp;type=3#ListView" />
     <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
-    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="0" high-value="100" />
     <ui:DropdownField label="Dropdown" index="-1" choices="System.Collections.Generic.List`1[System.String]" />
     <ui:ListView />
 </ui:UXML>
