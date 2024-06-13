@@ -5,7 +5,9 @@ namespace Objects.Map {
         [SerializeField] private GameObject target;
 
         private void FixedUpdate() {
-            transform.rotation = Quaternion.LookRotation(target.transform.position * -1);
+            Vector3 position = transform.position - target.transform.position;
+            Quaternion rotation = Quaternion.LookRotation(position);
+            transform.rotation = rotation;
         }
     }
 }

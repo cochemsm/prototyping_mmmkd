@@ -27,22 +27,27 @@ namespace Manager {
         }
 
         private void Start() {
-            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             AddCardsFromPool(5);
         }
 
         private void OnEnable() {
             PublicEvents.LoadNextLevel += LoadNextLevel;
             PublicEvents.SafeGame += SafeGame;
+            PublicEvents.PlayerNotice += PlayerReferenceSingleton;
         }
 
         private void OnDisable() {
             PublicEvents.LoadNextLevel -= LoadNextLevel;
             PublicEvents.SafeGame -= SafeGame;
+            PublicEvents.PlayerNotice -= PlayerReferenceSingleton;
         }
 
         private void OnDestroy() {
             if (Instance == this) Instance = null;
+        }
+
+        private void PlayerReferenceSingleton(PlayerController player) {
+            _player = player;
         }
 
         public void LoadNextLevel() {

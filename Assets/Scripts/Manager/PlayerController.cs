@@ -47,6 +47,7 @@ namespace Manager {
         private void Start() {
             Health = 100;
             _damageOverTime = StartCoroutine(DamageOverTime());
+            PublicEvents.PlayerNotice?.Invoke(this);
         }
 
         private void Update() {
