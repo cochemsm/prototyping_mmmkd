@@ -167,7 +167,6 @@ namespace Manager {
             _windowMode = _panels[(int)UIs.SettingsMenu].Q<DropdownField>("WindowDropDown");
             _gamma = _panels[(int)UIs.SettingsMenu].Q<Slider>("GammaSlider");
             _panels[(int)UIs.SettingsMenu].Q<Button>("Back").clicked += Back;
-            _panels[(int)UIs.SettingsMenu].Q<Button>("Apply").clicked += UpdateSettings;
             
             _categories = new List<string>();
             _categories.Add("Audio");
@@ -180,6 +179,10 @@ namespace Manager {
             };
             _category.bindItem = (elem, i) => ((Label) elem).text = _categories[i];
             _category.itemsSource = _categories;
+            
+            _master.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MasterVolume, evt.newValue));
+            _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
+            _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
             
             _resolution.choices.RemoveAt(0);
             int i = 0;
@@ -204,10 +207,6 @@ namespace Manager {
 
         private void Back() {
             ChangePanel(_lastPanelBeforeSettings);
-        }
-
-        private void UpdateSettings() {
-            // TODO: apply button
         }
 
         #endregion

@@ -7,9 +7,9 @@
                 <ui:VisualElement name="SoundView" class="view">
                     <ui:Label tabindex="-1" text="Sound Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-bottom: 2%; margin-top: 0; margin-right: 0; margin-left: 0;" />
                     <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="SoundSettings">
-                        <ui:Slider picking-mode="Ignore" label="Master" value="42" high-value="100" name="MasterSound" />
-                        <ui:Slider picking-mode="Ignore" label="Music" value="42" high-value="100" name="MusicSound" />
-                        <ui:Slider picking-mode="Ignore" label="SFX" value="42" high-value="100" name="SFXSound" />
+                        <ui:Slider picking-mode="Ignore" label="Master" value="42" name="MasterSound" high-value="1" low-value="0.0001" />
+                        <ui:Slider picking-mode="Ignore" label="Music" value="42" name="MusicSound" high-value="1" low-value="0.0001" />
+                        <ui:Slider picking-mode="Ignore" label="SFX" value="42" name="SFXSound" high-value="1" low-value="0.0001" />
                     </ui:ScrollView>
                 </ui:VisualElement>
                 <ui:VisualElement name="ScreenView" class="view" style="display: none;">
