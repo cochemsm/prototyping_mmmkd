@@ -92,13 +92,16 @@ namespace Manager {
             
             switch (newUI) {
                 case UIs.InGame:
+                    _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
+                    break;
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
+                    _patience.ActiveMeterFields = int.MaxValue;
                     break;
                 case UIs.SettingsMenu:
                     _lastPanelBeforeSettings = CurrentPanel;
                     break;
-            } 
+            }
             
             _panels[(int) newUI].style.display = DisplayStyle.Flex;
             CurrentPanel = newUI;
@@ -185,6 +188,8 @@ namespace Manager {
                 if (resolution.width == 1920 && resolution.height == 1080) _resolution.index = i;
                 i++;
             }
+            
+            // TODO: set settings to values
         }
 
         private void ChangeCategory(IEnumerable<object> selected) {
@@ -202,7 +207,7 @@ namespace Manager {
         }
 
         private void UpdateSettings() {
-            // TODO
+            // TODO: apply button
         }
 
         #endregion

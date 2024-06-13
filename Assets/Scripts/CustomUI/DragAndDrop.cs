@@ -49,12 +49,10 @@ namespace CustomUI {
             bool test = RectOverlap(target.worldBound, _cardhand.worldBound);
             if (test) {
                 _cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);
-                Debug.Log("Card Stayed");
             } else {
                 _cardhand.RemoveCard((Card) target.userData);
                 target.RemoveFromHierarchy();
                 GameManager.Instance.CardPlayed(((Card) target.userData).befriendPoints, ((Card) target.userData).killPoints, ((Card) target.userData).energy);
-                Debug.Log("Removed Card");
             }
 
             target.style.top = _localStartPos.y;
@@ -66,12 +64,9 @@ namespace CustomUI {
             evt.StopPropagation();
         }
 
-        private bool RectOverlap(Rect firstRect, Rect secondRect) {
-            Debug.LogWarning($"{firstRect.x}, {firstRect.y}|{firstRect.width}, {firstRect.height}");
-            
-            return firstRect.x + firstRect.width >= secondRect.x && firstRect.x <= secondRect.x + secondRect.width &&
-                   firstRect.y + 350 >= secondRect.y && firstRect.y <= secondRect.y + secondRect.height;
-        }
+        private bool RectOverlap(Rect firstRect, Rect secondRect) => 
+            firstRect.x + firstRect.width >= secondRect.x && firstRect.x <= secondRect.x + secondRect.width &&
+            firstRect.y + 350 >= secondRect.y && firstRect.y <= secondRect.y + secondRect.height;
 
         protected override void RegisterCallbacksOnTarget() {
             target.RegisterCallback<MouseDownEvent>(OnMouseDown);

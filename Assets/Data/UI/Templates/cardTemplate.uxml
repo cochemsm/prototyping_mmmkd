@@ -2,6 +2,7 @@
     <Style src="project://database/Assets/Data/UI/Styles/Encounter.uss?fileID=7433441132597879392&amp;guid=6ba5ff8fc8a242b42ad21ef9538ae450&amp;type=3#Encounter" />
     <ui:VisualElement name="Background" style="background-image: url(&apos;project://database/Assets/Art/MapMarker/Map_Border/MapBorder.png?fileID=2800000&amp;guid=3b0063d7dc58bc94299e820436fe68dd&amp;type=3#MapBorder&apos;); flex-direction: row; background-color: rgb(33, 0, 219); width: 100%; height: 100%;">
         <ui:VisualElement style="flex-basis: 80%;">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardTitle" style="-unity-text-align: middle-center; flex-basis: 10%;" />
             <ui:VisualElement style="flex-basis: 40%; padding-top: 10%; padding-right: 10%; padding-bottom: 10%; padding-left: 10%;">
                 <ui:VisualElement name="CardImage" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Art/Decals/Src/NumeralPuzzle/SM_2-Number_Decal.png?fileID=2800000&amp;guid=1ae86b8b65a77bb429c508534f87ea43&amp;type=3#SM_2-Number_Decal&apos;); background-color: rgb(65, 65, 65);" />
             </ui:VisualElement>
