@@ -1,0 +1,26 @@
+.unity-base-popup-field__text {
+    color: rgb(255, 255, 255);
+}
+
+.unity-base-popup-field .unity-base-popup-field__input {
+    background-color: rgb(143, 76, 19);
+    border-left-color: rgb(96, 53, 16);
+    border-right-color: rgb(96, 53, 16);
+    border-top-color: rgb(96, 53, 16);
+    border-bottom-color: rgb(96, 53, 16);
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.unity-base-popup-field .unity-base-popup-field__arrow {
+}
+
+.unity-base-field__input .unity-base-popup-field__text {
+    color: rgb(46, 255, 0);
+}

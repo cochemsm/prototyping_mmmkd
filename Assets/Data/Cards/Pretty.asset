@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Pretty
   m_EditorClassIdentifier: 
   cardName: The good guy
-  cardImage: {fileID: 4584671053970592468, guid: adda468b490f8674d9a333d046f84a7b, type: 3}
+  cardBase: {fileID: 2800000, guid: 29ecd34e9c281994c959fc20770291ea, type: 3}
+  cardBattery: {fileID: 2800000, guid: 2a63c395239c6c848a440f3dbf636163, type: 3}
   imageOnCard: {fileID: 2800000, guid: 98ab44feb3f505142a72e97e0b3f9532, type: 3}
   text: Tell them that they are pretty
   energy: 3

@@ -119,16 +119,20 @@ namespace Manager {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
             AddCardToPool(_character.data.killReward);
             _character.gameObject.SetActive(false);
-            _player.ManuelTriggerExit();
+            PreventTriggerBug();
         }
 
         public void FleeEnemy() {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
             StartCoroutine(UIController.Instance.SetPickupText("Enemy has fled to safety"));
             _character.gameObject.SetActive(false);
-            _player.ManuelTriggerExit();
+            PreventTriggerBug();
         }
         
         #endregion
+
+        public void PreventTriggerBug() {
+            _player.ManuelTriggerExit();
+        }
     }
 }

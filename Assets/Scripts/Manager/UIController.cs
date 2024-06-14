@@ -179,6 +179,7 @@ namespace Manager {
             };
             _category.bindItem = (elem, i) => ((Label) elem).text = _categories[i];
             _category.itemsSource = _categories;
+            _category.SetSelection(0);
             
             _master.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MasterVolume, evt.newValue));
             _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
@@ -368,7 +369,7 @@ namespace Manager {
 
         private void Enter() {
             if (Convert.ToInt32(_code.text) == 24579) {
-                PublicEvents.CodeIsRight?.Invoke();
+                PublicEvents.PuzzleIsRight?.Invoke();
                 ChangePanel(UIs.InGame);
             }
         }

@@ -27,7 +27,8 @@ namespace CustomUI {
             _cards.Add(newCard);
             _cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml"); // TODO: this cant be build
             VisualElement card = _cardTemplate.Instantiate();
-            card.Q<VisualElement>("Background").style.backgroundImage = new StyleBackground(newCard.cardImage);
+            card.Q<VisualElement>("CardBase").style.backgroundImage = new StyleBackground(newCard.cardBase);
+            card.Q<LifeMeter>("Energy").style.backgroundImage = new StyleBackground(newCard.cardBattery);
             card.Q<VisualElement>("CardImage").style.backgroundImage = new StyleBackground(newCard.imageOnCard);
             card.Q<Label>("CardTitle").text = newCard.cardName;
             card.Q<Label>("CardText").text = newCard.text;

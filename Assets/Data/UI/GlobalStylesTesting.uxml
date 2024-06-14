@@ -1,12 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Data/UI/Styles/Global/Dropdown.uss?fileID=7433441132597879392&amp;guid=b243973d985a2fb458ec601ab66a2b04&amp;type=3#Dropdown" />
     <Style src="project://database/Assets/Data/UI/Styles/Global/Labels.uss?fileID=7433441132597879392&amp;guid=a744797c9c9c0e4409b4feb87baf21a1&amp;type=3#Labels" />
     <Style src="project://database/Assets/Data/UI/Styles/Global/Buttons.uss?fileID=7433441132597879392&amp;guid=22997adc88a868441ae14944d5db3861&amp;type=3#Buttons" />
     <Style src="project://database/Assets/Data/UI/Styles/Global/Slider.uss?fileID=7433441132597879392&amp;guid=8b636ac046904084b912bbaf380a04b9&amp;type=3#Slider" />
-    <Style src="project://database/Assets/Data/UI/Styles/Global/Dropdown.uss?fileID=7433441132597879392&amp;guid=b243973d985a2fb458ec601ab66a2b04&amp;type=3#Dropdown" />
     <Style src="project://database/Assets/Data/UI/Styles/Global/ListView.uss?fileID=7433441132597879392&amp;guid=6b97381dbb26dff42968843d089b9ea0&amp;type=3#ListView" />
     <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" />
     <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
     <ui:Slider picking-mode="Ignore" label="Slider" value="0" high-value="100" />
-    <ui:DropdownField label="Dropdown" index="-1" choices="System.Collections.Generic.List`1[System.String]" />
+    <ui:DropdownField label="Dropdown" index="-1" choices="One, Two, Three, Four, Five" />
     <ui:ListView />
 </ui:UXML>
