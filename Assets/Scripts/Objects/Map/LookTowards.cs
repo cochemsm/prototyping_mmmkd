@@ -1,6 +1,7 @@
 using UnityEngine;
 
 namespace Objects.Map {
+    [RequireComponent(typeof(AudioSource))]
     public class LookToward : MonoBehaviour {
         [SerializeField] private GameObject target;
 
