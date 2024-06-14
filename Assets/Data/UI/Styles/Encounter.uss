@@ -15,7 +15,7 @@
     width: 100%;
     height: 200px;
     flex-direction: row;
-    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&guid=101f7f399f631dd40992be7068463071&type=3#check@2x');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter/PatiencepowerLines5.png?fileID=2800000&guid=9791195ca071c9a41810d22f8db0e845&type=3#PatiencepowerLines5');
 }
 
 .meterField {
@@ -24,11 +24,11 @@
 }
 
 .activeMeterField {
-    background-image: url('project://database/Assets/Art/2D%20Art/Card/Card%20Rare/CardBatterieEnergy1.png?fileID=2800000&guid=9dc70c7f4dc57164db9b7caf3382b832&type=3#CardBatterieEnergy1');
+    background-image: url('project://database/Assets/Art/2D%20Art/Cards/Epic/CardBatterieEnergy5.png?fileID=2800000&guid=639fd4a5caf036f439568acbdc950c2c&type=3#CardBatterieEnergy5');
 }
 
 #Patience .activeMeterField {
-    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter%20UI/Patiencepower.png?fileID=2800000&guid=e248b1b3a98752444baee7708c4a8700&type=3#Patiencepower');
+    background-image: url('project://database/Assets/Art/2D%20Art/Cards/Epic/CardBatterieEnergy5.png?fileID=2800000&guid=639fd4a5caf036f439568acbdc950c2c&type=3#CardBatterieEnergy5');
 }
 
 .card {

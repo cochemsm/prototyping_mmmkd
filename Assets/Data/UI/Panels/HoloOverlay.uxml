@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/HoloOverlay.uss?fileID=7433441132597879392&amp;guid=7ca1f1669cc40b44cb47edfdd1505950&amp;type=3#HoloOverlay" />
-    <ui:VisualElement name="systemPowerContainer" picking-mode="Ignore" class="systemPowerContainer" style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/systemPower/SystemPowerBG4.png?fileID=2800000&amp;guid=81df2baf7c5b64a44980aa4dc43fc084&amp;type=3#SystemPowerBG4&apos;); flex-direction: column; height: 160px;">
+    <ui:VisualElement name="systemPowerContainer" picking-mode="Ignore" class="systemPowerContainer" style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/System%20Power/SystemPowerBG5.png?fileID=2800000&amp;guid=8533a427da2d8674ea3c8206d122e0bd&amp;type=3#SystemPowerBG5&apos;); flex-direction: column; height: 160px;">
         <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
             <ui:Label tabindex="-1" text="SYSTEM POWER:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="height: 35px;" />
-            <ui:ProgressBar value="67" name="SystemPower" class="systemPower" style="-unity-slice-scale: 1px;" />
+            <ui:ProgressBar value="67" name="SystemPower" class="systemPower" />
             <ui:Label tabindex="-1" text="67%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SystemPowerLabel" style="height: 35px;" />
         </ui:VisualElement>
     </ui:VisualElement>

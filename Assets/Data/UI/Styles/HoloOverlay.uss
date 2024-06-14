@@ -14,19 +14,17 @@
     margin-left: 10px;
     margin-bottom: 0;
     margin-top: 0;
-    -unity-slice-scale: 1px;
-    background-image: url('project://database/Assets/Art/2D%20Art/HUD/SystemPowerBG4.png?fileID=2800000&guid=81df2baf7c5b64a44980aa4dc43fc084&type=3#SystemPowerBG4');
 }
 
 .unity-progress-bar__background {
     width: 400px;
     min-height: 100%;
-    background-image: url('project://database/Assets/Art/2D%20Art/HUD/systemPowerLine.png?fileID=2800000&guid=e0f70d2be338d0b498e1e4b191c76183&type=3#systemPowerLine');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/System%20Power/systemPowerLine5.png?fileID=2800000&guid=6dc9a76e7525a004dacf5edee3d65839&type=3#systemPowerLine5');
     background-color: rgba(0, 0, 0, 0);
 }
 
 .unity-progress-bar__progress {
-    background-image: url('project://database/Assets/Art/2D%20Art/HUD/systemPowerbar4.png?fileID=2800000&guid=38e56615db0900243a5c9cb9c76b4753&type=3#systemPowerbar4');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/System%20Power/systemPowerbar5.png?fileID=2800000&guid=81ff6a5b37cf73f4c9fdbc433592a6a1&type=3#systemPowerbar5');
 }
 
 .unity-progress-bar__container {

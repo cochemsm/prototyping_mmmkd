@@ -4,8 +4,8 @@
     <ui:VisualElement name="Character" class="fillScreen" />
     <ui:VisualElement name="Container" style="flex-grow: 1;">
         <ui:VisualElement name="PatientMeter" class="patientMeter">
-            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter%20UI/PatienceMeterBG.png?fileID=2800000&amp;guid=5298653007f5e594ca0fe22db070c45c&amp;type=3#PatienceMeterBG&apos;); width: 100%; height: 200px; justify-content: center; align-items: flex-start;">
-                <CustomUI.LifeMeter MeterFields="8" name="Patience" ActiveFields="5" style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter%20UI/PatiencepowerLines.png?fileID=2800000&amp;guid=2233c44f12a0a1c40ab09d9a1fcf5e8c&amp;type=3#PatiencepowerLines&apos;); padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; height: 40%; width: 80%; margin-left: 5%;" />
+            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter/PatienceMeterBG5.png?fileID=2800000&amp;guid=dc3bf9fa8109f3c4895756afd60138d5&amp;type=3#PatienceMeterBG5&apos;); width: 100%; height: 200px; justify-content: center; align-items: flex-start;">
+                <CustomUI.LifeMeter MeterFields="8" name="Patience" ActiveFields="5" style="background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter/PatiencepowerLines5.png?fileID=2800000&amp;guid=9791195ca071c9a41810d22f8db0e845&amp;type=3#PatiencepowerLines5&apos;); padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; height: 40%; width: 80%; margin-left: 5%;" />
             </ui:VisualElement>
             <ui:VisualElement style="flex-direction: row;">
                 <ui:VisualElement>
