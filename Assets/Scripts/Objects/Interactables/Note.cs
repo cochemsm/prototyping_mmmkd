@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Objects.Interactables {
     [RequireComponent(typeof(SphereCollider))]
-    public class Level : MonoBehaviour {
-        private static int _leversTurned = 0;
+    public class Note : MonoBehaviour {
+        private static int _notesCollected = 0;
         private SphereCollider _trigger;
         
         private void Awake() {
@@ -13,12 +13,12 @@ namespace Objects.Interactables {
         }
 
         public void Interact() {
-            // Lever animation trigger
-            _trigger.enabled = false;
+            gameObject.SetActive(false);
             GameManager.Instance.PreventTriggerBug();
-            _leversTurned++;
-            if (_leversTurned >= 3) {
-                PublicEvents.PuzzleIsRight?.Invoke();
+            StartCoroutine(UIController.Instance.SetPickupText("Picked up a note"));
+            _notesCollected++;
+            if (_notesCollected >= 3) {
+                // Notify GameManager about the notes Ending
             }
         }
     }
