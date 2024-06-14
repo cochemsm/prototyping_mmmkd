@@ -15,6 +15,7 @@ namespace Objects.Interactables {
 
         public void Interact() {
             GameManager.Instance.AddCardToPool(data);
+            UIController.Instance.AddCardToHand(data);
             gameObject.SetActive(false);
         }
     }
