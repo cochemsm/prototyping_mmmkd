@@ -7,8 +7,8 @@ public struct PublicEvents {
     public delegate void SafeGameDelegate();
     public static SafeGameDelegate SafeGame;
 
-    public delegate void CodeIsRightDelegate();
-    public static CodeIsRightDelegate CodeIsRight;
+    public delegate void PuzzleIsRightDelegate();
+    public static PuzzleIsRightDelegate PuzzleIsRight;
 
     public delegate void LockMovementDelegate();
     public static LockMovementDelegate LockPlayerMovementToggle;

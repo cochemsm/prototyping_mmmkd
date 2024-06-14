@@ -1,0 +1,13 @@
+.unity-list-view .unity-collection-view__item--selected {
+    background-color: rgba(223, 255, 6, 0);
+    color: rgb(143, 76, 19);
+}
+
+.unity-list-view .unity-collection-view__item--selected:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.unity-list-view .unity-collection-view__item:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(96, 53, 16);
+}
