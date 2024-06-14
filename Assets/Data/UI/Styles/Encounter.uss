@@ -28,7 +28,7 @@
 }
 
 #Patience .activeMeterField {
-    background-image: url('project://database/Assets/Art/2D%20Art/Cards/Epic/CardBatterieEnergy5.png?fileID=2800000&guid=639fd4a5caf036f439568acbdc950c2c&type=3#CardBatterieEnergy5');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter/Patiencepower5.png?fileID=2800000&guid=efaaaf2d2abaf1345a1b7c7cedbc39c4&type=3#Patiencepower5');
 }
 
 .card {
