@@ -20,10 +20,15 @@
 
 .meterField {
     flex-basis: 100%;
+    margin-right: 5px;
 }
 
 .activeMeterField {
     background-image: url('project://database/Assets/Art/2D%20Art/Card/Card%20Rare/CardBatterieEnergy1.png?fileID=2800000&guid=9dc70c7f4dc57164db9b7caf3382b832&type=3#CardBatterieEnergy1');
+}
+
+#Patience .activeMeterField {
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Patience%20Meter%20UI/Patiencepower.png?fileID=2800000&guid=e248b1b3a98752444baee7708c4a8700&type=3#Patiencepower');
 }
 
 .card {

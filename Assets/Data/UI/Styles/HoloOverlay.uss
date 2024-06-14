@@ -22,6 +22,7 @@
     width: 400px;
     min-height: 100%;
     background-image: url('project://database/Assets/Art/2D%20Art/HUD/systemPowerLine.png?fileID=2800000&guid=e0f70d2be338d0b498e1e4b191c76183&type=3#systemPowerLine');
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .unity-progress-bar__progress {

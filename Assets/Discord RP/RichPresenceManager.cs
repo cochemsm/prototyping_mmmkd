@@ -10,6 +10,10 @@ namespace Discord_RP
         private Discord.Discord _discord;
         private long unixTimestamp;
 
+        private void Awake() {
+            DontDestroyOnLoad(this);
+        }
+
         private void Start()
         {
             // Call the method to get the Unix timestamp
