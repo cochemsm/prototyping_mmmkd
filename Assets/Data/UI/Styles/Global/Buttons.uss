@@ -14,4 +14,5 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: rgb(143, 76, 19);
+    -unity-font-definition: resource('Jaro-Regular SDF');
 }

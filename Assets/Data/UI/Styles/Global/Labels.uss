@@ -2,5 +2,5 @@ Label {
     font-size: 35px;
     color: rgb(255, 255, 255);
     -unity-text-align: middle-left;
-    -unity-font: url('project://database/Assets/UI%20Toolkit/Font/Jaro-Regular.ttf?fileID=12800000&guid=a1698af1afb357a4a833cced329a1802&type=3#Jaro-Regular');
+    -unity-font-definition: resource('Jaro-Regular SDF');
 }
