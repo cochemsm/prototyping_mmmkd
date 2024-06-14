@@ -618,7 +618,6 @@ GameObject:
   - component: {fileID: 140828169335014355}
   - component: {fileID: 7594282317393767597}
   - component: {fileID: 402347226980411976}
-  - component: {fileID: 8484497414806044921}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -716,18 +715,6 @@ MonoBehaviour:
   jumpForce: 250
   canMove: 1
   timeBetweenDamage: 1
---- !u!114 &8484497414806044921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402318274859529911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56680b6bcae786b46af422e848684fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8411349843081406845
 GameObject:
   m_ObjectHideFlags: 0
