@@ -19,6 +19,8 @@ namespace CustomUI {
         }
     
         private void OnMouseDown(MouseDownEvent evt) {
+            if (target.Q<VisualElement>("Active").ClassListContains("inactiveCard")) return;
+                
             _startPosition = evt.localMousePosition;
             var globalStartPos = target.worldBound.position;
             _localStartPos = target.layout.position;
@@ -49,14 +51,14 @@ namespace CustomUI {
             bool test = RectOverlap(target.worldBound, _cardhand.worldBound);
             if (test) {
                 _cardhand.Q<VisualElement>(className:"cardhandCenter").Add(target);
+                
+                target.style.top = _localStartPos.y;
+                target.style.left = _localStartPos.x;
             } else {
-                _cardhand.RemoveCard((Card) target.userData);
                 target.RemoveFromHierarchy();
                 GameManager.Instance.CardPlayed(((Card) target.userData).befriendPoints, ((Card) target.userData).killPoints, ((Card) target.userData).energy);
+                _cardhand.RemoveCard(target);
             }
-
-            target.style.top = _localStartPos.y;
-            target.style.left = _localStartPos.x;
             
             _dragArea.style.display = DisplayStyle.None;
             

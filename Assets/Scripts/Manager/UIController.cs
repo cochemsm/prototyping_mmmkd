@@ -318,6 +318,10 @@ namespace Manager {
             if (_patience.ActiveMeterFields <= 0) GameManager.Instance.FleeEnemy();
         }
 
+        public int GetPatience() {
+            return _patience.ActiveMeterFields;
+        }
+        
         public void SetEnemyInfo(string enemyName, string enemyInfo) {
             _enemyName.text = enemyName;
             _enemyInfo.text = enemyInfo;

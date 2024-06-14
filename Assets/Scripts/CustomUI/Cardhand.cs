@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Manager;
 using Objects.Cards;
+using Unity.Profiling;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -39,8 +41,17 @@ namespace CustomUI {
             SetCardsToPoints();
         }
 
-        public void RemoveCard(Card oldCard) {
-            _cards.Remove(oldCard);
+        public void RemoveCard(VisualElement oldCard) {
+            _uiCards.Remove(oldCard);
+            _cards.Remove((Card) oldCard.userData);
+            for (int i = 0; i < _uiCards.Count; i++) {
+                VisualElement activate = _uiCards[i].Q<VisualElement>("Active");
+                if (_cards[i].energy < UIController.Instance.GetPatience()) {
+                    activate.RemoveFromClassList("inactiveCard");
+                } else { 
+                    activate.AddToClassList("inactiveCard");
+                }
+            }
             
             SetCardsToPoints();
         }
@@ -64,6 +75,8 @@ namespace CustomUI {
                 _uiCards[i].style.position = Position.Absolute;
                 _uiCards[i].style.bottom = position.y;
                 _uiCards[i].style.left = position.x;
+                _uiCards[i].style.top = StyleKeyword.Auto;
+                _uiCards[i].style.right = StyleKeyword.Auto;
             }
         }
     }
