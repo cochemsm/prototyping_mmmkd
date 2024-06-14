@@ -10,8 +10,6 @@ using UnityEngine.UIElements;
 namespace Manager {
     public class UIController : MonoBehaviour {
         public static UIController Instance {get; private set; }
-
-        // TODO: cards need a system
         public RenderTexture map;
         
         private UIDocument _ui;
