@@ -135,7 +135,7 @@ namespace Manager {
         private IEnumerator DamageOverTime() {
             yield return new WaitForSeconds(timeBetweenDamage);
             Health--;
-            _damageOverTime = StartCoroutine(DamageOverTime());
+            if (Health > 0) _damageOverTime = StartCoroutine(DamageOverTime());
         }
     }
 }

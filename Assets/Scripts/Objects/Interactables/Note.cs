@@ -1,9 +1,10 @@
+using Interfaces;
 using Manager;
 using UnityEngine;
 
 namespace Objects.Interactables {
     [RequireComponent(typeof(SphereCollider))]
-    public class Note : MonoBehaviour {
+    public class Note : MonoBehaviour, IInteractable {
         private static int _notesCollected = 0;
         private SphereCollider _trigger;
         
