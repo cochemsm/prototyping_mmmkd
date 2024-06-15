@@ -58,7 +58,7 @@ namespace Manager {
         private void FixedUpdate() {
             Vector3 movementVector = Move();
 
-            /*float currentRotation = _playerBody.eulerAngles.y + 180; TODO: rotation
+            /*float currentRotation = _playerBody.eulerAngles.y + 180;
             float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
             bool rotationDirection = currentRotation < wantedRotation;
             bool checkIfEqual = Math.Abs(currentRotation - wantedRotation) < 1;
@@ -123,7 +123,7 @@ namespace Manager {
             _rigidbody.AddForce(new Vector3(0, jumpForce, 0));
         }
     
-        private IInteractable _character; // TODO: rework this
+        private IInteractable _character;
         private void Interact(InputAction.CallbackContext ctx) {
             _character?.Interact();
         }
