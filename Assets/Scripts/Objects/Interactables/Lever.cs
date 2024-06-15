@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Objects.Interactables {
     [RequireComponent(typeof(SphereCollider))]
-    public class Level : MonoBehaviour, IInteractable {
+    public class Lever : MonoBehaviour, IInteractable {
         private static int _leversTurned = 0;
         private SphereCollider _trigger;
         
