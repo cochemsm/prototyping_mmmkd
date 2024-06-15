@@ -85,9 +85,9 @@ namespace Manager {
             cardPool.Add(card);
             StartCoroutine(UIController.Instance.SetPickupText("Added new card to deck"));
         }
-
-        public void GameEnd() {
-            Debug.Log("Player Died");
+        
+        public void PreventTriggerBug() {
+            _player.ManuelTriggerExit();
         }
         
         #region Patience Logic
@@ -120,6 +120,7 @@ namespace Manager {
             AddCardToPool(_character.data.killReward);
             _character.gameObject.SetActive(false);
             PreventTriggerBug();
+            _kills++;
         }
 
         public void FleeEnemy() {
@@ -131,8 +132,36 @@ namespace Manager {
         
         #endregion
 
-        public void PreventTriggerBug() {
-            _player.ManuelTriggerExit();
+        #region Endings Logic
+
+        private int _kills = 0;
+        private bool _reachedEnd;
+        private bool _noteEnding;
+        
+        public void GameEnd() {
+            if (!_reachedEnd) {
+                Debug.Log("Player Died");
+                return;
+            }
+
+            if (_noteEnding) {
+                Debug.Log("Note Ending");
+                return;
+            }
+            
+            switch (_kills) {
+                case 0:
+                    Debug.Log("No Kills Ending");
+                    break;
+                case 4:
+                    Debug.Log("All Kills Ending");
+                    break;
+                default:
+                    Debug.Log("Some Kills Ending");
+                    break;
+            }
         }
+
+        #endregion
     }
 }

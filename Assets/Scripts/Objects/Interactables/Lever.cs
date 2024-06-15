@@ -1,9 +1,10 @@
+using Interfaces;
 using Manager;
 using UnityEngine;
 
 namespace Objects.Interactables {
     [RequireComponent(typeof(SphereCollider))]
-    public class Level : MonoBehaviour {
+    public class Level : MonoBehaviour, IInteractable {
         private static int _leversTurned = 0;
         private SphereCollider _trigger;
         
