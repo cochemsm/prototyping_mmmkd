@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using Manager;
 using Objects.Cards;
-using Unity.Profiling;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -25,7 +23,7 @@ namespace CustomUI {
 
         public void AddCard(Card newCard, VisualElement root) {
             _cards.Add(newCard);
-            _cardTemplate = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Data/UI/Templates/cardTemplate.uxml"); // TODO: this cant be build
+            _cardTemplate = Resources.Load<VisualTreeAsset>("cardTemplate");
             VisualElement card = _cardTemplate.Instantiate();
             card.Q<VisualElement>("CardBase").style.backgroundImage = new StyleBackground(newCard.cardBase);
             card.Q<LifeMeter>("Energy").style.backgroundImage = new StyleBackground(newCard.cardBattery);
