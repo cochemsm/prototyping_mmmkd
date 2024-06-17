@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Data/UI/Styles/MainMenu.uss?fileID=7433441132597879392&amp;guid=6171c8cfe6a45fd48ba14c4f431cbfea&amp;type=3#MainMenu" />
     <ui:VisualElement style="flex-grow: 1; align-items: center; background-color: rgba(0, 0, 0, 0.39);">
         <ui:Label tabindex="-1" text="Game Paused" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" />
-        <ui:VisualElement name="Buttons">
+        <ui:VisualElement name="Buttons" style="height: 500px; width: 150px; font-size: 25px;">
             <ui:Button text="Resume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ResumeButton" class="buttons" />
             <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsButton" class="buttons" />
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="buttons" />
