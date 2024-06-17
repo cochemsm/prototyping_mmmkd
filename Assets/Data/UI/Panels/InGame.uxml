@@ -9,7 +9,8 @@
     <ui:VisualElement name="PickupIndicator" style="flex-grow: 1; position: absolute; right: 20px; bottom: 20px;">
         <ui:Label tabindex="-1" text="Picked up a new Card" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PickupText" style="visibility: hidden;" />
     </ui:VisualElement>
-    <ui:VisualElement name="MapBackground" style="width: 400px; height: 400px; position: absolute; left: 20px; background-image: url(&apos;project://database/Assets/Art/MapMarker/Map_Border/MapBorder.png?fileID=2800000&amp;guid=3b0063d7dc58bc94299e820436fe68dd&amp;type=3#MapBorder&apos;); justify-content: center; align-items: center; bottom: 20px;">
-        <ui:VisualElement name="Map" style="width: 90%; height: 90%;" />
+    <ui:VisualElement name="MapBackground" style="width: 400px; height: 400px; position: absolute; left: 20px; background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/MiniMapBorder.png?fileID=2800000&amp;guid=afa005ea7f7e5b147815bbdb759c101a&amp;type=3#MiniMapBorder&apos;); justify-content: center; align-items: center; bottom: 20px; overflow: hidden;">
+        <ui:VisualElement name="Map" style="width: 72%; height: 90%; overflow: hidden; background-image: url(&apos;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Textures/Sunny%20Days%20-%20Seamless.jpg?fileID=2800000&amp;guid=17c350171f7a3ca479f830547c66d187&amp;type=3#Sunny Days - Seamless&apos;);" />
+        <ui:VisualElement name="MapBackground" style="width: 100%; height: 100%; overflow: hidden; background-image: url(&apos;project://database/Assets/Art/2D%20Art/HUD/MiniMapBorder.png?fileID=2800000&amp;guid=afa005ea7f7e5b147815bbdb759c101a&amp;type=3#MiniMapBorder&apos;); position: absolute;" />
     </ui:VisualElement>
 </ui:UXML>
