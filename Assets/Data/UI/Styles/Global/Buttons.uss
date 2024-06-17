@@ -12,4 +12,5 @@
 
 .unity-text-element.unity-button:hover {
     background-image: url('project://database/Assets/Art/2D%20Art/HUD/Button2.png?fileID=2800000&guid=7f0cff0954e29e244b8a4686973e4932&type=3#Button2');
+    background-color: rgba(0, 0, 0, 0);
 }
