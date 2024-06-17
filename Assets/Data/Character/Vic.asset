@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ded6adca301ae8488323678f972f45b, type: 3}
   m_Name: Vic
   m_EditorClassIdentifier: 
-  myName: Vic
+  myName: Vic [V-1C]
   info: Outlaw / Runaway
   befriendGoal: 45
   killGoal: 40
