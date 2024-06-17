@@ -5,11 +5,12 @@ using CustomUI;
 using Objects.Cards;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 
 namespace Manager {
     public class UIController : MonoBehaviour {
-        public static UIController Instance {get; private set; }
+        public static UIController Instance { get; private set; }
         public RenderTexture map;
         
         private UIDocument _ui;
@@ -152,6 +153,8 @@ namespace Manager {
         private DropdownField _resolution;
         private DropdownField _windowMode;
         private Slider _gamma;
+
+        private LiftGammaGain _gammaSetting;
         
         private void SetupSettingsMenu() {
             _category = _panels[(int) UIs.SettingsMenu].Q<ListView>("CategorySelector");
