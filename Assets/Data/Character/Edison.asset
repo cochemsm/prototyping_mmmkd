@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ded6adca301ae8488323678f972f45b, type: 3}
   m_Name: Edison
   m_EditorClassIdentifier: 
-  myName: Edison
-  info: Ist neidisch auf Gerrit
+  myName: Edison [ED-1-50N
+  info: Miner
   befriendGoal: 14
   killGoal: 10
   killReward: {fileID: 0}
