@@ -17,3 +17,6 @@ MonoBehaviour:
   befriendGoal: 45
   killGoal: 40
   killReward: {fileID: 11400000, guid: 47cd1dfbbf1446a4b8145cd8dea77d1c, type: 2}
+  standard: {fileID: 2800000, guid: 34db768ab4e933e4c91e965f94d99c4a, type: 3}
+  happy: {fileID: 2800000, guid: a9088a2749bddde4399d729b5d522658, type: 3}
+  angry: {fileID: 2800000, guid: c9d5b6923976116459cacc4360ca583b, type: 3}

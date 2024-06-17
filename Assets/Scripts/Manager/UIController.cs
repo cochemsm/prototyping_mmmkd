@@ -298,6 +298,7 @@ namespace Manager {
         private Label _enemyInfo;
         private Cardhand _cardhand;
         private Label _speechLabel;
+        private VisualElement _characterPicture;
 
         public UIController(UIs startPanel) {
             this.startPanel = startPanel;
@@ -309,6 +310,7 @@ namespace Manager {
             _enemyInfo = _panels[(int) UIs.Encounter].Q<Label>("EnemyInfo");
             _cardhand = _panels[(int) UIs.Encounter].Q<Cardhand>("Cardhand");
             _speechLabel = _panels[(int) UIs.Encounter].Q<Label>("SpeechLabel");
+            _characterPicture = _panels[(int)UIs.Encounter].Q<VisualElement>("Character");
         }
         
         public void AddCardToHand(Card newCard) {
@@ -331,6 +333,10 @@ namespace Manager {
 
         public void SetSpeech(string text) {
             _speechLabel.text = text;
+        }
+
+        public void SetEnemyPicture(Texture2D picture) {
+            _characterPicture.style.backgroundImage = new StyleBackground(picture);
         }
         
         #endregion

@@ -9,5 +9,10 @@ namespace Objects.Characters {
         public int befriendGoal;
         public int killGoal;
         public Card killReward;
+        
+        [Header("Encounter Sprites")]
+        public Texture2D standard;
+        public Texture2D happy;
+        public Texture2D angry;
     }
 }
