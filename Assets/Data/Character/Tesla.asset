@@ -16,4 +16,4 @@ MonoBehaviour:
   info: Wealth dealer / Shareholder
   befriendGoal: 25
   killGoal: 20
-  killReward: {fileID: 11400000, guid: 47cd1dfbbf1446a4b8145cd8dea77d1c, type: 2}
+  killReward: {fileID: 11400000, guid: e68a36d1307011a488126aa1a4e4d862, type: 2}
