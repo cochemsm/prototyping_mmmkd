@@ -2,5 +2,14 @@
     font-size: 35px;
     color: rgb(255, 255, 255);
     -unity-font-definition: resource('Jaro-Regular SDF');
-    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Button1.png?fileID=2800000&guid=fdac6e1e6a80da2408ec16d1731d9bf5&type=3#Button1');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Button1.1.png?fileID=2800000&guid=0ec8296613318044fbbc68e3fe7a98c9&type=3#Button1.1');
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.unity-text-element.unity-button:hover {
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Button2.png?fileID=2800000&guid=7f0cff0954e29e244b8a4686973e4932&type=3#Button2');
 }
