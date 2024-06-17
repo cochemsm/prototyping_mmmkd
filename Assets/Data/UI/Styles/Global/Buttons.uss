@@ -1,18 +1,6 @@
 .unity-text-element.unity-button {
     font-size: 35px;
     color: rgb(255, 255, 255);
-    border-left-color: rgb(96, 53, 16);
-    border-right-color: rgb(96, 53, 16);
-    border-top-color: rgb(96, 53, 16);
-    border-bottom-color: rgb(96, 53, 16);
-    border-top-width: 5px;
-    border-right-width: 5px;
-    border-bottom-width: 5px;
-    border-left-width: 5px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    background-color: rgb(143, 76, 19);
     -unity-font-definition: resource('Jaro-Regular SDF');
+    background-image: url('project://database/Assets/Art/2D%20Art/HUD/Button1.png?fileID=2800000&guid=fdac6e1e6a80da2408ec16d1731d9bf5&type=3#Button1');
 }
