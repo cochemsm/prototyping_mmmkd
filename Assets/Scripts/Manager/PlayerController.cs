@@ -33,21 +33,25 @@ namespace Manager {
                 if (_health <= 0) {
                     GameManager.Instance.GameEnd();
                     _damageOverTime = null;
+                    _animator.SetTrigger(Dead);
+                    canMove = false;
                 }
             }
         }
+        
+        private IInteractable _character;
+        
+        private Animator _animator;
+        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Jump1 = Animator.StringToHash("Jump");
+        private static readonly int Dead = Animator.StringToHash("Dead");
         
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
             _playerBody = transform.GetChild(0);
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
             PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
-            animator = GetComponent<Animator>();
-
-            if (animator == null )
-            {
-                Debug.Log("Animator NICHT da");
-            }
+            _animator = GetComponentInChildren<Animator>();
         }
 
         private void Start() {
@@ -55,61 +59,21 @@ namespace Manager {
             _damageOverTime = StartCoroutine(DamageOverTime());
             PublicEvents.PlayerNotice?.Invoke(this);
         }
-        private Animator animator;
 
         private void Update() {
             _input = movementInput.action.ReadValue<Vector2>();
-
-            // If Key Pressed, Animatior Bool True
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                
-                animator.SetBool("W", true);
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                
-                animator.SetBool("S", true);
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                animator.SetBool("A", true);
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                
-                animator.SetBool("D", true);
-            }
-
-            // IF Key Released, Animator False
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-
-                animator.SetBool("D", false);
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-
-                animator.SetBool("W", false);
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-
-                animator.SetBool("A", false);
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-
-                animator.SetBool("S", false);
-            }
-
-
         }
 
         // private float rotation;
         private void FixedUpdate() {
             Vector3 movementVector = Move();
 
+            if (movementVector != Vector3.zero) {
+                _animator.SetBool(Walk, true);
+            } else {
+                _animator.SetBool(Walk, false);  
+            }
+            
             /*float currentRotation = _playerBody.eulerAngles.y + 180;
             float wantedRotation = Quaternion.LookRotation(movementVector).eulerAngles.y + 180;
             bool rotationDirection = currentRotation < wantedRotation;
@@ -173,9 +137,9 @@ namespace Manager {
             if (!Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), Vector3.down, out hit, 1f)) return;
             if (!hit.transform.CompareTag("Ground")) return;
             _rigidbody.AddForce(new Vector3(0, jumpForce, 0));
+            _animator.SetTrigger(Jump1);
         }
-    
-        private IInteractable _character;
+
         private void Interact(InputAction.CallbackContext ctx) {
             _character?.Interact();
         }
