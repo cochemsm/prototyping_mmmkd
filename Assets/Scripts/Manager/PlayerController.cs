@@ -48,10 +48,58 @@ namespace Manager {
             Health = 100;
             _damageOverTime = StartCoroutine(DamageOverTime());
             PublicEvents.PlayerNotice?.Invoke(this);
+            animator = GetComponent<Animator>();
+
         }
+        private Animator animator;
 
         private void Update() {
             _input = movementInput.action.ReadValue<Vector2>();
+
+            // If Key Pressed, Animatior Bool True
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                
+                animator.SetBool("W", true);
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                
+                animator.SetBool("S", true);
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                animator.SetBool("A", true);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                
+                animator.SetBool("D", true);
+            }
+
+            // IF Key Released, Animator False
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+
+                animator.SetBool("D", false);
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+
+                animator.SetBool("w", false);
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+
+                animator.SetBool("A", false);
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+
+                animator.SetBool("S", false);
+            }
+
+
         }
 
         // private float rotation;
