@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Serialization;
@@ -30,6 +32,11 @@ namespace Manager {
 
         public void SetVolume(MixerGroups group, float value) {
             mixers.SetFloat(group.ToString(), Mathf.Log10(value) * 20);
+        }
+
+        public float SetSlider(MixerGroups group) {
+            mixers.GetFloat(group.ToString(), out float value);
+            return (float) Math.Pow(10, value / 20);
         }
     }
 }

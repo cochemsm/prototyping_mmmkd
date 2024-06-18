@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomUI;
 using Objects.Cards;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -185,16 +186,23 @@ namespace Manager {
             _master.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MasterVolume, evt.newValue));
             _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
             _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
+
+            _master.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MasterVolume);
+            _music.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MusicVolume);
+            _sfx.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.SfxVolume);
             
             _resolution.choices.RemoveAt(0);
             int i = 0;
             foreach (var resolution in Screen.resolutions) {
                 _resolution.choices.Add(resolution.width + "x" + resolution.height);
-                if (resolution.width == 1920 && resolution.height == 1080) _resolution.index = i;
+                if (resolution.width == Screen.width && resolution.height == Screen.height) _resolution.index = i;
                 i++;
             }
             
-            // TODO: set settings to values
+            _windowMode.index = Screen.fullScreen ? 0 : 1;
+
+            _resolution.RegisterValueChangedCallback(ResolutionDropDown);
+            _windowMode.RegisterValueChangedCallback(WindowDropDown);
         }
 
         private void ChangeCategory(IEnumerable<object> selected) {
@@ -205,6 +213,16 @@ namespace Manager {
                 _soundView.style.display = DisplayStyle.None;
                 _screenView.style.display = DisplayStyle.Flex;
             }
+        }
+
+        private void ResolutionDropDown(ChangeEvent<string> evt) {
+            string[] res = evt.newValue.Split('x');
+            Screen.SetResolution(Convert.ToInt32(res[0]), Convert.ToInt32(res[1]), Screen.fullScreen);
+        }
+
+        private void WindowDropDown(ChangeEvent<string> evt) {
+            bool fullscreen = evt.newValue.Equals("Fullscreen");
+            Screen.fullScreen = fullscreen;
         }
 
         private void Back() {
