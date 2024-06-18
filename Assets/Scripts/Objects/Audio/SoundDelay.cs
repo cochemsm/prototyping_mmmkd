@@ -9,6 +9,7 @@ namespace Objects.Audio {
         private AudioSource _source;
         
         private void Awake() {
+            _source = GetComponent<AudioSource>();
             StartCoroutine(PlaySoundWithDelay());
         }
 
