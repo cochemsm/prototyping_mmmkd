@@ -43,6 +43,11 @@ namespace Manager {
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
             PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
             animator = GetComponent<Animator>();
+
+            if (animator == null )
+            {
+                Debug.Log("Animator NICHT da");
+            }
         }
 
         private void Start() {

@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 7594282317393767597}
   - component: {fileID: 402347226980411976}
   - component: {fileID: 2276249667207246301}
+  - component: {fileID: 7402480533978405910}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -609,6 +610,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7402480533978405910
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402318274859529911}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b30b3bf48513a2847af46c55d1166b51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8926587471452136154
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +965,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plyr_Prefab_CharANim
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5777341355158830532, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6220407714555046116, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
@@ -953,6 +976,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4542455447616094712, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2328693016504750324}
+    - targetCorrespondingSourceObject: {fileID: 4542455447616094712, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4151106796809849278}
   m_SourcePrefab: {fileID: 100100000, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
 --- !u!1 &3483528580944330506 stripped
 GameObject:
@@ -982,6 +1008,27 @@ CapsuleCollider:
   m_Height: 9.966536
   m_Direction: 1
   m_Center: {x: 0.19250402, y: 4.805875, z: 0.06338251}
+--- !u!95 &4151106796809849278
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483528580944330506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b30b3bf48513a2847af46c55d1166b51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6417244897279890966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220407714555046116, guid: 1f9b7f4b1cf813f439d5ad1519070ecb, type: 3}
