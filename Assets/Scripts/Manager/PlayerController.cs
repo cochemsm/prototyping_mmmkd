@@ -90,7 +90,7 @@ namespace Manager {
             if (Input.GetKeyDown(KeyCode.W))
             {
 
-                animator.SetBool("w", false);
+                animator.SetBool("W", false);
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
