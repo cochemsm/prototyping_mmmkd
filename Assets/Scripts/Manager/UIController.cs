@@ -58,7 +58,13 @@ namespace Manager {
             
             ChangePanel(startPanel);
         }
-    
+
+        private void Start() {
+            _master.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MasterVolume);
+            _music.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MusicVolume);
+            _sfx.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.SfxVolume);
+        }
+
         private void OnDestroy() {
             if (Instance == this) Instance = null;
         }
@@ -187,10 +193,6 @@ namespace Manager {
             _master.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MasterVolume, evt.newValue));
             _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
             _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
-
-            _master.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MasterVolume);
-            _music.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.MusicVolume);
-            _sfx.value = AudioManager.Instance.SetSlider(AudioManager.MixerGroups.SfxVolume);
             
             _resolution.choices.RemoveAt(0);
             int i = 0;
