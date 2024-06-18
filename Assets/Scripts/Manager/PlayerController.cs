@@ -42,14 +42,13 @@ namespace Manager {
             _playerBody = transform.GetChild(0);
             _cameraRotation = transform.GetChild(1).transform.eulerAngles.y;
             PublicEvents.LockPlayerMovementToggle += () => canMove = !canMove;
+            animator = GetComponent<Animator>();
         }
 
         private void Start() {
             Health = 100;
             _damageOverTime = StartCoroutine(DamageOverTime());
             PublicEvents.PlayerNotice?.Invoke(this);
-            animator = GetComponent<Animator>();
-
         }
         private Animator animator;
 

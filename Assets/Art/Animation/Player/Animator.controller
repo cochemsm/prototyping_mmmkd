@@ -623,7 +623,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 180, y: 100, z: 0}
+  m_EntryPosition: {x: 180, y: 110, z: 0}
   m_ExitPosition: {x: 1270, y: -50, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7689646866277743331}
@@ -683,7 +683,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_AnimAtor
+  m_Name: Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: W
