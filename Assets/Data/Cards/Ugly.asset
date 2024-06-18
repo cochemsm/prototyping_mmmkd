@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Ugly
   m_EditorClassIdentifier: 
   cardName: Roaster
-  cardBase: {fileID: 2800000, guid: 1404cf1a3955b4f4daf2b161158ec564, type: 3}
+  cardBase: {fileID: 2800000, guid: 606a04b6dd658014a98c6879d0d02474, type: 3}
   cardBattery: {fileID: 2800000, guid: 21f8f8c9ffa18b0499404254d7a65287, type: 3}
-  imageOnCard: {fileID: 2800000, guid: 1a8b7d82e4b771345b8c5330999484af, type: 3}
   text: Tell them that they are ugly
   energy: 2
   befriendPoints: 0

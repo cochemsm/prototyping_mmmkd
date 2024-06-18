@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: DevBlessing
   m_EditorClassIdentifier: 
   cardName: Developers Blessing
-  cardBase: {fileID: 0}
-  cardBattery: {fileID: 0}
-  imageOnCard: {fileID: 0}
+  cardBase: {fileID: 2800000, guid: a35e7483e8063d44288d22bae010115a, type: 3}
+  cardBattery: {fileID: 2800000, guid: 7ea7c1f71d57a8947ae1ab109db39e4f, type: 3}
   text: The Developers blessed you with this godly gift!
   energy: 6
   befriendPoints: 5

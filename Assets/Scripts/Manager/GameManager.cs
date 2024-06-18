@@ -55,7 +55,10 @@ namespace Manager {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
-            if (SceneManager.sceneCountInBuildSettings == index + 1) GameEnd();
+            if (SceneManager.sceneCountInBuildSettings == index + 1) {
+                _reachedEnd = true;
+                GameEnd();
+            }
         }
 
         public void LoadScene(Scenes scene) {

@@ -23,6 +23,7 @@
 }
 
 .activeMeterField {
+    background-image: url('project://database/Assets/Art/2D%20Art/Cards/Rare/CardBatterieEnergy5.png?fileID=2800000&guid=985dcf81152635f4bb4ccc8698eb535e&type=3#CardBatterieEnergy5');
 }
 
 #Patience .activeMeterField {

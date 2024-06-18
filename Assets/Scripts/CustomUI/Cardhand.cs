@@ -27,7 +27,6 @@ namespace CustomUI {
             VisualElement card = _cardTemplate.Instantiate();
             card.Q<VisualElement>("CardBase").style.backgroundImage = new StyleBackground(newCard.cardBase);
             card.Q<LifeMeter>("Energy").style.backgroundImage = new StyleBackground(newCard.cardBattery);
-            card.Q<VisualElement>("CardImage").style.backgroundImage = new StyleBackground(newCard.imageOnCard);
             card.Q<Label>("CardTitle").text = newCard.cardName;
             card.Q<Label>("CardText").text = newCard.text;
             card.Q<LifeMeter>("Energy").ActiveMeterFields = newCard.energy;
@@ -45,7 +44,7 @@ namespace CustomUI {
             _cards.Remove((Card) oldCard.userData);
             for (int i = 0; i < _uiCards.Count; i++) {
                 VisualElement activate = _uiCards[i].Q<VisualElement>("Active");
-                if (_cards[i].energy < UIController.Instance.GetPatience()) {
+                if (_cards[i].energy <= UIController.Instance.GetPatience()) {
                     activate.RemoveFromClassList("inactiveCard");
                 } else { 
                     activate.AddToClassList("inactiveCard");

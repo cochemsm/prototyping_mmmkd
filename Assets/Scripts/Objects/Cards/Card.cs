@@ -6,7 +6,6 @@ namespace Objects.Cards {
         public string cardName;
         public Texture2D cardBase;
         public Texture2D cardBattery;
-        public Texture2D imageOnCard;
         public string text;
         public int energy;
         public int befriendPoints;
