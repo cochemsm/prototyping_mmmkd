@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Objects.Cards;
 using Objects.Characters;
+using Objects.Endings;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -54,7 +55,7 @@ namespace Manager {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
-            if (SceneManager.sceneCountInBuildSettings == index + 1) UIController.Instance.ChangePanel(UIController.UIs.GameOver);
+            if (SceneManager.sceneCountInBuildSettings == index + 1) GameEnd();
         }
 
         public void LoadScene(Scenes scene) {
@@ -137,27 +138,28 @@ namespace Manager {
         private int _kills = 0;
         private bool _reachedEnd;
         private bool _noteEnding;
+        [SerializeField] private List<Ending> ends;
         
         public void GameEnd() {
             if (!_reachedEnd) {
-                Debug.Log("Player Died");
+                UIController.Instance.SetGameOver("You died");
                 return;
             }
 
             if (_noteEnding) {
-                Debug.Log("Note Ending");
+                UIController.Instance.StartEndingSequence(ends[3]);
                 return;
             }
             
             switch (_kills) {
                 case 0:
-                    Debug.Log("No Kills Ending");
+                    UIController.Instance.StartEndingSequence(ends[0]);
                     break;
                 case 4:
-                    Debug.Log("All Kills Ending");
+                    UIController.Instance.StartEndingSequence(ends[2]);
                     break;
                 default:
-                    Debug.Log("Some Kills Ending");
+                    UIController.Instance.StartEndingSequence(ends[1]);
                     break;
             }
         }

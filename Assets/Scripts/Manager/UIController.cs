@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomUI;
 using Objects.Cards;
+using Objects.Endings;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
@@ -408,12 +409,18 @@ namespace Manager {
         #region Game Over
 
         private Label _deathText;
+
+        private VisualElement _sequenceImage;
+        private Label _sequenceText;
+        private VisualElement _gameOverPanel;
         
         private void SetupGameOver() {
             _deathText = _panels[(int)UIs.GameOver].Q<Label>("DeathText");
             _panels[(int)UIs.GameOver].Q<Button>("CheckpointButton").clicked += LoadCheckpoint;
             _panels[(int)UIs.GameOver].Q<Button>("RestartButton").clicked += Restart;
             _panels[(int)UIs.GameOver].Q<Button>("ExitButton").clicked += Exit;
+            _sequenceImage = _panels[(int)UIs.GameOver].Q<VisualElement>("EndingSequenceImage");
+            _sequenceText = _panels[(int)UIs.GameOver].Q<Label>("EndingSequenceText");
         }
 
         private void LoadCheckpoint() {
@@ -426,6 +433,30 @@ namespace Manager {
         }
         
         // Exit function identical to pause menu
+
+        public void StartEndingSequence(Ending end) {
+            StartCoroutine(EndingSequence(end));
+        }
+
+        private IEnumerator EndingSequence(Ending end) {
+            foreach (var part in end.Sequence) {
+                if (part.Image is null) _sequenceImage.style.backgroundColor = Color.black;
+                else _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
+                foreach (var partText in part.Text) {
+                    _sequenceText.text = partText;   
+                    yield return new WaitForSeconds(1.5f);
+                }
+            }
+
+            SetGameOver(end.name);
+        }
+
+        public void SetGameOver(string text) {
+            _sequenceImage.style.display = DisplayStyle.None;
+            _gameOverPanel.style.display = DisplayStyle.Flex;
+
+            _deathText.text = text;
+        }
 
         #endregion
     }
