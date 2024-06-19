@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Serialization;
 
 namespace Manager {
     public class AudioManager : MonoBehaviour {
