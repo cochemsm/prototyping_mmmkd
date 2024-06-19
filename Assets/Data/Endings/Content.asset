@@ -15,4 +15,19 @@ MonoBehaviour:
   Sequence:
   - Image: {fileID: 0}
     Text:
-    - Content is useless
+    - Dragging your body with the other's company, you somehow made it through.
+    - The elevator is right there in front of you.
+  - Image: {fileID: 0}
+    Text:
+    - Before you can use your last energy to save the others, they stop you and offer
+      their help.
+    - Together you jump the elevator back to life.
+  - Image: {fileID: 0}
+    Text:
+    - Taking in the rattling and creaking of the elevator, you all sit together.
+    - Thinking and debating what to do once you reach the top.
+    - You however know now what you are feeling.
+  - Image: {fileID: 0}
+    Text:
+    - "You feel\u2026"
+    - Content.
