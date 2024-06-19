@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 namespace Manager {
     public class UIController : MonoBehaviour {
@@ -84,6 +85,9 @@ namespace Manager {
         public void ChangePanel(UIs newUI) {
             switch (CurrentPanel) {
                 case UIs.InGame:
+                    Cursor.visible = true;
+                    _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.None;
+                    break;
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.None;
                     break;
@@ -100,6 +104,7 @@ namespace Manager {
             switch (newUI) {
                 case UIs.InGame:
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
+                    Cursor.visible = false;
                     break;
                 case UIs.Encounter: 
                     _panels[(int) UIs.HoloOverlay].style.display = DisplayStyle.Flex;
@@ -130,7 +135,7 @@ namespace Manager {
         }
 
         private void Play() {
-            if (GameManager.Instance is not null) GameManager.Instance.LoadNextLevel();
+            if (GameManager.Instance is not null) GameManager.Instance.LoadNextLevel(100);
             ChangePanel(UIs.InGame);
         }
 
@@ -421,6 +426,7 @@ namespace Manager {
             _panels[(int)UIs.GameOver].Q<Button>("CheckpointButton").clicked += LoadCheckpoint;
             _panels[(int)UIs.GameOver].Q<Button>("RestartButton").clicked += Restart;
             _panels[(int)UIs.GameOver].Q<Button>("ExitButton").clicked += Exit;
+            _gameOverPanel = _panels[(int)UIs.GameOver].Q<VisualElement>("GameOver");
             _sequenceImage = _panels[(int)UIs.GameOver].Q<VisualElement>("EndingSequenceImage");
             _sequenceText = _panels[(int)UIs.GameOver].Q<Label>("EndingSequenceText");
         }
@@ -437,10 +443,14 @@ namespace Manager {
         // Exit function identical to pause menu
 
         public void StartEndingSequence(Ending end) {
+            ChangePanel(UIs.GameOver);
             StartCoroutine(EndingSequence(end));
         }
 
         private IEnumerator EndingSequence(Ending end) {
+            _sequenceImage.style.display = DisplayStyle.Flex;
+            _gameOverPanel.style.display = DisplayStyle.None;
+            
             foreach (var part in end.Sequence) {
                 if (part.Image is null) _sequenceImage.style.backgroundColor = Color.black;
                 else _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
@@ -449,14 +459,14 @@ namespace Manager {
                     yield return new WaitForSeconds(1.5f);
                 }
             }
-
-            SetGameOver(end.name);
-        }
-
-        public void SetGameOver(string text) {
+            
             _sequenceImage.style.display = DisplayStyle.None;
             _gameOverPanel.style.display = DisplayStyle.Flex;
 
+            SetGameOverText(end.name);
+        }
+
+        public void SetGameOverText(string text) {
             _deathText.text = text;
         }
 

@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 
 namespace Objects.Triggers {
@@ -9,7 +10,7 @@ namespace Objects.Triggers {
 
         private void OnTriggerEnter(Collider other) {
             if (!other.CompareTag("Player")) return;
-            PublicEvents.LoadNextLevel?.Invoke();
+            PublicEvents.LoadNextLevel?.Invoke(other.GetComponent<PlayerController>().Health);
         }
     }
 }

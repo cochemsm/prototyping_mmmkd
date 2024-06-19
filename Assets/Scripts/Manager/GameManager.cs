@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Objects.Cards;
 using Objects.Characters;
@@ -51,11 +52,13 @@ namespace Manager {
             _player = player;
         }
 
-        public void LoadNextLevel() {
+        public void LoadNextLevel(int playerHealth) {
             int index = SceneManager.GetActiveScene().buildIndex;
             if (!(SceneManager.sceneCountInBuildSettings >= index + 1)) return;
             SceneManager.LoadScene(index + 1);
-            if (SceneManager.sceneCountInBuildSettings == index + 1) {
+            StartCoroutine(SetPlayerHealth(playerHealth));
+            if ((int) Scenes.GameOver == index + 1) {
+                Debug.Log("Ending Started");
                 _reachedEnd = true;
                 GameEnd();
             }
@@ -63,6 +66,11 @@ namespace Manager {
 
         public void LoadScene(Scenes scene) {
             SceneManager.LoadScene((int) scene);
+        }
+
+        private IEnumerator SetPlayerHealth(int playerHealth) {
+            yield return new WaitForSeconds(0.1f);
+            _player.Health = playerHealth;
         }
     
         private void SafeGame() {
@@ -145,7 +153,9 @@ namespace Manager {
         
         public void GameEnd() {
             if (!_reachedEnd) {
-                UIController.Instance.SetGameOver("You died");
+                UIController.Instance.ChangePanel(UIController.UIs.GameOver);
+                UIController.Instance.SetGameOverText("You died");
+                LoadScene(Scenes.GameOver);
                 return;
             }
 

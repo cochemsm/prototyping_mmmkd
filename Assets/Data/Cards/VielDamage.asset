@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Death
   cardBase: {fileID: 2800000, guid: a35e7483e8063d44288d22bae010115a, type: 3}
-  cardBattery: {fileID: 2800000, guid: 7ea7c1f71d57a8947ae1ab109db39e4f, type: 3}
+  cardBatteryBase: {fileID: 2800000, guid: 9e468f39f4735c047b8a9826d345668c, type: 3}
+  cardBattery: {fileID: 2800000, guid: a5382e2dc2dd60b49a998677c6fe1807, type: 3}
   text: No Witnesses
   energy: 4
   befriendPoints: 0

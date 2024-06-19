@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sequence:
   - Image: {fileID: 0}
-    Text: []
+    Text:
+    - Content is useless

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd157981c41ef574786df8118d54b032, type: 3}
   m_Name: Regretful
   m_EditorClassIdentifier: 
-  Sequence: []
+  Sequence:
+  - Image: {fileID: 0}
+    Text:
+    - Regret sucks

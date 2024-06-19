@@ -24,7 +24,7 @@ namespace Manager {
         private float _cameraRotation;
         private Coroutine _damageOverTime;
         private int _health;
-        private int Health {
+        public int Health {
             get => _health;
             set {
                 _health = Mathf.Clamp(value, 0, 100);
@@ -54,7 +54,6 @@ namespace Manager {
         }
 
         private void Start() {
-            Health = 100;
             _damageOverTime = StartCoroutine(DamageOverTime());
             PublicEvents.PlayerNotice?.Invoke(this);
         }

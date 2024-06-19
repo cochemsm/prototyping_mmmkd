@@ -5,6 +5,7 @@ namespace Objects.Cards {
     public class Card : ScriptableObject {
         public string cardName;
         public Texture2D cardBase;
+        public Texture2D cardBatteryBase;
         public Texture2D cardBattery;
         public string text;
         public int energy;

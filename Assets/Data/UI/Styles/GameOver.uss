@@ -9,6 +9,6 @@
 }
 
 .button {
-    flex-shrink: 1;
-    flex-basis: 100%;
+    width: 200px;
+    height: 60px;
 }

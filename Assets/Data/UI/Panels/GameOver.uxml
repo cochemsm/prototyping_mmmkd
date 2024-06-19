@@ -1,15 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/GameOver.uss?fileID=7433441132597879392&amp;guid=e9dc0b279ab9110419587e3ec11954b8&amp;type=3#GameOver" />
-    <ui:VisualElement name="GameOver" style="flex-grow: 1; flex-direction: column; align-items: center; display: none;">
+    <ui:VisualElement name="GameOver" style="flex-grow: 1; flex-direction: column; align-items: center; display: flex; background-color: rgb(43, 43, 43);">
         <ui:Label tabindex="-1" text="Game Over" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="title" style="font-size: 120px; height: 30%;" />
         <ui:Label tabindex="-1" text="Du loser bist gestorben" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DeathText" style="top: 10%;" />
-        <ui:VisualElement name="Buttons" style="flex-direction: row; justify-content: space-between; width: 60%; top: 30%;">
-            <ui:Button text="Load Checkpoint" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CheckpointButton" class="button" />
+        <ui:VisualElement name="Buttons" style="flex-direction: row; justify-content: space-between; width: 40%; top: 30%;">
+            <ui:Button text="Load Checkpoint" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CheckpointButton" class="button" style="display: none;" />
             <ui:Button text="Restart" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RestartButton" class="button" />
             <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ExitButton" class="button" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="EndingSequenceImage" style="position: absolute; width: 100%; height: 100%;">
+    <ui:VisualElement name="EndingSequenceImage" style="position: absolute; width: 100%; height: 100%; display: none;">
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" picking-mode="Ignore" name="EndingSequenceText" style="top: 75%; -unity-text-align: upper-center;" />
     </ui:VisualElement>
 </ui:UXML>

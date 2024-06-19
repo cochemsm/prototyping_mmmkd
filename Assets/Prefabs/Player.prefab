@@ -512,7 +512,7 @@ MonoBehaviour:
   movementSpeed: 5
   jumpForce: 150
   canMove: 1
-  timeBetweenDamage: 1
+  timeBetweenDamage: 5
 --- !u!82 &2276249667207246301
 AudioSource:
   m_ObjectHideFlags: 0

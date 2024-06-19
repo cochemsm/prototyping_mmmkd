@@ -26,7 +26,8 @@ namespace CustomUI {
             _cardTemplate = Resources.Load<VisualTreeAsset>("cardTemplate");
             VisualElement card = _cardTemplate.Instantiate();
             card.Q<VisualElement>("CardBase").style.backgroundImage = new StyleBackground(newCard.cardBase);
-            card.Q<LifeMeter>("Energy").style.backgroundImage = new StyleBackground(newCard.cardBattery);
+            card.Q<LifeMeter>("Energy").style.backgroundImage = new StyleBackground(newCard.cardBatteryBase);
+            card.Q<VisualElement>("EnergyBase").style.backgroundImage = new StyleBackground(newCard.cardBattery);
             card.Q<Label>("CardTitle").text = newCard.cardName;
             card.Q<Label>("CardText").text = newCard.text;
             card.Q<LifeMeter>("Energy").ActiveMeterFields = newCard.energy;

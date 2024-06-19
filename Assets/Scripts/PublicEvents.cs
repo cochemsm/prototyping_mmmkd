@@ -1,7 +1,7 @@
 using Manager;
 
 public struct PublicEvents {
-    public delegate void LoadLevelDelegate();
+    public delegate void LoadLevelDelegate(int playerHealth);
     public static LoadLevelDelegate LoadNextLevel;
 
     public delegate void SafeGameDelegate();
