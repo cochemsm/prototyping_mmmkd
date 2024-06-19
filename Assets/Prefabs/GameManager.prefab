@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPool:
-  - {fileID: 11400000, guid: e68a36d1307011a488126aa1a4e4d862, type: 2}
-  - {fileID: 11400000, guid: 47cd1dfbbf1446a4b8145cd8dea77d1c, type: 2}
-  - {fileID: 11400000, guid: e58b3f091cd083c44b2b43e725c5d1a6, type: 2}
+  - {fileID: 11400000, guid: 608b3b728b3f42341813c644663ffdca, type: 2}
+  - {fileID: 11400000, guid: 688d584f9f8cf2447af0c10906400b12, type: 2}
+  - {fileID: 11400000, guid: 4185da3ea17c3a745b6e3bfa5cec4a97, type: 2}
+  - {fileID: 11400000, guid: d09516f13813df54f843376fbfa0f382, type: 2}
+  - {fileID: 11400000, guid: 08e8a55883102c64aa1ba4b4499584eb, type: 2}
+  - {fileID: 11400000, guid: f67633bb9492b5449818b023f2eef979, type: 2}
   ends:
   - {fileID: 11400000, guid: 6219b8b772ae7ad489d02aa3a302a2ce, type: 2}
   - {fileID: 11400000, guid: 8590267bc9968f5499d0388a75a244ea, type: 2}

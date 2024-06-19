@@ -29,7 +29,7 @@ namespace Manager {
         }
 
         private void Start() {
-            AddCardsFromPool(5);
+            AddCardsFromPool(6);
         }
 
         private void OnEnable() {

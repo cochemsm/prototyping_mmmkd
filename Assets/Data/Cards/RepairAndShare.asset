@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcc46e79d9cc49848b34f9e1e08dcb60, type: 3}
-  m_Name: VielDamage
+  m_Name: RepairAndShare
   m_EditorClassIdentifier: 
-  cardName: Death
-  cardBase: {fileID: 2800000, guid: a35e7483e8063d44288d22bae010115a, type: 3}
-  cardBatteryBase: {fileID: 2800000, guid: 9e468f39f4735c047b8a9826d345668c, type: 3}
-  cardBattery: {fileID: 2800000, guid: a5382e2dc2dd60b49a998677c6fe1807, type: 3}
-  text: No Witnesses
-  energy: 4
+  cardName: 
+  cardBase: {fileID: 0}
+  cardBatteryBase: {fileID: 0}
+  cardBattery: {fileID: 0}
+  text: 
+  energy: 0
   befriendPoints: 0
-  killPoints: 8
+  killPoints: 0

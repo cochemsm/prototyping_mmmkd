@@ -15,6 +15,7 @@ namespace Objects.Characters {
             UIController.Instance.ChangePanel(UIController.UIs.Encounter);
             UIController.Instance.SetEnemyInfo(data.myName, data.info);
             UIController.Instance.SetEnemyPicture(data.standard);
+            GameManager.Instance.AddCardsFromPool(3);
         }
     }
 }
