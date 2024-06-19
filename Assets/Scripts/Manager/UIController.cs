@@ -452,7 +452,7 @@ namespace Manager {
             _gameOverPanel.style.display = DisplayStyle.None;
             
             foreach (var part in end.Sequence) {
-                if (part.Image is null) _sequenceImage.style.backgroundColor = Color.black;
+                if (part.Image == null) _sequenceImage.style.backgroundColor = new StyleColor(Color.black);
                 else _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
                 foreach (var partText in part.Text) {
                     _sequenceText.text = partText;   
@@ -462,7 +462,7 @@ namespace Manager {
             
             _sequenceImage.style.display = DisplayStyle.None;
             _gameOverPanel.style.display = DisplayStyle.Flex;
-
+            
             SetGameOverText(end.name);
         }
 
