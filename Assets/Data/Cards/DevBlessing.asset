@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc46e79d9cc49848b34f9e1e08dcb60, type: 3}
   m_Name: DevBlessing
   m_EditorClassIdentifier: 
-  cardName: 
-  cardBase: {fileID: 0}
-  cardBatteryBase: {fileID: 0}
-  cardBattery: {fileID: 0}
-  text: 
-  energy: 0
-  befriendPoints: 0
-  killPoints: 0
+  cardName: Developers Blessing
+  cardBase: {fileID: 2800000, guid: a35e7483e8063d44288d22bae010115a, type: 3}
+  cardBatteryBase: {fileID: 2800000, guid: 9e468f39f4735c047b8a9826d345668c, type: 3}
+  cardBattery: {fileID: 2800000, guid: a5382e2dc2dd60b49a998677c6fe1807, type: 3}
+  text: You influence the one before you, to easily manipulate them.
+  energy: 2
+  befriendPoints: 6
+  killPoints: 6

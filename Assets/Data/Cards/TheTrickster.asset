@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc46e79d9cc49848b34f9e1e08dcb60, type: 3}
   m_Name: TheTrickster
   m_EditorClassIdentifier: 
-  cardName: 
-  cardBase: {fileID: 0}
-  cardBatteryBase: {fileID: 0}
-  cardBattery: {fileID: 0}
-  text: 
-  energy: 0
+  cardName: The Trickster
+  cardBase: {fileID: 2800000, guid: 5857bd4f8937e644eb837ccc9259142e, type: 3}
+  cardBatteryBase: {fileID: 2800000, guid: 2f54b981bdb4ddf4fa949a2f88b4c90b, type: 3}
+  cardBattery: {fileID: 2800000, guid: 2a12e53d625255841a18ecd71581d0f5, type: 3}
+  text: You offer to trade, but while the one before you looks away, you steal one
+    of their cards.
+  energy: 1
   befriendPoints: 0
-  killPoints: 0
+  killPoints: 4

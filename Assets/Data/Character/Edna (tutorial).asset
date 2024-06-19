@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myName: Edna
   info: Tutorial Bot
-  befriendGoal: 10
-  killGoal: 10
-  killReward: {fileID: 11400000, guid: 47cd1dfbbf1446a4b8145cd8dea77d1c, type: 2}
+  befriendGoal: 6
+  killGoal: 7
+  killReward: {fileID: 11400000, guid: e58b3f091cd083c44b2b43e725c5d1a6, type: 2}
   standard: {fileID: 2800000, guid: 5d8b09528414a3841b971ec7bb990799, type: 3}
   happy: {fileID: 2800000, guid: 992d36ede519e3746a831d667ec14fdf, type: 3}
   angry: {fileID: 2800000, guid: 333dc40bb14647049b440de49f2b676c, type: 3}

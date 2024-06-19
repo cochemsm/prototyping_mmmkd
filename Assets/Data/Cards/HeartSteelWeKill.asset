@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc46e79d9cc49848b34f9e1e08dcb60, type: 3}
   m_Name: HeartSteelWeKill
   m_EditorClassIdentifier: 
-  cardName: 
-  cardBase: {fileID: 0}
-  cardBatteryBase: {fileID: 0}
-  cardBattery: {fileID: 0}
-  text: 
-  energy: 0
+  cardName: Heart, Steel, We Kill
+  cardBase: {fileID: 2800000, guid: a59fff5fb973d1043b2dd71ef82d0203, type: 3}
+  cardBatteryBase: {fileID: 2800000, guid: ddd0c2fe93d8a5f44b3fc986e497979f, type: 3}
+  cardBattery: {fileID: 2800000, guid: f53f5301dcd2a274cb3d7ad107fab6d1, type: 3}
+  text: You don't survive through being friendly. You use violence if necessary.
+  energy: 3
   befriendPoints: 0
-  killPoints: 0
+  killPoints: 8

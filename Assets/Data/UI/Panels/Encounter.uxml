@@ -21,7 +21,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="SpeechBubble" style="position: absolute; top: 224px; left: 1445px; width: 400px;">
+        <ui:VisualElement name="SpeechBubble" style="position: absolute; top: 224px; left: 1445px; width: 400px; display: none;">
             <ui:Label tabindex="-1" text="HAHAHA You will never defeat me" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SpeechLabel" style="flex-wrap: wrap;" />
         </ui:VisualElement>
         <ui:VisualElement style="align-items: center; height: 20%; bottom: 0; position: absolute; width: 100%;">
