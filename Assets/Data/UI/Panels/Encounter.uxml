@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Data/UI/Styles/Encounter.uss?fileID=7433441132597879392&amp;guid=6ba5ff8fc8a242b42ad21ef9538ae450&amp;type=3#Encounter" />
-    <ui:VisualElement name="Background" class="fillScreen" style="background-color: rgb(140, 55, 31);" />
+    <ui:VisualElement name="Background" class="fillScreen" style="background-color: rgb(255, 255, 255); background-image: url(&apos;project://database/Assets/Art/2D%20Art/rustBGdark.png?fileID=2800000&amp;guid=49134877d6b0ab4428fff383ef7e49c0&amp;type=3#rustBGdark&apos;); -unity-background-image-tint-color: rgb(135, 108, 85);" />
     <ui:VisualElement name="CharacterContainer" class="fillScreen" style="justify-content: flex-end; align-items: center;">
         <ui:VisualElement name="Character" style="width: 1000px; height: 80%;" />
     </ui:VisualElement>
