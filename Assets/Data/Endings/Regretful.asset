@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Regretful
   m_EditorClassIdentifier: 
   Sequence:
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 2aef97eb6791d344f93a4394749ce656, type: 3}
     Text:
     - Dragging your body by yourself, you made it through.
     - The elevator is right there in front of you.
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 71c0355724c3dac44a23fe401caa8b32, type: 3}
     Text:
     - You use your energy to spark up the elevator and bring it back to life.
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: d2a83db2415014b49b4b3750fbec70c4, type: 3}
     Text:
     - Without realizing it, your body hits the ground.
     - The blurry figures surround you as the world around you becomes brighter and
       brighter.
     - A loud buzzing fills your head.
     - You feel your mind slip.
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 32bf62a11b9a6f244aa7611b96384178, type: 3}
     Text:
     - "It\u2019s okay though."
     - They will be free. The ones at were sacrificed won't die in vain.
