@@ -65,9 +65,6 @@ namespace Manager {
         }
 
         public void LoadScene(Scenes scene) {
-            if (scene == Scenes.Lvl1) {
-                StartCoroutine(SetPlayerHealth(100));
-            }
             SceneManager.LoadScene((int) scene);
         }
 

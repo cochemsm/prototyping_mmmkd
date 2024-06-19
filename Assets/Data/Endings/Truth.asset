@@ -15,36 +15,4 @@ MonoBehaviour:
   Sequence:
   - Image: {fileID: 0}
     Text:
-    - Dragging your body to the elevator. You stop before it.
-    - A look at the notes you found along the way, you wonder.
-    - Who has placed these?
-    - These are written with hope.
-    - Hope that was found in this place?!
-    - You take another look.
-  - Image: {fileID: 0}
-    Text:
-    - "\u2026 Marks?"
-    - "First note\u2026 \u201Clook\u201D."
-    - "Second note\u2026 \u201Cfor\u201D"
-    - "Last note\u2026 \u201Clights\u201D"
-  - Image: {fileID: 0}
-    Text:
-    - You look around the elevator.
-    - A little shine creeps into your vision from behind a panel.
-    - Prying it open, you find a faintly shining button.
-    - You press it.
-    - The Elevator starts to fall.
-  - Image: {fileID: 0}
-    Text:
-    - With force, the elevator suddenly stops.
-    - "The doors open to someone sitting in a chair\u2026"
-    - "A melody plays\u2026"
-  - Image: {fileID: 0}
-    Text:
-    - "\u201CWell. Look at that.\u201D"
-    - "\u201DA new friend. And a Milo as well.\u201D"
-    - "\u201DMy name is Harvey.\u201D"
-    - Tell me, son, how do you feel?
-  - Image: {fileID: 0}
-    Text:
-    - "You feel\u2026"
+    - no one tells the truth

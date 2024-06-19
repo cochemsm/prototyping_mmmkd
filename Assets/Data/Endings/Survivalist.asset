@@ -15,21 +15,4 @@ MonoBehaviour:
   Sequence:
   - Image: {fileID: 0}
     Text:
-    - With stern confidence, you approach the elevator.
-    - Of course you made it through.
-    - 'You did everything in your power to make it. '
-    - Whatever means necessary.
-  - Image: {fileID: 0}
-    Text:
-    - You use your energy to spark up the elevator and bring it back to life.
-    - Even with a decent amount being zapped away from you, you still stand strong.
-  - Image: {fileID: 0}
-    Text:
-    - The rattling and creaking of the rusted elevator rings in your system.
-    - You have made it out. You did what you had to do.
-    - You took out what stood in your way and were able to push forward.
-    - Good job M1-L0
-  - Image: {fileID: 0}
-    Text:
-    - "You feel like\u2026"
-    - A Survivalist.
+    - Survival is everything
