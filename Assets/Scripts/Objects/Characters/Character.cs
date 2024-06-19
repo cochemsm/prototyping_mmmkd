@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Objects.Characters {
     public class Character : MonoBehaviour, IInteractable {
         public CharacterData data;
+        private bool _firstTime = true;
         
         private void Awake() {
             gameObject.tag = "interactable";
@@ -15,7 +16,11 @@ namespace Objects.Characters {
             UIController.Instance.ChangePanel(UIController.UIs.Encounter);
             UIController.Instance.SetEnemyInfo(data.myName, data.info);
             UIController.Instance.SetEnemyPicture(data.standard);
-            GameManager.Instance.AddCardsFromPool(3);
+            UIController.Instance.CheckCards();
+            if (_firstTime) {
+                GameManager.Instance.AddCardsFromPool(3);
+                _firstTime = false;
+            }
         }
     }
 }

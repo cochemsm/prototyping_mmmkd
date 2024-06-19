@@ -43,6 +43,13 @@ namespace CustomUI {
         public void RemoveCard(VisualElement oldCard) {
             _uiCards.Remove(oldCard);
             _cards.Remove((Card) oldCard.userData);
+            
+            CheckAllCards();
+            
+            SetCardsToPoints();
+        }
+
+        public void CheckAllCards() {
             int x = 0;
             for (int i = 0; i < _uiCards.Count; i++) {
                 VisualElement activate = _uiCards[i].Q<VisualElement>("Active");
@@ -54,8 +61,6 @@ namespace CustomUI {
                 }
             }
             if (_uiCards.Count == x) PublicEvents.NoCardToPlay?.Invoke();
-            
-            SetCardsToPoints();
         }
 
         public void SetCardsToPoints() {

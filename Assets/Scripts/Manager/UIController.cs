@@ -364,6 +364,10 @@ namespace Manager {
         public void SetEnemyPicture(Texture2D picture) {
             _characterPicture.style.backgroundImage = new StyleBackground(picture);
         }
+
+        public void CheckCards() {
+            _cardhand.CheckAllCards();
+        }
         
         #endregion
 
