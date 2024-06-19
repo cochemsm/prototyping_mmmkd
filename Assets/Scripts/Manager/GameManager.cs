@@ -128,7 +128,9 @@ namespace Manager {
 
         private void BefriendEnemy() {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
-            // TODO: Befriending
+            StartCoroutine(UIController.Instance.SetPickupText("You befriended " + _character.data.name));
+            _character.gameObject.tag = "Untagged";
+            PreventTriggerBug();
         }
 
         private void KillEnemy() {
