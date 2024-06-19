@@ -15,4 +15,7 @@ public struct PublicEvents {
     
     public delegate void PlayerDelegate(PlayerController player);
     public static PlayerDelegate PlayerNotice;
+    
+    public delegate void NoCardToPlayDelegate();
+    public static NoCardToPlayDelegate NoCardToPlay;
 }

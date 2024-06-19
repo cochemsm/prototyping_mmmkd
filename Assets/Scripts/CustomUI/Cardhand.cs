@@ -43,14 +43,17 @@ namespace CustomUI {
         public void RemoveCard(VisualElement oldCard) {
             _uiCards.Remove(oldCard);
             _cards.Remove((Card) oldCard.userData);
+            int x = 0;
             for (int i = 0; i < _uiCards.Count; i++) {
                 VisualElement activate = _uiCards[i].Q<VisualElement>("Active");
                 if (_cards[i].energy <= UIController.Instance.GetPatience()) {
                     activate.RemoveFromClassList("inactiveCard");
                 } else { 
                     activate.AddToClassList("inactiveCard");
+                    x++;
                 }
             }
+            if (_uiCards.Count == x) PublicEvents.NoCardToPlay?.Invoke();
             
             SetCardsToPoints();
         }

@@ -337,6 +337,10 @@ namespace Manager {
             _cardhand = _panels[(int) UIs.Encounter].Q<Cardhand>("Cardhand");
             _speechLabel = _panels[(int) UIs.Encounter].Q<Label>("SpeechLabel");
             _characterPicture = _panels[(int)UIs.Encounter].Q<VisualElement>("Character");
+
+            PublicEvents.NoCardToPlay += () => {
+                GameManager.Instance.FleeEnemy();
+            };
         }
         
         public void AddCardToHand(Card newCard) {
