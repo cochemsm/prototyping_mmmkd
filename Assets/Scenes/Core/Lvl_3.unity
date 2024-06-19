@@ -49246,6 +49246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vic_iDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 8414441113551978508, guid: b9103661b486a4d46a05ea7fdd107371, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 8aca5b769c2adec48bdd32efced56ae8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
