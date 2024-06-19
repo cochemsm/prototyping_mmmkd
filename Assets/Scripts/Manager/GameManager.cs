@@ -134,6 +134,7 @@ namespace Manager {
         private void KillEnemy() {
             UIController.Instance.ChangePanel(UIController.UIs.InGame);
             AddCardToPool(_character.data.killReward);
+            StartCoroutine(UIController.Instance.SetPickupText("You killed " + _character.data.name + " to survive"));
             _character.gameObject.SetActive(false);
             PreventTriggerBug();
             _kills++;

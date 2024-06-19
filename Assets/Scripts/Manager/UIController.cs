@@ -426,7 +426,7 @@ namespace Manager {
             _panels[(int)UIs.GameOver].Q<Button>("CheckpointButton").clicked += LoadCheckpoint;
             _panels[(int)UIs.GameOver].Q<Button>("RestartButton").clicked += Restart;
             _panels[(int)UIs.GameOver].Q<Button>("ExitButton").clicked += Exit;
-            _gameOverPanel = _panels[(int)UIs.GameOver].Q<VisualElement>("GameOver");
+            _gameOverPanel = _panels[(int)UIs.GameOver].Q<VisualElement>("GameOverPanel");
             _sequenceImage = _panels[(int)UIs.GameOver].Q<VisualElement>("EndingSequenceImage");
             _sequenceText = _panels[(int)UIs.GameOver].Q<Label>("EndingSequenceText");
         }
@@ -448,6 +448,7 @@ namespace Manager {
         }
 
         private IEnumerator EndingSequence(Ending end) {
+            Debug.Log(end.name);
             _sequenceImage.style.display = DisplayStyle.Flex;
             _gameOverPanel.style.display = DisplayStyle.None;
             
@@ -455,7 +456,7 @@ namespace Manager {
                 if (part.Image == null) _sequenceImage.style.backgroundColor = new StyleColor(Color.black);
                 else _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
                 foreach (var partText in part.Text) {
-                    _sequenceText.text = partText;   
+                    _sequenceText.text = partText;
                     yield return new WaitForSeconds(1.5f);
                 }
             }
