@@ -454,7 +454,10 @@ namespace Manager {
             
             foreach (var part in end.Sequence) {
                 if (part.Image == null) _sequenceImage.style.backgroundColor = new StyleColor(Color.black);
-                else _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
+                else {
+                    _sequenceImage.style.backgroundImage = new StyleBackground(part.Image);
+                    _sequenceImage.style.backgroundColor = new StyleColor(Color.white);
+                }
                 foreach (var partText in part.Text) {
                     _sequenceText.text = partText;
                     yield return new WaitForSeconds(1.5f);
