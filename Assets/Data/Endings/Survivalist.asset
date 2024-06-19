@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Survivalist
   m_EditorClassIdentifier: 
   Sequence:
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 2aef97eb6791d344f93a4394749ce656, type: 3}
     Text:
     - With stern confidence, you approach the elevator.
     - Of course you made it through.
     - 'You did everything in your power to make it. '
     - Whatever means necessary.
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 71c0355724c3dac44a23fe401caa8b32, type: 3}
     Text:
     - You use your energy to spark up the elevator and bring it back to life.
     - Even with a decent amount being zapped away from you, you still stand strong.
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: d2a83db2415014b49b4b3750fbec70c4, type: 3}
     Text:
     - The rattling and creaking of the rusted elevator rings in your system.
     - You have made it out. You did what you had to do.
     - You took out what stood in your way and were able to push forward.
     - Good job M1-L0
-  - Image: {fileID: 0}
+  - Image: {fileID: 2800000, guid: 0ab8382a54418694c895959431680408, type: 3}
     Text:
     - "You feel like\u2026"
     - A Survivalist.
