@@ -53165,7 +53165,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 402347226980411976, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
       propertyPath: timeBetweenDamage
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 578240461852973821, guid: a6bba79ec8c79d740b5d45eabb206a07, type: 3}
       propertyPath: target
