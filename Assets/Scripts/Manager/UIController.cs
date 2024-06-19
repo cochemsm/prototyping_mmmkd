@@ -326,10 +326,6 @@ namespace Manager {
         private Label _speechLabel;
         private VisualElement _characterPicture;
 
-        public UIController(UIs startPanel) {
-            this.startPanel = startPanel;
-        }
-
         private void SetupEncounter() {
             _patience = _panels[(int) UIs.Encounter].Q<LifeMeter>("Patience");
             _enemyName = _panels[(int) UIs.Encounter].Q<Label>("EnemyName");

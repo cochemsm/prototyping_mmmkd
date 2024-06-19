@@ -123,6 +123,7 @@ namespace Manager {
             if (_friendlyGoal <= 0) BefriendEnemy();
             if (_evilGoal <= 0) KillEnemy();
             UIController.Instance.ChangePatience(energy);
+            UIController.Instance.SetEnemyPicture(_friendlyGoal > _evilGoal ? _character.data.happy : _character.data.angry);
         }
 
         private void BefriendEnemy() {
