@@ -126,7 +126,7 @@ namespace Manager {
             if (!canMove) return Vector3.zero;
             Vector3 movementVector = new Vector3(_input.x, Mathf.Epsilon, _input.y);
             movementVector = Quaternion.Euler(0, _cameraRotation, 0) * movementVector;
-            _rigidbody.velocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.velocity.y, 0);
+            _rigidbody.linearVelocity = (movementVector * movementSpeed) + new Vector3(0, _rigidbody.linearVelocity.y, 0);
             return movementVector;
         }
 
